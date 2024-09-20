@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Patient Notes</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Patient Notes</value>
+    </caseValues>
+    
+    
+    
+    
+    
+    
+    <layouts>
+        <layout>Patient Notes Layout</layout>
+        <sections>
+            <label>
+                <!-- Custom Links -->
+            </label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage>
+            <!-- Where note type is Injection Training, please indicate whether training attended -->
+        </errorMessage>
+        <name>If_Training_Must_Have_Training_Attended</name>
+    </validationRules>
+</CustomObjectTranslation>

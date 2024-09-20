@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bespoke_Meddx_Kit_Type</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL( Test_Type__c , &#39;Bespoke&#39;),
+ISPICKVAL( Bespoke_Meddx_Kit_Type__c , &#39;&#39;))</errorConditionFormula>
+    <errorDisplayField>Bespoke_Meddx_Kit_Type__c</errorDisplayField>
+    <errorMessage>Please choose a Bespoke Meddx Kit Type</errorMessage>
+</ValidationRule>

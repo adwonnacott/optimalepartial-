@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Re_send_HL7_file_to_Randox__c</fullName>
+    <externalId>false</externalId>
+    <label>Re-send HL7 file to Randox</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Re-send HL7 file to Randox</fullName>
+                <default>false</default>
+                <label>Re-send HL7 file to Randox</label>
+            </value>
+            <value>
+                <fullName>HL7 file re-sent to Randox</fullName>
+                <default>false</default>
+                <label>HL7 file re-sent to Randox</label>
+            </value>
+            <value>
+                <fullName>HL7 file sent to Randox</fullName>
+                <default>false</default>
+                <label>HL7 file sent to Randox</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

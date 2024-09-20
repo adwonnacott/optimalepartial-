@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Patients_w_o_Channel</fullName>
+    <columns>Patient_ID__pc</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>PC_EMAIL</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>Patient_Status__pc</columns>
+    <columns>Lead_Doctor__c</columns>
+    <columns>Channel__c</columns>
+    <columns>ACCOUNT.CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Channel__c</field>
+        <operation>notEqual</operation>
+        <value>Optimale,CJA Balance</value>
+    </filters>
+    <filters>
+        <field>Patient_Status__pc</field>
+        <operation>equals</operation>
+        <value>Current Patient</value>
+    </filters>
+    <label>Patients w/o Channel</label>
+</ListView>

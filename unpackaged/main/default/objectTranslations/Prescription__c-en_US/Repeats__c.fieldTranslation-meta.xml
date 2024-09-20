@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Number of repeat orders of the medication before a new prescription is required -->
+        </help>
+        <label>
+            <!-- Repeats -->
+        </label>
+        <name>Repeats__c</name>
+    </CustomFieldTranslation>

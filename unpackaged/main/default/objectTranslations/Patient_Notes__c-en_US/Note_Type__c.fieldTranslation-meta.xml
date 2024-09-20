@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Note Type -->
+        </label>
+        <name>Note_Type__c</name>
+        <picklistValues>
+            <masterLabel>Dr review of bloods</masterLabel>
+            <translation>
+                <!-- Dr review of bloods -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Early medication order</masterLabel>
+            <translation>
+                <!-- Early medication order -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IPSS</masterLabel>
+            <translation>
+                <!-- IPSS -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incident Report</masterLabel>
+            <translation>
+                <!-- Incident Report -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Injection Training</masterLabel>
+            <translation>
+                <!-- Injection Training -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Notes from Graeme</masterLabel>
+            <translation>
+                <!-- Notes from Graeme -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation>
+                <!-- Other -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient called</masterLabel>
+            <translation>
+                <!-- Patient called -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient emailed</masterLabel>
+            <translation>
+                <!-- Patient emailed -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

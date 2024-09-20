@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Contact.Patient_ID__c</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>qADAM_Questionnaire__c.Would_you_like_Contact_re_Side_Effects__c</field>
+    </columns>
+    <columns>
+        <field>PC_EMAIL</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>qADAM_Questionnaire__c.Would_you_like_Contact_re_Side_Effects__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Yes</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_CREATED_DATE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>lessOrEqual</operator>
+            <value>4/20/2024 12:00 AM</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Patients Requesting qAdam Contact</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountCustomEntity$qADAM_Questionnaire__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>DUE_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

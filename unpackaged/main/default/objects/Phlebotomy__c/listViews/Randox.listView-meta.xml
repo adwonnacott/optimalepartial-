@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Randox</fullName>
+    <columns>NAME</columns>
+    <columns>Patient__c</columns>
+    <columns>Type__c</columns>
+    <columns>Service_Provider__c</columns>
+    <columns>Voucher_Code__c</columns>
+    <columns>Appointment_Date__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Service_Provider__c</field>
+        <operation>equals</operation>
+        <value>Randox</value>
+    </filters>
+    <label>Randox</label>
+</ListView>

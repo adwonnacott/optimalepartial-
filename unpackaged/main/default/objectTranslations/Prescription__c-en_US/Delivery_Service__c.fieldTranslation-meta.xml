@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Delivery Service -->
+        </label>
+        <name>Delivery_Service__c</name>
+        <picklistValues>
+            <masterLabel>Collection from WebRx</masterLabel>
+            <translation>
+                <!-- Collection from WebRx -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPD</masterLabel>
+            <translation>
+                <!-- DPD -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Royal Mail</masterLabel>
+            <translation>
+                <!-- Royal Mail -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

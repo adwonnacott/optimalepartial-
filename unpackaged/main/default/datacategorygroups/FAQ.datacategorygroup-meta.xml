@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>Injecting</label>
+                <name>Injecting</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Blood Tests</label>
+                <name>Blood_Tests</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Dosage</label>
+                <name>Dosage</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Medication</label>
+                <name>Medication</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Subscriptions</label>
+                <name>Subscriptions</name>
+            </dataCategory>
+            <label>Customer FAQ</label>
+            <name>Customer_FAQ</name>
+        </dataCategory>
+        <label>All</label>
+        <name>All</name>
+    </dataCategory>
+    <label>FAQ</label>
+    <objectUsage>
+        <object>KnowledgeArticleVersion</object>
+    </objectUsage>
+</DataCategoryGroup>

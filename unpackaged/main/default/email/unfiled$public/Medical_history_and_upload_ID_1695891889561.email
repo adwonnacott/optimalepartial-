@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p>Hi&nbsp;{{{Account.FirstName}}}<br />
+<br />
+Please could you fill out your medical history and upload a copy of your ID using the following link:<br />
+<br />
+<a href="https://optimale.typeform.com/to/cj6EnJ1L#patient_id={{{Recipient.Patient_ID__c}}}&amp;name={{{Account.FirstName}}}">Medical History Form</a><br />
+<br />
+This information is very important for us to be able to determine the best course of treatment.<br />
+<br />
+Please let us know if you have any questions,<br />
+<br />
+Many thanks,</p>
+
+<p>Optimale</p>
+<div style="all: initial;">&nbsp;</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Patient advised to monitor Blood Pressure at home and see GP if consistently above 140/80 -->
+        </help>
+        <label>
+            <!-- Monitor BP at home &amp; if &gt;140/80 see GP -->
+        </label>
+        <name>Monitor_BP_at_home__c</name>
+    </CustomFieldTranslation>

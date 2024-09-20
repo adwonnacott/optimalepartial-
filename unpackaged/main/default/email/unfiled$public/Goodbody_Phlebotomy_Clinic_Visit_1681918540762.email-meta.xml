@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Goodbody Phlebotomy Clinic Visit</name>
+    <pageDevName>Goodbody_Phlebotomy_Clinic_Visit</pageDevName>
+    <relatedEntityType>Phlebotomy__c</relatedEntityType>
+    <style>none</style>
+    <subject>Book your Optimale Blood Test Clinic Visit</subject>
+    <textOnly>Book your Venous Blood Test Clinic Visit with our partner Goodbody ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+
+Dear {{{Recipient.FirstName}}},
+
+Thank you for ordering a Clinic Visit to take your Venous Blood Test.
+
+Please click the button below to book your appointment with our partner Goodbody.
+
+When you attend the clinic to have your blood taken, please take your blood test kit (which you must order separately) and some personal photo identification.
+
+Please contact us if you cannot find a clinic in your area. If the booking link below is not working for any reason, please call this number to arrange your clinic visit: 01225 444 144
+
+Please feel welcome to contact us if you have any questions.
+
+Book Here &lt; https://book.gbc.health/b/63beb0c3171b3 &gt; 
+
+If you have any questions, please contact bloods@optimale.co.uk or reply to this email.
+
+Thanks,
+
+Optimale
+
+Optimale Ltd, 71-75 Shelton Street, London, WC2H 9JQ, United Kingdom</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

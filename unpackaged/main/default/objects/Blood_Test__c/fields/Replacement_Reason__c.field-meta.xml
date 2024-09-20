@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Replacement_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Replacement Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1st replacement - Haemolysed</fullName>
+                <default>false</default>
+                <label>1st replacement - Haemolysed</label>
+            </value>
+            <value>
+                <fullName>1st replacement - Failed values</fullName>
+                <default>false</default>
+                <label>1st replacement - Failed values</label>
+            </value>
+            <value>
+                <fullName>1st replacement - Unable to fill</fullName>
+                <default>false</default>
+                <label>1st replacement - Unable to fill</label>
+            </value>
+            <value>
+                <fullName>1st replacement - Missing label</fullName>
+                <default>false</default>
+                <label>1st replacement - Missing label</label>
+            </value>
+            <value>
+                <fullName>1st replacement - Insufficient</fullName>
+                <default>false</default>
+                <label>1st replacement - Insufficient</label>
+            </value>
+            <value>
+                <fullName>1st replacement - Kit didn&#39;t arrive</fullName>
+                <default>false</default>
+                <label>1st replacement - Kit didn&#39;t arrive</label>
+            </value>
+            <value>
+                <fullName>1st replacement - Incorrect kit arrived</fullName>
+                <default>false</default>
+                <label>1st replacement - Incorrect kit arrived</label>
+            </value>
+            <value>
+                <fullName>1st replacement - Incorrect details printed on labels</fullName>
+                <default>false</default>
+                <label>1st replacement - Incorrect details printed on labels</label>
+            </value>
+            <value>
+                <fullName>2nd replacement - Haemolysed</fullName>
+                <default>false</default>
+                <label>2nd replacement - Haemolysed</label>
+            </value>
+            <value>
+                <fullName>2nd replacement - Failed values</fullName>
+                <default>false</default>
+                <label>2nd replacement - Failed values</label>
+            </value>
+            <value>
+                <fullName>2nd replacement - Unable to fill</fullName>
+                <default>false</default>
+                <label>2nd replacement - Unable to fill</label>
+            </value>
+            <value>
+                <fullName>2nd replacement - Missing label</fullName>
+                <default>false</default>
+                <label>2nd replacement - Missing label</label>
+            </value>
+            <value>
+                <fullName>2nd replacement - Insufficient</fullName>
+                <default>false</default>
+                <label>2nd replacement - Insufficient</label>
+            </value>
+            <value>
+                <fullName>2nd replacement - Kit didn&#39;t arrive</fullName>
+                <default>false</default>
+                <label>2nd replacement - Kit didn&#39;t arrive</label>
+            </value>
+            <value>
+                <fullName>2nd replacement - Incorrect kit arrived</fullName>
+                <default>false</default>
+                <label>2nd replacement - Incorrect kit arrived</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

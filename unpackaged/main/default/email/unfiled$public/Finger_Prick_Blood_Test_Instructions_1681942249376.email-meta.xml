@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Finger Prick Blood Test Instructions</name>
+    <pageDevName>Finger_Prick_Blood_Test_Instructions</pageDevName>
+    <relatedEntityType>Blood_Test__c</relatedEntityType>
+    <style>none</style>
+    <subject>Your Finger-Prick Blood Test Instructions</subject>
+    <textOnly>Instructions on how to successfully take your Finger - Prick blood test ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+
+Dear {{{Recipient.FirstName}}}
+
+Thank you for your finger-prick blood test order.
+
+Please note the following important instructions for taking and returning your sample:
+
+We have placed your order and you should receive a finger-prick home testing kit in the coming days.
+
+It is important that you take your blood sample on a Monday, Tuesday or Wednesday and send it back the same day, because the testing labs are closed on the weekend.
+
+Failure to follow this advice will increase the likelihood of your blood sample failing, due to the blood being too old to analyse.
+
+Here is a video that you might find useful for the blood test:
+
+- How to take a finger prick blood test
+
+https://youtu.be/0oVjzk-7vpE
+
+If you have any questions, please contact bloods@optimale.co.uk or reply to this email.
+
+If you haven&#39;t already shared them with us, it would also be good to hear about the symptoms which have led you to purchase this blood test.
+
+Many thanks,
+
+Optimale
+
+Optimale Ltd, 71-75 Shelton Street, London, WC2H 9JQ, United Kingdom</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

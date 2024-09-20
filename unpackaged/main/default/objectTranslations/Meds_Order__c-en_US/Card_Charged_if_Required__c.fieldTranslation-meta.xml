@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Has the patient&apos;s card been charged for the medication? -->
+        </help>
+        <label>
+            <!-- Card Charged? -->
+        </label>
+        <name>Card_Charged_if_Required__c</name>
+    </CustomFieldTranslation>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- How happy do you think the patient currently is with Optimale and the treatment? -->
+        </help>
+        <label>
+            <!-- Patient Satisfaction Rating -->
+        </label>
+        <name>Patient_Satisfaction_Rating__c</name>
+        <picklistValues>
+            <masterLabel>Happy</masterLabel>
+            <translation>
+                <!-- Happy -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Neutral / Unsure</masterLabel>
+            <translation>
+                <!-- Neutral / Unsure -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unhappy</masterLabel>
+            <translation>
+                <!-- Unhappy -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

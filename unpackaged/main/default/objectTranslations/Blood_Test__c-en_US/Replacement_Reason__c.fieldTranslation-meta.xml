@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Replacement Reason -->
+        </label>
+        <name>Replacement_Reason__c</name>
+        <picklistValues>
+            <masterLabel>1st replacement - Failed values</masterLabel>
+            <translation>
+                <!-- 1st replacement - Failed values -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1st replacement - Haemolysed</masterLabel>
+            <translation>
+                <!-- 1st replacement - Haemolysed -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1st replacement - Incorrect details printed on labels</masterLabel>
+            <translation>
+                <!-- 1st replacement - Incorrect details printed on labels -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1st replacement - Incorrect kit arrived</masterLabel>
+            <translation>
+                <!-- 1st replacement - Incorrect kit arrived -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1st replacement - Insufficient</masterLabel>
+            <translation>
+                <!-- 1st replacement - Insufficient -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1st replacement - Kit didn&#39;t arrive</masterLabel>
+            <translation>
+                <!-- 1st replacement - Kit didn&apos;t arrive -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1st replacement - Missing label</masterLabel>
+            <translation>
+                <!-- 1st replacement - Missing label -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1st replacement - Unable to fill</masterLabel>
+            <translation>
+                <!-- 1st replacement - Unable to fill -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd replacement - Failed values</masterLabel>
+            <translation>
+                <!-- 2nd replacement - Failed values -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd replacement - Haemolysed</masterLabel>
+            <translation>
+                <!-- 2nd replacement - Haemolysed -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd replacement - Incorrect kit arrived</masterLabel>
+            <translation>
+                <!-- 2nd replacement - Incorrect kit arrived -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd replacement - Insufficient</masterLabel>
+            <translation>
+                <!-- 2nd replacement - Insufficient -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd replacement - Kit didn&#39;t arrive</masterLabel>
+            <translation>
+                <!-- 2nd replacement - Kit didn&apos;t arrive -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd replacement - Missing label</masterLabel>
+            <translation>
+                <!-- 2nd replacement - Missing label -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd replacement - Unable to fill</masterLabel>
+            <translation>
+                <!-- 2nd replacement - Unable to fill -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

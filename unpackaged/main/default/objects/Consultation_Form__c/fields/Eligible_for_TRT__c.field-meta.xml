@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Eligible_for_TRT__c</fullName>
+    <description>Is the patient eligible for TRT?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Is the patient eligible for TRT?</inlineHelpText>
+    <label>Eligible for TRT?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Yes_No</valueSetName>
+    </valueSet>
+</CustomField>

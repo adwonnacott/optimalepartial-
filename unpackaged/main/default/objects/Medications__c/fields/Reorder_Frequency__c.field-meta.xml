@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reorder_Frequency__c</fullName>
+    <externalId>false</externalId>
+    <label>Re-order Frequency</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>On Demand</fullName>
+                <default>false</default>
+                <label>On Demand</label>
+            </value>
+            <value>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+                <label>Monthly</label>
+            </value>
+            <value>
+                <fullName>1-2 months</fullName>
+                <default>false</default>
+                <label>1-2 months</label>
+            </value>
+            <value>
+                <fullName>2 months</fullName>
+                <default>false</default>
+                <label>2 months</label>
+            </value>
+            <value>
+                <fullName>2-3 months</fullName>
+                <default>false</default>
+                <label>2-3 months</label>
+            </value>
+            <value>
+                <fullName>3-4 Months</fullName>
+                <default>false</default>
+                <label>3-4 Months</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Full Blood Test Results? -->
+        </label>
+        <name>Full_Blood_Test_Results__c</name>
+        <picklistValues>
+            <masterLabel>No, full set ordered</masterLabel>
+            <translation>
+                <!-- No, full set ordered -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No, needs to order</masterLabel>
+            <translation>
+                <!-- No, needs to order -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes, full set</masterLabel>
+            <translation>
+                <!-- Yes, full set -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

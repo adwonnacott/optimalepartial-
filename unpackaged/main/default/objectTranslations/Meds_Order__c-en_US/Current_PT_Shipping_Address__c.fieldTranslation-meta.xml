@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Current PT Shipping Address -->
+        </label>
+        <name>Current_PT_Shipping_Address__c</name>
+    </CustomFieldTranslation>

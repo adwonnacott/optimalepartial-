@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Doctor Consultation - Transfer Remote</fullName>
+        <default>false</default>
+        <label>Doctor Consultation - Transfer Remote</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Doctor Consultation - Transfer F2F</fullName>
+        <default>false</default>
+        <label>Doctor Consultation - Transfer F2F</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Doctor Consultation - Sign-Up Remote</fullName>
+        <default>false</default>
+        <label>Doctor Consultation - Sign-Up Remote</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Doctor Consultation - Sign-Up Remote £99</fullName>
+        <default>false</default>
+        <label>Doctor Consultation - Sign-Up Remote £99</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Doctor Consultation - Sign-Up F2F</fullName>
+        <default>false</default>
+        <label>Doctor Consultation - Sign-Up F2F</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Doctor Consultation - 2nd Blood Test Bundle</fullName>
+        <default>false</default>
+        <label>Doctor Consultation - 2nd Blood Test Bundle</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Hair Loss</fullName>
+        <default>false</default>
+        <label>Hair Loss</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Erectile Dysfunction</fullName>
+        <default>false</default>
+        <label>Erectile Dysfunction</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Blood Test</fullName>
+        <default>false</default>
+        <label>Blood Test</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Fertility Test</fullName>
+        <default>false</default>
+        <label>Fertility Test</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Subscription</fullName>
+        <default>false</default>
+        <label>Subscription</label>
+    </standardValue>
+</StandardValueSet>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>First Contact</fullName>
+        <default>false</default>
+        <label>First Contact</label>
+    </customValue>
+    <customValue>
+        <fullName>Blood Test</fullName>
+        <default>false</default>
+        <label>Blood Test</label>
+    </customValue>
+    <customValue>
+        <fullName>Consultation</fullName>
+        <default>false</default>
+        <label>Consultation</label>
+    </customValue>
+    <customValue>
+        <fullName>Approved</fullName>
+        <default>false</default>
+        <label>Approved</label>
+    </customValue>
+    <customValue>
+        <fullName>Patient</fullName>
+        <default>false</default>
+        <label>Patient</label>
+    </customValue>
+    <masterLabel>Patient Path Picklist</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

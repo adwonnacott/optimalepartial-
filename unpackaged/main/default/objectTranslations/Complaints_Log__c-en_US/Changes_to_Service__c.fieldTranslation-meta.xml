@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- If any changes are recommended to be made to our service as a result of this complaint, enter them here. -->
+        </help>
+        <label>
+            <!-- Changes to Service -->
+        </label>
+        <name>Changes_to_Service__c</name>
+    </CustomFieldTranslation>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Is the medication prescribed off licence? -->
+        </help>
+        <label>
+            <!-- Off Licence? -->
+        </label>
+        <name>Off_Licence__c</name>
+    </CustomFieldTranslation>

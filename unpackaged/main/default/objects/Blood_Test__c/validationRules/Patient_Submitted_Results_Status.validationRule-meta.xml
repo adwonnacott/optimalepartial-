@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Patient_Submitted_Results_Status</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL( Test_Type__c , &#39;Patient Submitted Results&#39;),
+ISPICKVAL( Status__c , &#39;Ordered&#39;))</errorConditionFormula>
+    <errorDisplayField>Status__c</errorDisplayField>
+    <errorMessage>Status must be Successful or Partial Success if Patient Submitted Results are uploaded</errorMessage>
+</ValidationRule>

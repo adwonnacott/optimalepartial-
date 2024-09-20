@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- How strong are your erections?
+1 (extremely weak) - 5 (extremely strong) -->
+        </help>
+        <label>
+            <!-- Q6 Erection Strength Rating -->
+        </label>
+        <name>Q6_Erection_Strength_Rating__c</name>
+    </CustomFieldTranslation>

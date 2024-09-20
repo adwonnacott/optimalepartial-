@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <decisions>
+        <name>Stage_Changed_to_Closed_Won</name>
+        <label>Stage Changed to Closed Won?</label>
+        <locationX>182</locationX>
+        <locationY>335</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Stage_to_Closed_Won</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Opportunities</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Yes Stage to Closed Won</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Opportunity Update Trigger {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity Update Trigger</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Opportunities</name>
+        <label>Get Opportunities</label>
+        <locationX>50</locationX>
+        <locationY>455</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Patient</targetReference>
+        </connector>
+        <filterLogic>1 AND (2 OR 3 OR 4 OR 5 OR 6)</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Doctor Consultation - Transfer Remote</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Doctor Consultation - Transfer F2F</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Doctor Consultation - Sign-Up Remote</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Doctor Consultation - Sign-Up Remote £99</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Doctor Consultation - Sign-Up F2F</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <sortField>CloseDate</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Patient</name>
+        <label>Update Patient</label>
+        <locationX>50</locationX>
+        <locationY>575</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Opportunity_Won_Date__c</field>
+            <value>
+                <elementReference>Get_Opportunities.CloseDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WonOpportunity__c</field>
+            <value>
+                <elementReference>Get_Opportunities.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Won_Opportunity_Type__c</field>
+            <value>
+                <elementReference>Get_Opportunities.Type</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Stage_Changed_to_Closed_Won</targetReference>
+        </connector>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Failed_Tasks_Task</fullName>
+    <columns>SUBJECT</columns>
+    <columns>WHAT_NAME</columns>
+    <columns>DUE_DATE</columns>
+    <columns>Automated_Email_Address__c</columns>
+    <columns>Automated_Email_Status__c</columns>
+    <columns>Automated_SMS_Status__c</columns>
+    <columns>Automated_Task_Channel__c</columns>
+    <filterScope>Queue</filterScope>
+    <label>Failed Tasks</label>
+    <queue>Failed_Tasks</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

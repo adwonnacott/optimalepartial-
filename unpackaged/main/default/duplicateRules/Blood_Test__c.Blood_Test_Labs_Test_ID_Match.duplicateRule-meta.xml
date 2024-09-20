@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DuplicateRule xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionOnInsert>Allow</actionOnInsert>
+    <actionOnUpdate>Allow</actionOnUpdate>
+    <alertText xsi:nil="true"/>
+    <description>Find duplicate Blood Tests based on Labs Test ID</description>
+    <duplicateRuleFilter xsi:nil="true"/>
+    <duplicateRuleMatchRules>
+        <matchRuleSObjectType>Blood_Test__c</matchRuleSObjectType>
+        <matchingRule>Blood_Test_Labs_Test_ID_Match</matchingRule>
+        <objectMapping xsi:nil="true"/>
+    </duplicateRuleMatchRules>
+    <isActive>true</isActive>
+    <masterLabel>Blood Test Labs Test ID Match</masterLabel>
+    <operationsOnInsert>Report</operationsOnInsert>
+    <operationsOnUpdate>Report</operationsOnUpdate>
+    <securityOption>EnforceSharingRules</securityOption>
+    <sortOrder>1</sortOrder>
+</DuplicateRule>

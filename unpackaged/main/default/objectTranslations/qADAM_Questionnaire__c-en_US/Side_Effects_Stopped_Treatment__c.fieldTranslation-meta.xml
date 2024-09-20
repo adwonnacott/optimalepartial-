@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Side Effects Stopped Treatment? -->
+        </label>
+        <name>Side_Effects_Stopped_Treatment__c</name>
+    </CustomFieldTranslation>

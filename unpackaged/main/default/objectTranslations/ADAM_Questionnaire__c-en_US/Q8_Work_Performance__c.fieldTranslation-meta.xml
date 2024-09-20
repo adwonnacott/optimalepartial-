@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Has there been a recent deterioration in your work performance? -->
+        </help>
+        <label>
+            <!-- Q8 Work Performance -->
+        </label>
+        <name>Q8_Work_Performance__c</name>
+    </CustomFieldTranslation>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Select the contract you want the Patient to sign -->
+        </help>
+        <label>
+            <!-- Contract Type -->
+        </label>
+        <name>Contract_Type__c</name>
+        <picklistValues>
+            <masterLabel>Anastrozole PIL &amp; Consent</masterLabel>
+            <translation>
+                <!-- Anastrozole PIL &amp; Consent -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Covid-19 Patient Screen</masterLabel>
+            <translation>
+                <!-- Covid-19 Patient Screen -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exemestane PIL &amp; Consent</masterLabel>
+            <translation>
+                <!-- Exemestane PIL &amp; Consent -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finasteride &amp; Minoxidil Foam PIL &amp; Consent</masterLabel>
+            <translation>
+                <!-- Finasteride &amp; Minoxidil Foam PIL &amp; Consent -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finasteride, Azelaic Acid &amp; Minoxidil PIL &amp; Consent</masterLabel>
+            <translation>
+                <!-- Finasteride, Azelaic Acid &amp; Minoxidil PIL &amp; Consent -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HCG PIL &amp; Consent</masterLabel>
+            <translation>
+                <!-- HCG PIL &amp; Consent -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Male Pattern Baldness Consent</masterLabel>
+            <translation>
+                <!-- Male Pattern Baldness Consent -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medical Advice Adherence Waiver - Cryopreservation</masterLabel>
+            <translation>
+                <!-- Medical Advice Adherence Waiver - Cryopreservation -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medication Adherence Waiver</masterLabel>
+            <translation>
+                <!-- Medication Adherence Waiver -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Metformin PIL &amp; Consent</masterLabel>
+            <translation>
+                <!-- Metformin PIL &amp; Consent -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation>
+                <!-- Other -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Agreement</masterLabel>
+            <translation>
+                <!-- Patient Agreement -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Polycythaemia Risk Waiver</masterLabel>
+            <translation>
+                <!-- Polycythaemia Risk Waiver -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prostate Exam Waiver</masterLabel>
+            <translation>
+                <!-- Prostate Exam Waiver -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Third Party Information Consent (Manual)</masterLabel>
+            <translation>
+                <!-- Third Party Information Consent (Manual) -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

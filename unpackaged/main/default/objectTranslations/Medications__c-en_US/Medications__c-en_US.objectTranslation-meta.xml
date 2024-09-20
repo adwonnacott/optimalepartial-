@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Medications</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Medications</value>
+    </caseValues>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <layouts>
+        <layout>Medications Layout</layout>
+        <sections>
+            <label>
+                <!-- Allergy -->
+            </label>
+            <section>Allergy</section>
+        </sections>
+        <sections>
+            <label>
+                <!-- Custom Links -->
+            </label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>
+                <!-- Medication Item Setup -->
+            </label>
+            <section>Medication Item Setup</section>
+        </sections>
+        <sections>
+            <label>
+                <!-- Repeats -->
+            </label>
+            <section>Repeats</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage>
+            <!-- Number of Repeats Allowed must be completed if Repeats Allowed is TRUE -->
+        </errorMessage>
+        <name>If_Repeats_Allowed_No_of_Repeats_req</name>
+    </validationRules>
+</CustomObjectTranslation>

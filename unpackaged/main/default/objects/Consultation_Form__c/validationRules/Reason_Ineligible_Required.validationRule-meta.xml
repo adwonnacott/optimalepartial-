@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_Ineligible_Required</fullName>
+    <active>true</active>
+    <description>Reason ineligible required where Eligible for TRT = No</description>
+    <errorConditionFormula>AND( ISPICKVAL(Eligible_for_TRT__c ,&quot;No&quot;),ISBLANK( TEXT(Ineligible_for_TRT_reason__c)))</errorConditionFormula>
+    <errorDisplayField>Ineligible_for_TRT_reason__c</errorDisplayField>
+    <errorMessage>Please complete Reason Ineligible for TRT field</errorMessage>
+</ValidationRule>

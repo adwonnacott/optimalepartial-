@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Results Status -->
+        </label>
+        <name>Results_Status__c</name>
+        <picklistValues>
+            <masterLabel>Auto-send to patient</masterLabel>
+            <translation>
+                <!-- Auto-send to patient -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Checking with doctor</masterLabel>
+            <translation>
+                <!-- Checking with doctor -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discuss at consultation</masterLabel>
+            <translation>
+                <!-- Discuss at consultation -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not sent to patient</masterLabel>
+            <translation>
+                <!-- Not sent to patient -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent to patient</masterLabel>
+            <translation>
+                <!-- Sent to patient -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent to patient (automated)</masterLabel>
+            <translation>
+                <!-- Sent to patient (automated) -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

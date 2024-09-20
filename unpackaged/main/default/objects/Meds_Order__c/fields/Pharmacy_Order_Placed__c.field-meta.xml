@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pharmacy_Order_Placed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Has the order been placed with the pharmacy?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Has the order been placed with the pharmacy?</inlineHelpText>
+    <label>Pharmacy Order Placed?</label>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

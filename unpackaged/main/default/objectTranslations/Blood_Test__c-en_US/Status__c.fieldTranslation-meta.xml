@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Status of the Blood Test -->
+        </help>
+        <label>
+            <!-- Status -->
+        </label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled Order</masterLabel>
+            <translation>
+                <!-- Cancelled Order -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dispatched</masterLabel>
+            <translation>
+                <!-- Dispatched -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Error - Replacement Kit Missing Patient Data</masterLabel>
+            <translation>
+                <!-- Error - Replacement Kit Missing Patient Data -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed Test</masterLabel>
+            <translation>
+                <!-- Failed Test -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lost in post</masterLabel>
+            <translation>
+                <!-- Lost in post -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order sent to Inuvi</masterLabel>
+            <translation>
+                <!-- Order sent to Inuvi -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order sent to RDi</masterLabel>
+            <translation>
+                <!-- Order sent to RDi -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order sent to Randox</masterLabel>
+            <translation>
+                <!-- Order sent to Randox -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order sent to Real Digital</masterLabel>
+            <translation>
+                <!-- Order sent to Real Digital -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ordered</masterLabel>
+            <translation>
+                <!-- Ordered -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partial Success/Some Failed Values</masterLabel>
+            <translation>
+                <!-- Partial Success/Some Failed Values -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Re-submit to Inuvi</masterLabel>
+            <translation>
+                <!-- Re-submit to Inuvi -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Re-submit to Meddx</masterLabel>
+            <translation>
+                <!-- Re-submit to Meddx -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Re-submit to RDi</masterLabel>
+            <translation>
+                <!-- Re-submit to RDi -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Re-submitted to Inuvi</masterLabel>
+            <translation>
+                <!-- Re-submitted to Inuvi -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Re-submitted to Meddx</masterLabel>
+            <translation>
+                <!-- Re-submitted to Meddx -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Re-submitted to RDi</masterLabel>
+            <translation>
+                <!-- Re-submitted to RDi -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Received by lab</masterLabel>
+            <translation>
+                <!-- Received by lab -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Refunded</masterLabel>
+            <translation>
+                <!-- Refunded -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Successful Test</masterLabel>
+            <translation>
+                <!-- Successful Test -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Successful Test - Doctor Requested Repeat</masterLabel>
+            <translation>
+                <!-- Successful Test - Doctor Requested Repeat -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

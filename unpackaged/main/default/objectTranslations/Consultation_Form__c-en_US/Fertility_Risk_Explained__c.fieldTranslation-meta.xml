@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Fertility risk and no guarantee of fertility with HCG must be explained to the Patient by the Doctor -->
+        </help>
+        <label>
+            <!-- Fertility Risk Explained? -->
+        </label>
+        <name>Fertility_Risk_Explained__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation>
+                <!-- No -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation>
+                <!-- Yes -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

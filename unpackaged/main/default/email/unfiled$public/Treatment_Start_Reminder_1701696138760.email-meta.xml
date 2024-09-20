@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Used where new Patient asks to delay treatment to remind patient re treatment commencement</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Treatment Start Reminder</name>
+    <pageDevName>Treatment_Start_Reminder</pageDevName>
+    <style>none</style>
+    <subject>Starting your treatment</subject>
+    <textOnly>Book your Venous Blood Test Clinic Visit with our partner Superdrug ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+
+Dear {{{Recipient.FirstName}}},
+
+Thank you for your recent enquiry with Optimale.
+
+When we last spoke, you weren&#39;t quite ready to move forward with treatment. I wanted to check in and see if you were now ready to move forward with treatment?
+
+If you have any questions, please contact patients@optimale.co.uk or reply to this email.
+
+Thanks,
+
+Optimale
+
+Optimale Ltd, 71-75 Shelton Street, London, WC2H 9JQ, United Kingdom</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

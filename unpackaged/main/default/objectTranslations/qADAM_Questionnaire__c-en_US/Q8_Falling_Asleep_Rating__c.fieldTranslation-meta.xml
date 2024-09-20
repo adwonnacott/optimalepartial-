@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- How often do you fall asleep after dinner?
+1 (every night), 2 (5-6x week), 3 (3-4x week), 4 (1-2x week), 5 (never) -->
+        </help>
+        <label>
+            <!-- Q8 Falling Asleep Rating -->
+        </label>
+        <name>Q8_Falling_Asleep_Rating__c</name>
+    </CustomFieldTranslation>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Concatenation_2__c</fullName>
+    <description>Field to concatenate Email 2 and Email 1 - used for duplicate matching</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Field to concatenate Email 2 and Email 1 - used for duplicate matching</inlineHelpText>
+    <label>Email Concatenation2</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

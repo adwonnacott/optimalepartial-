@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dosage_Instruction__c</fullName>
+    <description>Prescription dosage eg 0.5mls</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Prescription dosage eg 0.5mls</inlineHelpText>
+    <label>Dosage Instruction</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- How would you rate your work performance over the past 4 weeks?
+1 (terrible), 2 (poor), 3 (average), 4 (good), 5 (excellent) -->
+        </help>
+        <label>
+            <!-- Q7 Work Performance Rating -->
+        </label>
+        <name>Q7_Work_Performance_Rating__c</name>
+    </CustomFieldTranslation>

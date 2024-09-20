@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lifecycle_Stage__c</fullName>
+    <description>Lifecycle Stage drives type of Email/SMS</description>
+    <externalId>false</externalId>
+    <formula>IF(((TODAY()-Treatment_Start_Date__c)/30.417) &lt;= 1.4,&quot;A&quot;,
+IF(((TODAY()-Treatment_Start_Date__c)/30.417) &lt;= 3,&quot;B&quot;,
+IF(((TODAY()-Treatment_Start_Date__c)/30.417) &lt;= 6,&quot;C&quot;,
+IF(((TODAY()-Treatment_Start_Date__c)/30.417) &lt;= 12,&quot;D&quot;,
+IF(((TODAY()-Treatment_Start_Date__c)/30.417) &gt; 12,&quot;E&quot;,NULL
+			)
+			)
+			)
+			)
+			)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Lifecycle Stage</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

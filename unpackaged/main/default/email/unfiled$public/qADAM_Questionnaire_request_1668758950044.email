@@ -1,0 +1,16 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p>Hi&nbsp;{{{Account.FirstName}}}<br />
+<br />
+Ahead of your call with our doctor, we would be grateful if you could fill out our quick qADAM questionnaire - it takes less than 3 minutes, and helps us to track your progress on treatment and any changes in your symptoms.<br />
+<br />
+Please click this link - https://optimale.typeform.com/to/AgNLbiaw#patient_id={{{Recipient.Patient_ID__c}}}&amp;name={{{Account.FirstName}}}<br />
+<br />
+Many thanks,</p>
+
+<p>Optimale</p>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Have off-licence medications been explained to the patient and have they given consent? -->
+        </help>
+        <label>
+            <!-- Off-licence Meds Explained and Consent? -->
+        </label>
+        <name>Off_licence_Meds_Explained_Consent__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation>
+                <!-- No -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation>
+                <!-- Yes -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

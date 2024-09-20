@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Soy, Cotton Seed or Peanut Allergy -->
+        </label>
+        <name>Soy_Cotton_Seed_or_Peanut_Allergy__c</name>
+        <picklistValues>
+            <masterLabel>Cotton Seed</masterLabel>
+            <translation>
+                <!-- Cotton Seed -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation>
+                <!-- None -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Peanut</masterLabel>
+            <translation>
+                <!-- Peanut -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Soy</masterLabel>
+            <translation>
+                <!-- Soy -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

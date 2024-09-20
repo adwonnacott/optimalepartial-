@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <assignments>
+        <name>Assign_to_Opp</name>
+        <label>Assign to Opp</label>
+        <locationX>50</locationX>
+        <locationY>516</locationY>
+        <assignmentItems>
+            <assignToReference>oOpportunity.Earliest_Blood_Test_Opp__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>oOpportunity.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>oOpportunity.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opp</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Does_Account_Have_Opp</name>
+        <label>Does Account Have Opp</label>
+        <locationX>182</locationX>
+        <locationY>396</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Account_Has_Opps</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>oOpportunity</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_to_Opp</targetReference>
+            </connector>
+            <label>Yes Account Has Opps</label>
+        </rules>
+    </decisions>
+    <description>Temporary Flow to identify the earliest Opp on Account with &#39;Blood Test&#39; in Name</description>
+    <environments>Default</environments>
+    <interviewLabel>Earliest Opp Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Earliest Opp Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Earliest_Opp</name>
+        <label>Get Earliest Opp</label>
+        <locationX>182</locationX>
+        <locationY>276</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Does_Account_Have_Opp</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Name</field>
+            <operator>Contains</operator>
+            <value>
+                <stringValue>Blood Test</stringValue>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <outputReference>oOpportunity</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Earliest_Blood_Test_Opp__c</queriedFields>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Asc</sortOrder>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Opp</name>
+        <label>Update Opp</label>
+        <locationX>50</locationX>
+        <locationY>636</locationY>
+        <inputReference>oOpportunity</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Earliest_Opp</targetReference>
+        </connector>
+        <object>Account</object>
+        <schedule>
+            <frequency>Once</frequency>
+            <startDate>2022-06-28</startDate>
+            <startTime>15:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>oOpportunity</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+</Flow>

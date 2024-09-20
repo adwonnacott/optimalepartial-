@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <name>Treatment_Started</name>
+        <label>Treatment Started?</label>
+        <locationX>648</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Treatment Not Started</defaultConnectorLabel>
+        <rules>
+            <name>Treatment_Start_Date_Set</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Treatment_Start_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Recurring_Task_Blood_Test_Reminders_every_6_months</targetReference>
+            </connector>
+            <label>Treatment Start Date Set</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Generate Recurring Tasks - 6m Blood Test Reminders {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Generate Recurring Tasks - 6m Blood Test Reminders</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Recurring_Task_Blood_Test_Reminders_every_6_months</name>
+        <label>Recurring Task - Blood Test Reminders every 6 months</label>
+        <locationX>1091</locationX>
+        <locationY>458</locationY>
+        <inputAssignments>
+            <field>IsRecurrence</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecurrenceInterval</field>
+            <value>
+                <numberValue>182.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecurrenceRegeneratedType</field>
+            <value>
+                <stringValue>RecurrenceRegenerateAfterDueDate</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>Blood Test Reminder every 6 months</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>Regular Blood Test Reminder</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <start>
+        <locationX>373</locationX>
+        <locationY>43</locationY>
+        <connector>
+            <targetReference>Treatment_Started</targetReference>
+        </connector>
+        <object>Account</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

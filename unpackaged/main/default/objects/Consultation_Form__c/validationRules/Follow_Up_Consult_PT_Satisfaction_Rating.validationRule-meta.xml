@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Follow_Up_Consult_PT_Satisfaction_Rating</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISBLANK(Follow_Up_Consultation_Notes__c)),
+ISBLANK(TEXT(  Patient_Satisfaction_Rating__c  ))
+)</errorConditionFormula>
+    <errorDisplayField>Patient_Satisfaction_Rating__c</errorDisplayField>
+    <errorMessage>Please choose a Patient Satisfaction Rating</errorMessage>
+</ValidationRule>

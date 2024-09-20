@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Contact__c</columns>
+    <columns>Order_Date__c</columns>
+    <columns>Test_Type__c</columns>
+    <columns>Collection_Method__c</columns>
+    <columns>Status__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Replacement_Kit__c</columns>
+    <columns>Manual_New_Order__c</columns>
+    <columns>Website_Order__c</columns>
+    <columns>Patient_Submitted_Results__c</columns>
+    <columns>Sample_Date__c</columns>
+    <columns>Dispatch_Date_Time__c</columns>
+    <columns>Kit_Tracking_Link__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

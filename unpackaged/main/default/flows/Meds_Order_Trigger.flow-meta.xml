@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <decisions>
+        <name>Date_of_Birth_Present</name>
+        <label>Date of Birth Present?</label>
+        <locationX>182</locationX>
+        <locationY>455</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_DOB_on_Patient_Account</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Patient__r.Date_of_Birth__pc</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_DOB</targetReference>
+            </connector>
+            <label>Yes - DOB on Patient Account</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Meds Order Trigger {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Meds Order Trigger</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_DOB</name>
+        <label>Update DOB</label>
+        <locationX>50</locationX>
+        <locationY>575</locationY>
+        <inputAssignments>
+            <field>Date_of_Birth__c</field>
+            <value>
+                <elementReference>$Record.Patient__r.Date_of_Birth__pc</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Meds_Shipping_Address</name>
+        <label>Update Meds Shipping Address</label>
+        <locationX>182</locationX>
+        <locationY>335</locationY>
+        <connector>
+            <targetReference>Date_of_Birth_Present</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Shipping_Address__c</field>
+            <value>
+                <elementReference>addressTemplate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Meds_Shipping_Address</targetReference>
+        </connector>
+        <object>Meds_Order__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>addressTemplate</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!$Record.Shipping_Address_Street__c}
+{!$Record.Shipping_Address_City__c}
+{!$Record.Shipping_Address_County__c}
+{!$Record.Shipping_Address_Country__c}
+{!$Record.Shipping_Address_PostCode__c}</text>
+    </textTemplates>
+</Flow>

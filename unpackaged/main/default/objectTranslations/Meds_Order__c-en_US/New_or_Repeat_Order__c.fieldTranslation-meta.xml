@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- New or Repeat Order? -->
+        </label>
+        <name>New_or_Repeat_Order__c</name>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation>
+                <!-- New -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Repeat</masterLabel>
+            <translation>
+                <!-- Repeat -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

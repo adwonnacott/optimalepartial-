@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Randox Clinic Visit Only Voucher</name>
+    <pageDevName>Randox_Clinic_Visit_Only_Voucher</pageDevName>
+    <relatedEntityType>Voucher__c</relatedEntityType>
+    <style>none</style>
+    <subject>Book your Optimale Blood Test Clinic Visit</subject>
+    <textOnly>Book your Venous Blood Test Clinic Visit with our partner Randox ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ 
+
+Dear {{{Recipient.FirstName}}},
+
+Thanks for your recent Blood Test and Clinic Visit order. 
+
+Please click the button below to book your appointment with our partner Randox Health. You will need to order a blood test kit separately and wait for it to be delivered to you, so that you can take it with you to the Randox clinic for the nurse to use when you have your blood taken.
+
+You&#39;ll need to enter Voucher Code {{{Voucher__c.Code__c}}} when booking to avoid being asked to pay again.
+
+Choose &#39;Sample Collection&#39;, then select your preferred location using the drop-down, and enter your availability, then click next. You do not need to change the category and service boxes.
+
+Book Here &lt; https://healthchecks.randoxhealth.com/?-cat_id=1&amp;service_id=146 &gt; 
+
+If you have any questions, please contact bloods@optimale.co.uk or reply to this email.
+
+Thanks,
+
+Optimale
+
+Optimale Ltd, 71-75 Shelton Street, London, WC2H 9JQ, United Kingdom</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

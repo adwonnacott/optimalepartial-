@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sample_Date_for_Successful_Test</fullName>
+    <active>true</active>
+    <description>Enter a sample date for Successful Tests</description>
+    <errorConditionFormula>AND(
+ISPICKVAL( Status__c , &#39;Successful Test&#39;),
+ISBLANK( Sample_Date_Time__c ),
+$Profile.Name &lt;&gt;&#39;System Administrator&#39;,
+$Profile.Name &lt;&gt;&#39;Integration Admin&#39;)</errorConditionFormula>
+    <errorDisplayField>Sample_Date_Time__c</errorDisplayField>
+    <errorMessage>Please enter a Sample Date for the Test</errorMessage>
+</ValidationRule>

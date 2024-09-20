@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ongoing_Medications__c</fullName>
+    <description>TRT related Medications that the Patient is currently prescribed or taking</description>
+    <externalId>false</externalId>
+    <inlineHelpText>TRT related Medications that the Patient is currently prescribed or taking</inlineHelpText>
+    <label>On-going Medications</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Medications</valueSetName>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

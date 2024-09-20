@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Medical history and upload your ID</name>
+    <pageDevName>Optimale_Complete_your_medical_history_and_upload_your_ID</pageDevName>
+    <relatedEntityType>Blood_Test__c</relatedEntityType>
+    <style>none</style>
+    <subject>Optimale - Complete your medical history and upload your ID</subject>
+    <textOnly>Dear {{{Blood_Test__c.Contact_Name__c}}}, 
+
+Please could you fill out your medical history and upload a copy of your ID using the following link:
+
+Medical History Form &lt; https://optimale.typeform.com/to/cj6EnJ1L#patient_id={{{Recipient.Patient_ID__c}}}&amp;name={{{Blood_Test__c.Account_First_Name__c}}} &gt; 
+
+This information is very important for us to be able to determine the best course of treatment.
+
+Please let us know if you have any questions,
+
+Many thanks,
+
+Optimale
+
+Optimale Ltd, 71-75 Shelton Street, London, WC2H 9JQ, United Kingdom</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

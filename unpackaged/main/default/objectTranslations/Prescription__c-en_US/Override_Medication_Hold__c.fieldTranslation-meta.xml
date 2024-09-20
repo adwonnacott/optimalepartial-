@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Tick this box if you have authorisation from the doctor to override a patient medication hold, for example for a non-TRT medication -->
+        </help>
+        <label>
+            <!-- Override Medication Hold -->
+        </label>
+        <name>Override_Medication_Hold__c</name>
+    </CustomFieldTranslation>

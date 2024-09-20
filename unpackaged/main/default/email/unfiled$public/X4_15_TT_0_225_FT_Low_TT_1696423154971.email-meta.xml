@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>4. &lt;=15 TT &amp; &gt;0.225 FT -&gt; Low TT</name>
+    <pageDevName>X4_15_TT_0_225_FT_Low_TT</pageDevName>
+    <relatedEntityType>Blood_Test__c</relatedEntityType>
+    <style>none</style>
+    <subject>Your Optimale Blood Test Result</subject>
+    <textOnly>Hi {{{Blood_Test__c.Contact_Name__c}}}, 
+
+We have received the analysis of your blood test from the laboratory. The results indicate that you have low total testosterone levels, which can cause low testosterone symptoms.
+
+You can access your blood test results below:
+
+View Results &lt; {{{Blood_Test__c.PDF_URL__c}}} &gt; 
+
+The password is: {{{Blood_Test__c.PDF_Password__c}}}
+
+In the result you’ll see 4 values. I’ve put an explanation of each below. The key one is your total testosterone.
+
+Anything below 12 nmol/L is considered a low result for a man of your age who is experiencing symptoms. Levels between 12nmol/L and 15nmol/L may be eligible for TRT at our doctor&#39;s discretion.
+
+We specialise in helping men who have low levels and symptoms to get back on track, so hopefully we can help.
+
+What’s next?
+
+Testosterone Replacement Therapy (TRT) is a fantastic treatment option, but we are very careful in assessing suitability. If you are interested in treatment, we are required by regulations to do:
+
+ - An enhanced blood test. This checks over 40 biomarkers (more than the finger prick test that you’ve done) and needs to be administered by a nurse. You can visit a Superdrug, Randox or a Goodbody clinic to do this, or if you know a nurse you can get them to do it for you. Here’s a bit more info on this stage.
+ - A possible prostate examination. If you are 45 years old or older, and post a PSA reading that is within acceptable range for your age, we may not require a physical check of your prostate. We can arrange for a member of the team to give you a call to go over some quick questions.
+ - A consultation with a TRT-specialist Doctor. The doctor will determine the best treatment protocol to alleviate your symptoms, given your blood test results and factoring in any other health considerations.
+
+If you are interested in continuing towards treatment, you can:
+
+Order an enhanced blood test here &lt; https://www.optimale.co.uk/product/enhanced-testosterone-blood-test/ &gt; 
+
+You can order the blood test and clinic visit at the same time, however, please wait for the test kit to arrive in the post before you book a date and time for your sample to be taken, unless you book with Randox who have test kits on site.
+
+If you’d like to discuss your results further, there are explanations of the 4 values below, but please reply to this email and we will be more than happy to help you with any questions.
+
+Many thanks,
+
+Optimale
+
+Explained: The 4 Values in your Test
+
+Albumin - this protein binds to testosterone in the blood, limiting how much testosterone is available for use by the body. A higher level of Albumin will mean less testosterone is readily available, which is called Free Testosterone.
+
+SHBG - short for Sex Hormone Binding Globulin. This protein helps with transporting testosterone in the bloodstream. If levels are too high then free testosterone available to the body will be lower.
+
+Free testosterone- this is the testosterone available for the body to use. If total testosterone is normal but this is low, then you may still have symptoms of low testosterone.
+
+Total testosterone- this is the overall testosterone level in the blood and indicates how much testosterone your body produces overall. If low then you may experience symptoms of low testosterone.
+
+The password is: {{{Blood_Test__c.PDF_Password__c}}}
+
+In the result you’ll see 4 values. I’ve put an explanation of each below. The key one is your total testosterone.
+
+Anything at or below 15 nmol/L is considered a low result for a man who is experiencing symptoms.
+
+We specialise in helping men who have low levels and symptoms to get back on track, so hopefully we can help.
+
+What’s next?
+
+Testosterone Replacement Therapy (TRT) is a fantastic treatment option, but we are very careful in assessing suitability. If you are interested in treatment, we are required by regulations to do:
+
+ - An enhanced blood test. This checks 44 biomarkers (39 more than the finger prick test that you’ve done) and needs to be administered by a nurse. You can visit a Superdrug, Randox or a Goodbody clinic to do this, or if you know a nurse you can get them to do it for you. Here’s a bit more info on this stage.
+ - A possible prostate examination if you are over 45. If you are 45 years old or older, and post a PSA reading of &lt;2ng/ml we may not require a physical check of your prostate. We will be able to ascertain your PSA levels once you&#39;ve completed the Enhanced test and will be in a better position to advise further.
+ - A consultation with a TRT-specialist Doctor. The doctor will determine the best treatment protocol to alleviate your symptoms, given your blood test results and factoring in any other health considerations.
+
+If you are interested in continuing towards treatment, you can:
+
+Order an enhanced blood test here &lt; https://www.optimale.co.uk/product/enhanced-testosterone-blood-test/ &gt; 
+
+You can order the blood test and clinic visit at the same time, however, please wait for the kit to arrive in the post before you book a date and time for your sample to be taken, unless you are booking with Randox.
+
+If you’d like to discuss your results further, there are explanations of the 5 values below, but please reply to this email and we will be more than happy to help you with any questions.
+
+Many thanks,
+
+Optimale
+
+Explained: The 4 Values in your Test
+
+Albumin - this protein binds to testosterone in the blood, limiting how much testosterone is available for use by the body. A higher level of Albumin will mean less testosterone is readily available, which is called Free Testosterone.
+
+SHBG - short for Sex Hormone Binding Globulin. This protein helps with transporting testosterone in the bloodstream. If levels are too high then free testosterone available to the body will be lower.
+
+Free testosterone- this is the testosterone available for the body to use. If total testosterone is normal but this is low, then you may still have symptoms of low testosterone.
+
+Total testosterone- this is the overall testosterone level in the blood and indicates how much testosterone your body produces overall. If low then you may experience symptoms of low testosterone.
+
+Optimale Ltd, 71-75 Shelton Street, London, WC2H 9JQ, United Kingdom</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

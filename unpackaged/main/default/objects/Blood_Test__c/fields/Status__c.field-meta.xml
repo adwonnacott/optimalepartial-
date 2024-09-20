@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <description>Status of the Blood Test</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Status of the Blood Test</inlineHelpText>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ordered</fullName>
+                <default>true</default>
+                <label>Ordered</label>
+            </value>
+            <value>
+                <fullName>Successful Test</fullName>
+                <default>false</default>
+                <label>Successful Test</label>
+            </value>
+            <value>
+                <fullName>Partial Success/Some Failed Values</fullName>
+                <default>false</default>
+                <label>Partial Success/Some Failed Values</label>
+            </value>
+            <value>
+                <fullName>Successful Test - Doctor Requested Repeat</fullName>
+                <default>false</default>
+                <label>Successful Test - Doctor Requested Repeat</label>
+            </value>
+            <value>
+                <fullName>Failed Test</fullName>
+                <default>false</default>
+                <label>Failed Test</label>
+            </value>
+            <value>
+                <fullName>Lost in post</fullName>
+                <default>false</default>
+                <label>Lost in post</label>
+            </value>
+            <value>
+                <fullName>Cancelled Order</fullName>
+                <default>false</default>
+                <label>Cancelled Order</label>
+            </value>
+            <value>
+                <fullName>Refunded</fullName>
+                <default>false</default>
+                <label>Refunded</label>
+            </value>
+            <value>
+                <fullName>Dispatched</fullName>
+                <default>false</default>
+                <label>Dispatched</label>
+            </value>
+            <value>
+                <fullName>Received by lab</fullName>
+                <default>false</default>
+                <label>Received by lab</label>
+            </value>
+            <value>
+                <fullName>Error - Replacement Kit Missing Patient Data</fullName>
+                <default>false</default>
+                <label>Error - Replacement Kit Missing Patient Data</label>
+            </value>
+            <value>
+                <fullName>Re-submit to RDi</fullName>
+                <default>false</default>
+                <label>Re-submit to RDi</label>
+            </value>
+            <value>
+                <fullName>Re-submit to Inuvi</fullName>
+                <default>false</default>
+                <label>Re-submit to Inuvi</label>
+            </value>
+            <value>
+                <fullName>Re-submitted to RDi</fullName>
+                <default>false</default>
+                <label>Re-submitted to RDi</label>
+            </value>
+            <value>
+                <fullName>Re-submitted to Inuvi</fullName>
+                <default>false</default>
+                <label>Re-submitted to Inuvi</label>
+            </value>
+            <value>
+                <fullName>Order sent to RDi</fullName>
+                <default>false</default>
+                <label>Order sent to RDi</label>
+            </value>
+            <value>
+                <fullName>Order sent to Real Digital</fullName>
+                <default>false</default>
+                <label>Order sent to Real Digital</label>
+            </value>
+            <value>
+                <fullName>Order sent to Inuvi</fullName>
+                <default>false</default>
+                <label>Order sent to Inuvi</label>
+            </value>
+            <value>
+                <fullName>Order sent to Randox</fullName>
+                <default>false</default>
+                <label>Order sent to Randox</label>
+            </value>
+            <value>
+                <fullName>Re-submit to Meddx</fullName>
+                <default>false</default>
+                <label>Re-submit to Meddx</label>
+            </value>
+            <value>
+                <fullName>Re-submitted to Meddx</fullName>
+                <default>false</default>
+                <label>Re-submitted to Meddx</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

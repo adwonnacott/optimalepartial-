@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Shipping_Address_Exists</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISBLANK( Contact__r.Account.ShippingStreet ),
+    Patient_Submitted_Results__c = False, 
+ $Profile.Name &lt;&gt;&#39;System Administrator&#39;,
+$Profile.Name &lt;&gt;&#39;Integration Admin&#39;)</errorConditionFormula>
+    <errorMessage>Please update the patient&#39;s shipping address before creating a new blood test</errorMessage>
+</ValidationRule>

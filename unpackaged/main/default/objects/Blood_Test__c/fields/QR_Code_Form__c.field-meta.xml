@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QR_Code_Form__c</fullName>
+    <description>QR Code for Lab Request Form</description>
+    <externalId>false</externalId>
+    <formula>Contact__r.Patient_ID__c &amp; &quot;%09&quot; &amp;  Name &amp; &quot;%09&quot; &amp; Contact__r.LastName &amp; &quot;%09&quot; &amp;  Contact__r.FirstName &amp; &quot;%09&quot; &amp; &quot;%09&quot; &amp; &quot;M&quot; &amp; &quot;%09&quot; &amp; LPAD(TEXT(DAY(Contact__r.Date_of_Birth__c)),2,&quot;0&quot;) &amp; LPAD(TEXT(MONTH(Contact__r.Date_of_Birth__c)),2,&quot;0&quot;) &amp; TEXT(YEAR(Contact__r.Date_of_Birth__c))  &amp; &quot;%09&quot; &amp; &quot;%09&quot; &amp; &quot;OPTIMALE&quot; &amp; &quot;%09&quot; &amp; &quot;%09&quot; &amp; &quot;%09&quot; &amp; &quot;%09&quot; &amp; &quot;%09&quot; &amp; &quot;%09&quot; &amp; &quot;%09&quot; &amp; &quot;%09&quot; &amp; &quot;%09&quot; &amp; &quot;%09&quot; &amp; &quot;%09&quot; &amp; &quot;%09&quot; &amp;  TEXT(Test_Type__c)</formula>
+    <inlineHelpText>QR Code for Lab Request Form</inlineHelpText>
+    <label>QR Code - Form</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

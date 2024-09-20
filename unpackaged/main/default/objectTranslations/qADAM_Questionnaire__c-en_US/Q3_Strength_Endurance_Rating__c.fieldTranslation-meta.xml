@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- How would you rate your strength/endurance?
+1 (terrible), 2 (poor), 3 (average), 4 (good), 5 (excellent) -->
+        </help>
+        <label>
+            <!-- Q3 Strength/Endurance Rating -->
+        </label>
+        <name>Q3_Strength_Endurance_Rating__c</name>
+    </CustomFieldTranslation>

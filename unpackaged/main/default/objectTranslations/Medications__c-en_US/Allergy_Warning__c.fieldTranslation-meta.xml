@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Are there any allergies related to this prescription that the patient must be informed about, eg peanut allergy? -->
+        </help>
+        <label>
+            <!-- Allergy Warning? -->
+        </label>
+        <name>Allergy_Warning__c</name>
+    </CustomFieldTranslation>

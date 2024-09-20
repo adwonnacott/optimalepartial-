@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Process</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Processes</value>
+    </caseValues>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <layouts>
+        <layout>Process Layout</layout>
+        <sections>
+            <label>
+                <!-- Custom Links -->
+            </label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>
+                <!-- S1 Pre-Approval -->
+            </label>
+            <section>S1 Pre-Approval</section>
+        </sections>
+        <sections>
+            <label>
+                <!-- S2 Approved for Consultation -->
+            </label>
+            <section>S2 Approved for Consultation</section>
+        </sections>
+        <sections>
+            <label>
+                <!-- S3 Consultation -->
+            </label>
+            <section>S3 Consultation</section>
+        </sections>
+        <sections>
+            <label>
+                <!-- S4 Post-Consultation -->
+            </label>
+            <section>S4 Post-Consultation</section>
+        </sections>
+        <sections>
+            <label>
+                <!-- S5 Subscription Sign Up -->
+            </label>
+            <section>S5 Subscription Sign Up</section>
+        </sections>
+        <sections>
+            <label>
+                <!-- S6 Order Medication -->
+            </label>
+            <section>S6 Order Medication</section>
+        </sections>
+        <sections>
+            <label>
+                <!-- S7 Follow Up -->
+            </label>
+            <section>S7 Follow Up</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

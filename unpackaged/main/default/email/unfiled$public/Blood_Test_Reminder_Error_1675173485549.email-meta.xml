@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Blood Test Reminder Error</name>
+    <pageDevName>Blood_Test_Reminder_Error</pageDevName>
+    <relatedEntityType>Contact</relatedEntityType>
+    <style>none</style>
+    <subject>Blood Test Reminder Messages</subject>
+    <textOnly>Dear {{{Recipient.FirstName}}},
+
+You may have received one or more automated messages from us earlier today reminding you about blood tests. 
+
+The messages from earlier today were sent in error, so please ignore the messages on this occasion. 
+
+Blood tests are an important part of the treatment regime and we&#39;ll be in contact when you next require a test.
+
+We apologise for any confusion. 
+
+Thanks,
+
+Optimale</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

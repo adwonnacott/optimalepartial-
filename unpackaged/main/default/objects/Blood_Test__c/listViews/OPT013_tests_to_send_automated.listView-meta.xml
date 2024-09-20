@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OPT013_tests_to_send_automated</fullName>
+    <columns>NAME</columns>
+    <columns>Contact__c</columns>
+    <columns>Order_Date__c</columns>
+    <columns>Test_Type__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>PDF_Results_Upload_Date_Time__c</columns>
+    <columns>Results_Status__c</columns>
+    <columns>Sample_Date__c</columns>
+    <columns>Testosterone__c</columns>
+    <columns>Free_Testosterone__c</columns>
+    <columns>Low_Testosterone_Flag__c</columns>
+    <columns>HL7_Results_Uploaded__c</columns>
+    <columns>Status__c</columns>
+    <columns>Patient_Status__c</columns>
+    <columns>Account_Owner__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Results_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Sent to patient,Discuss at consultation,Sent to patient (automated)</value>
+    </filters>
+    <filters>
+        <field>Patient_Submitted_Results__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Successful Test</value>
+    </filters>
+    <filters>
+        <field>PDF_Results_Upload_Date_Time__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Test_Type__c</field>
+        <operation>equals</operation>
+        <value>OPT013-FP</value>
+    </filters>
+    <filters>
+        <field>Low_Testosterone_Flag__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Patient_Status__c</field>
+        <operation>notContain</operation>
+        <value>Current</value>
+    </filters>
+    <label>OPT013 tests to send automated</label>
+</ListView>

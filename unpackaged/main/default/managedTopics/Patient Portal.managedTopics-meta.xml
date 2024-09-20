@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedTopics xmlns="http://soap.sforce.com/2006/04/metadata">
+    <managedTopic>
+        <fullName>Patient Portal.Content:Blood Tests</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Blood Tests</name>
+        <parentName></parentName>
+        <position>0</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>Patient Portal.Content:Dosage</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Dosage</name>
+        <parentName></parentName>
+        <position>1</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>Patient Portal.Content:Injecting</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Injecting</name>
+        <parentName></parentName>
+        <position>2</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>Patient Portal.Content:Medication</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Medication</name>
+        <parentName></parentName>
+        <position>3</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>Patient Portal.Content:Subscriptions</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Subscriptions</name>
+        <parentName></parentName>
+        <position>4</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>Patient Portal.Featured:Blood Tests</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Blood Tests</name>
+        <parentName></parentName>
+        <position>0</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>Patient Portal.Featured:Dosage</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Dosage</name>
+        <parentName></parentName>
+        <position>1</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>Patient Portal.Featured:Injecting</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Injecting</name>
+        <parentName></parentName>
+        <position>2</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>Patient Portal.Featured:Medication</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Medication</name>
+        <parentName></parentName>
+        <position>3</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>Patient Portal.Featured:Subscriptions</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Subscriptions</name>
+        <parentName></parentName>
+        <position>4</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>Patient Portal.Navigational:Blood Tests</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Blood Tests</name>
+        <parentName></parentName>
+        <position>0</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>Patient Portal.Navigational:Dosage</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Dosage</name>
+        <parentName></parentName>
+        <position>1</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>Patient Portal.Navigational:Injecting</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Injecting</name>
+        <parentName></parentName>
+        <position>3</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>Patient Portal.Navigational:Medication</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Medication</name>
+        <parentName></parentName>
+        <position>2</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>Patient Portal.Navigational:Subscriptions</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Subscriptions</name>
+        <parentName></parentName>
+        <position>4</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+</ManagedTopics>

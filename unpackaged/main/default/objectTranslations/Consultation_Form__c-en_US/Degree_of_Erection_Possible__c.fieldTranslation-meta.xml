@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Degree of Erection Possible -->
+        </label>
+        <name>Degree_of_Erection_Possible__c</name>
+        <picklistValues>
+            <masterLabel>Duration</masterLabel>
+            <translation>
+                <!-- Duration -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Half at best</masterLabel>
+            <translation>
+                <!-- Half at best -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation>
+                <!-- None -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sometimes full</masterLabel>
+            <translation>
+                <!-- Sometimes full -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spontaneous erections</masterLabel>
+            <translation>
+                <!-- Spontaneous erections -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unable to sustain erection</masterLabel>
+            <translation>
+                <!-- Unable to sustain erection -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

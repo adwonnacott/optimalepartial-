@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Has a physical examination of the Patient been undertaken by the OptiMale Doctor? If so, what was examined and what were the results? -->
+        </help>
+        <label>
+            <!-- Physical Examination? -->
+        </label>
+        <name>Physical_Examination__c</name>
+    </CustomFieldTranslation>

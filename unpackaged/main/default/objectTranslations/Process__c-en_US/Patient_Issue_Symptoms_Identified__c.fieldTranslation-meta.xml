@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Outline any issues or symptoms identified -->
+        </help>
+        <label>
+            <!-- Patient Issue/Symptoms Identified -->
+        </label>
+        <name>Patient_Issue_Symptoms_Identified__c</name>
+    </CustomFieldTranslation>

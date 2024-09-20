@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ineligible_for_TRT_reason__c</fullName>
+    <description>If the patient is ineligible for TRT, select a reason why</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If the patient is ineligible for TRT, select a reason why</inlineHelpText>
+    <label>Reason ineligible for TRT</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PRL raised repeat required</fullName>
+                <default>false</default>
+                <label>PRL raised repeat required</label>
+            </value>
+            <value>
+                <fullName>PSA repeat required</fullName>
+                <default>false</default>
+                <label>PSA repeat required</label>
+            </value>
+            <value>
+                <fullName>MRI required</fullName>
+                <default>false</default>
+                <label>MRI required</label>
+            </value>
+            <value>
+                <fullName>DRE required</fullName>
+                <default>false</default>
+                <label>DRE required</label>
+            </value>
+            <value>
+                <fullName>Testosterone repeat required - too high</fullName>
+                <default>false</default>
+                <label>Testosterone repeat required - too high</label>
+            </value>
+            <value>
+                <fullName>Testosterone repeat required - too low</fullName>
+                <default>false</default>
+                <label>Testosterone repeat required - too low</label>
+            </value>
+            <value>
+                <fullName>Blood test results too old</fullName>
+                <default>false</default>
+                <label>Blood test results too old</label>
+            </value>
+            <value>
+                <fullName>Patient wants to consider risks</fullName>
+                <default>false</default>
+                <label>Patient wants to consider risks</label>
+            </value>
+            <value>
+                <fullName>CV risk - Patient doesn’t want Rx</fullName>
+                <default>false</default>
+                <label>CV risk - Patient doesn’t want Rx</label>
+            </value>
+            <value>
+                <fullName>Fertility risk - Patient doesn’t want Rx</fullName>
+                <default>false</default>
+                <label>Fertility risk - Patient doesn’t want Rx</label>
+            </value>
+            <value>
+                <fullName>Fertility risk - wants to consider</fullName>
+                <default>false</default>
+                <label>Fertility risk - wants to consider</label>
+            </value>
+            <value>
+                <fullName>Needs MOJO test</fullName>
+                <default>false</default>
+                <label>Needs MOJO test</label>
+            </value>
+            <value>
+                <fullName>Needs Swimcount</fullName>
+                <default>false</default>
+                <label>Needs Swimcount</label>
+            </value>
+            <value>
+                <fullName>Hair loss - Patient doesn’t want Rx</fullName>
+                <default>false</default>
+                <label>Hair loss - Patient doesn’t want Rx</label>
+            </value>
+            <value>
+                <fullName>Sleep apnoea - needs invx</fullName>
+                <default>false</default>
+                <label>Sleep apnoea - needs invx</label>
+            </value>
+            <value>
+                <fullName>Cost too high - can’t afford</fullName>
+                <default>false</default>
+                <label>Cost too high - can’t afford</label>
+            </value>
+            <value>
+                <fullName>Cortisol needs repeating</fullName>
+                <default>false</default>
+                <label>Cortisol needs repeating</label>
+            </value>
+            <value>
+                <fullName>Occupation check with OH</fullName>
+                <default>false</default>
+                <label>Occupation check with OH</label>
+            </value>
+            <value>
+                <fullName>Hct too high</fullName>
+                <default>false</default>
+                <label>Hct too high</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Overweight</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Overweight</label>
+            </value>
+            <value>
+                <fullName>Risk factors</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Risk factors</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

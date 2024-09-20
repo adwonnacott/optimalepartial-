@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- If the medication is a bundle item, this field lists the comma separated SKUs that make up the bundle -->
+        </help>
+        <label>
+            <!-- Bundle Contents -->
+        </label>
+        <name>Bundle_Contents__c</name>
+    </CustomFieldTranslation>

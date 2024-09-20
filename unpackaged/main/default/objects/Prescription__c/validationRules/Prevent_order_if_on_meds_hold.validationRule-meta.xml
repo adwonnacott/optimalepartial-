@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_order_if_on_meds_hold</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(Patient__r.Medication_Hold__c = TRUE, Override_Medication_Hold__c = FALSE)</errorConditionFormula>
+    <errorMessage>Patient is on medication hold, tick override medication hold checkbox if doctor authorises non-TRT medication to be dispatched</errorMessage>
+</ValidationRule>

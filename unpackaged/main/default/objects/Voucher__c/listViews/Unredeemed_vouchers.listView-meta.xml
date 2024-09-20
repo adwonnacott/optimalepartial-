@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unredeemed_vouchers</fullName>
+    <columns>NAME</columns>
+    <columns>Service_Provider__c</columns>
+    <columns>Test_Type__c</columns>
+    <columns>Code__c</columns>
+    <columns>Redeemed__c</columns>
+    <columns>OBJECT_ID</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Redeemed__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Unredeemed vouchers</label>
+</ListView>

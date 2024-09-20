@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Have you noticed a decreased enjoyment of life? -->
+        </help>
+        <label>
+            <!-- Q4 Life Enjoyment -->
+        </label>
+        <name>Q4_Life_Enjoyment__c</name>
+    </CustomFieldTranslation>

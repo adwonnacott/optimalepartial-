@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Goodbody</fullName>
+    <columns>NAME</columns>
+    <columns>Patient__c</columns>
+    <columns>Type__c</columns>
+    <columns>Service_Provider__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Goodbody_Confirmation_DateTime__c</columns>
+    <columns>Goodbody_Email_Sent__c</columns>
+    <columns>Goodbody_SMS_Sent__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Service_Provider__c</field>
+        <operation>equals</operation>
+        <value>Goodbody</value>
+    </filters>
+    <label>Goodbody</label>
+</ListView>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Over 45 20% increase risk of TIA, MI and CVA in first 24/12 -->
+        </help>
+        <label>
+            <!-- &gt;45 20% inc risk TIA/MI/CVA first 24/12 -->
+        </label>
+        <name>X45_20_inc_risk_TIA_MI_CVA_first_24_12__c</name>
+    </CustomFieldTranslation>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_order_type_ticked</fullName>
+    <active>true</active>
+    <description>An order type must be ticked for processing eg manual new order</description>
+    <errorConditionFormula>AND(
+Website_Order__c = False,
+Replacement_Kit__c = False,
+Manual_New_Order__c = False,
+Internal_Dispatch_Order__c = False,
+Patient_Submitted_Results__c = False,
+$Profile.Name &lt;&gt;&#39;System Administrator&#39;,
+$Profile.Name &lt;&gt;&#39;Integration Admin&#39;)</errorConditionFormula>
+    <errorMessage>You must tick one of the order types on the left, eg Manual New Order, Replacement Kit, etc</errorMessage>
+</ValidationRule>

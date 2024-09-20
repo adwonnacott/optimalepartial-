@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>qAdam Questionnaire Follow Up</name>
+    <pageDevName>qAdam_Questionnaire_Follow_Up</pageDevName>
+    <relatedEntityType>Account</relatedEntityType>
+    <style>none</style>
+    <subject>qAdam Questionnaire Follow Up</subject>
+    <textOnly>Hi {{{qADAM_Questionnaire__c.Patient_First_Name__c}}},
+
+Thank you for completing our TRT questionnaire.
+
+I can see you have mentioned you would like to speak to someone from the Clinical Team regarding your side effects.
+
+You can use the link below to get booked in with our Lead TRT Pharmacist:
+
+Book A Call &lt; https://calendly.com/rana-mirzai/trt-clinician-call &gt; 
+
+We look forward to hearing from you. 
+
+Many thanks, 
+
+Optimale
+
+Optimale Ltd, 71-75 Shelton Street, London, WC2H 9JQ, United Kingdom</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

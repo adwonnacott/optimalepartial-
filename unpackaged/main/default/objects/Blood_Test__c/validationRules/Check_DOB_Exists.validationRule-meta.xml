@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_DOB_Exists</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISBLANK(Contact__r.Date_of_Birth__c),
+    $Profile.Name &lt;&gt;&#39;System Administrator&#39;,
+$Profile.Name &lt;&gt;&#39;Integration Admin&#39;)</errorConditionFormula>
+    <errorMessage>Please update the patient&#39;s date of birth before creating a new blood test</errorMessage>
+</ValidationRule>

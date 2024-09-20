@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>NULL_Channel</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Edit</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <description>Where Account Channel has no value</description>
+        <label>NULL Channel</label>
+        <sharedTo>
+            <group>Optimale</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Channel__c</field>
+            <operation>equals</operation>
+            <value></value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Optimale_Channel</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Edit</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <description>Shares Optimale Channel Records with Optimale and Meta Health</description>
+        <label>Optimale Channel</label>
+        <sharedTo>
+            <group>Optimale</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Channel__c</field>
+            <operation>equals</operation>
+            <value>Optimale,Meta Health</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Optimale_Hellas_Channel</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Edit</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <description>Shares Optimale Hellas Channel Accounts with Optimale Hellas Group</description>
+        <label>Optimale Hellas Channel</label>
+        <sharedTo>
+            <group>Optimale_Hellas</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Channel__c</field>
+            <operation>equals</operation>
+            <value>Optimale Hellas</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

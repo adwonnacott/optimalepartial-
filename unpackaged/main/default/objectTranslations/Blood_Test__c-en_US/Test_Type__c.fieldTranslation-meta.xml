@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Test Type -->
+        </label>
+        <name>Test_Type__c</name>
+        <picklistValues>
+            <masterLabel>EST-FP</masterLabel>
+            <translation>
+                <!-- EST-FP -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EST-V</masterLabel>
+            <translation>
+                <!-- EST-V -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FERRITIN-FP</masterLabel>
+            <translation>
+                <!-- FERRITIN-FP -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FERRITIN-V</masterLabel>
+            <translation>
+                <!-- FERRITIN-V -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FSH-FP</masterLabel>
+            <translation>
+                <!-- FSH-FP -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FSH-V</masterLabel>
+            <translation>
+                <!-- FSH-V -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HSC1-V (FBC)</masterLabel>
+            <translation>
+                <!-- HSC1-V (FBC) -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA-FP (Sodium)</masterLabel>
+            <translation>
+                <!-- NA-FP (Sodium) -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA-V (Sodium)</masterLabel>
+            <translation>
+                <!-- NA-V (Sodium) -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT002-FP</masterLabel>
+            <translation>
+                <!-- OPT002-FP -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT002-V</masterLabel>
+            <translation>
+                <!-- OPT002-V -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT003-FP</masterLabel>
+            <translation>
+                <!-- OPT003-FP -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT003-V</masterLabel>
+            <translation>
+                <!-- OPT003-V -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT004-FP</masterLabel>
+            <translation>
+                <!-- OPT004-FP -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT004-V</masterLabel>
+            <translation>
+                <!-- OPT004-V -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT013-FP</masterLabel>
+            <translation>
+                <!-- OPT013-FP -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT013-V</masterLabel>
+            <translation>
+                <!-- OPT013-V -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT907-FP</masterLabel>
+            <translation>
+                <!-- OPT907-FP -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT907-V</masterLabel>
+            <translation>
+                <!-- OPT907-V -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT908-FP</masterLabel>
+            <translation>
+                <!-- OPT908-FP -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT908-V</masterLabel>
+            <translation>
+                <!-- OPT908-V -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT909-FP</masterLabel>
+            <translation>
+                <!-- OPT909-FP -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT909-V</masterLabel>
+            <translation>
+                <!-- OPT909-V -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT910-FP</masterLabel>
+            <translation>
+                <!-- OPT910-FP -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT910-V</masterLabel>
+            <translation>
+                <!-- OPT910-V -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT911-FP</masterLabel>
+            <translation>
+                <!-- OPT911-FP -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT911-V</masterLabel>
+            <translation>
+                <!-- OPT911-V -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT912-FP</masterLabel>
+            <translation>
+                <!-- OPT912-FP -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT912-V</masterLabel>
+            <translation>
+                <!-- OPT912-V -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT913-FP</masterLabel>
+            <translation>
+                <!-- OPT913-FP -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT913-V</masterLabel>
+            <translation>
+                <!-- OPT913-V -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT914-FP</masterLabel>
+            <translation>
+                <!-- OPT914-FP -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT914-V</masterLabel>
+            <translation>
+                <!-- OPT914-V -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT915-FP</masterLabel>
+            <translation>
+                <!-- OPT915-FP -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT915-V</masterLabel>
+            <translation>
+                <!-- OPT915-V -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT916-FP</masterLabel>
+            <translation>
+                <!-- OPT916-FP -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT916-V</masterLabel>
+            <translation>
+                <!-- OPT916-V -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT917-FP</masterLabel>
+            <translation>
+                <!-- OPT917-FP -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT917-V</masterLabel>
+            <translation>
+                <!-- OPT917-V -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT918-FP</masterLabel>
+            <translation>
+                <!-- OPT918-FP -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPT918-V</masterLabel>
+            <translation>
+                <!-- OPT918-V -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Submitted Results</masterLabel>
+            <translation>
+                <!-- Patient Submitted Results -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RP9-FP (Iron Studies)</masterLabel>
+            <translation>
+                <!-- RP9-FP (Iron Studies) -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RP9-V (Iron Studies)</masterLabel>
+            <translation>
+                <!-- RP9-V (Iron Studies) -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TPSA-FP</masterLabel>
+            <translation>
+                <!-- TPSA-FP -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TPSA-V</masterLabel>
+            <translation>
+                <!-- TPSA-V -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XLIPIDS-FP</masterLabel>
+            <translation>
+                <!-- XLIPIDS-FP -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XLIPIDS-V</masterLabel>
+            <translation>
+                <!-- XLIPIDS-V -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

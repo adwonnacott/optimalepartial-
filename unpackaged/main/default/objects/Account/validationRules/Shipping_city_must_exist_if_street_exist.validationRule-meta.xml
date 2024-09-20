@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shipping_city_must_exist_if_street_exist</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(IsPersonAccount=true, ISBLANK( ShippingCity ),Not(ISBLANK( ShippingStreet)),
+ISCHANGED(ShippingStreet))</errorConditionFormula>
+    <errorDisplayField>ShippingStreet</errorDisplayField>
+    <errorMessage>Please ensure all shipping fields are completed - do not enter all the shipping address in the shipping street field!</errorMessage>
+</ValidationRule>

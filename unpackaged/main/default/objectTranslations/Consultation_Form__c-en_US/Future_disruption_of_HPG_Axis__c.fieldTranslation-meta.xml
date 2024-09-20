@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Future disruption of HPG Axis -->
+        </label>
+        <name>Future_disruption_of_HPG_Axis__c</name>
+    </CustomFieldTranslation>

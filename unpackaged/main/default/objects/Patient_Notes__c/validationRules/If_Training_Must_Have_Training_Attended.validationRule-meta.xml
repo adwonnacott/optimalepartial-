@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_Training_Must_Have_Training_Attended</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISBLANK(TEXT( Training_Attended__c) ),ISPICKVAL( Note_Type__c ,&quot;Injection Training&quot;))</errorConditionFormula>
+    <errorMessage>Where note type is Injection Training, please indicate whether training attended</errorMessage>
+</ValidationRule>

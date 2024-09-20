@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Additions to the blood test that are not usually included -->
+        </help>
+        <label>
+            <!-- Additions -->
+        </label>
+        <name>Additions__c</name>
+    </CustomFieldTranslation>

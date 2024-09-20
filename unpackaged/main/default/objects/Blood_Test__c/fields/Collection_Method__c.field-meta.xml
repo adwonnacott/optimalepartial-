@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Collection_Method__c</fullName>
+    <description>Method for collecting the blood sample</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Method for collecting the blood sample</inlineHelpText>
+    <label>Collection Method</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Finger - Prick</fullName>
+                <default>false</default>
+                <label>Finger - Prick</label>
+            </value>
+            <value>
+                <fullName>Venous</fullName>
+                <default>false</default>
+                <label>Venous</label>
+            </value>
+            <value>
+                <fullName>Venous - Kit Only</fullName>
+                <default>false</default>
+                <label>Venous - Kit Only</label>
+            </value>
+            <value>
+                <fullName>Venous - Randox</fullName>
+                <default>false</default>
+                <label>Venous - Randox</label>
+            </value>
+            <value>
+                <fullName>Venous - Superdrug</fullName>
+                <default>false</default>
+                <label>Venous - Superdrug</label>
+            </value>
+            <value>
+                <fullName>Venous - Goodbody</fullName>
+                <default>false</default>
+                <label>Venous - Goodbody</label>
+            </value>
+            <value>
+                <fullName>Nurse Home Visit - Inuvi</fullName>
+                <default>false</default>
+                <label>Nurse Home Visit - Inuvi</label>
+            </value>
+            <value>
+                <fullName>Nurse Home Visit</fullName>
+                <default>false</default>
+                <label>Nurse Home Visit</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

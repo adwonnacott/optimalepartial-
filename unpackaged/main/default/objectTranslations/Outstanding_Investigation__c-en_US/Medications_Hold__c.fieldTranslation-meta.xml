@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Medications Hold -->
+        </label>
+        <name>Medications_Hold__c</name>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation>
+                <!-- None -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Until blood test</masterLabel>
+            <translation>
+                <!-- Until blood test -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Until doctor review</masterLabel>
+            <translation>
+                <!-- Until doctor review -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>2. &gt;15 TT &amp;&amp; &gt;0.225 FT -&gt; Normal levels</name>
+    <relatedEntityType>Blood_Test__c</relatedEntityType>
+    <style>none</style>
+    <subject>Your Optimale Blood Test Result</subject>
+    <textOnly>Hi {{{Blood_Test__c.Contact_Name__c}}}, 
+
+Your blood results are back from the lab and show normal levels of total and free testosterone.
+
+You can access your blood test results below:
+
+View Results &lt; {{{Blood_Test__c.PDF_URL__c}}} &gt; 
+
+The password is: {{{Blood_Test__c.PDF_Password__c}}}
+
+These levels are not currently low enough for testostereone replacement therapy.
+
+However, if you have symptoms of low testosterone, there are three options that may be suitable:
+
+ - Re-test in 6 weeks. Testosterone levels do fluctuate, so it may be helpful to re-test in a few weeks&#39; time. You can buy a new testing kit here &lt; https://www.optimale.co.uk/product/testosterone-blood-test/ &gt; .
+ - If you are experiencing Erectile Dysfunction then we recommend exploring Manual&#39;s range of Erectile Dysfunction treatment here &lt; https://www.manual.co/erectile-dysfunction?utm_source=email&amp;utm_medium=email&amp;utm_campaign=trt_not_low &gt; . Prices start from £1.67 per pill.
+ - Try to increase your testosterone levels without TRT. See Manual&#39;s &quot;Testosterone support&quot; daily supplements here &lt; https://www.manual.co/daily-health/testosterone?utm_source=email&amp;utm_medium=email&amp;utm_campaign=trt_not_low &gt; .
+
+If you have any questions at all about your results please let us know.
+
+Many thanks,
+
+Optimale
+
+Optimale Ltd, 71-75 Shelton Street, London, WC2H 9JQ, United Kingdom</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

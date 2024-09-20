@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Family_History_of_Heart_Disease_Stroke__c</fullName>
+    <externalId>false</externalId>
+    <label>Family History of Heart Disease/Stroke</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>False</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+            <value>
+                <fullName>True</fullName>
+                <default>false</default>
+                <label>Yes</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Age_Range__c</fullName>
+    <description>Age Range of Patient</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Age Range of Patient</inlineHelpText>
+    <label>Age Range</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>18-34</fullName>
+                <default>false</default>
+                <label>18-34</label>
+            </value>
+            <value>
+                <fullName>35-44</fullName>
+                <default>false</default>
+                <label>35-44</label>
+            </value>
+            <value>
+                <fullName>45-59</fullName>
+                <default>false</default>
+                <label>45-59</label>
+            </value>
+            <value>
+                <fullName>60-69</fullName>
+                <default>false</default>
+                <label>60-69</label>
+            </value>
+            <value>
+                <fullName>70+</fullName>
+                <default>false</default>
+                <label>70+</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

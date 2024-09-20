@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Service Provider -->
+        </label>
+        <name>Service_Provider__c</name>
+        <picklistValues>
+            <masterLabel>Goodbody</masterLabel>
+            <translation>
+                <!-- Goodbody -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Graeme Dunn</masterLabel>
+            <translation>
+                <!-- Graeme Dunn -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nasreen Rehmani</masterLabel>
+            <translation>
+                <!-- Nasreen Rehmani -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Randox</masterLabel>
+            <translation>
+                <!-- Randox -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Superdrug</masterLabel>
+            <translation>
+                <!-- Superdrug -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trust MSS</masterLabel>
+            <translation>
+                <!-- Trust MSS -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

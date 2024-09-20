@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Custom Report</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Custom Reports</value>
+    </caseValues>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <recordTypes>
+        <label>
+            <!-- Calls Sales Correlation -->
+        </label>
+        <name>Calls_Sales_Correlation</name>
+    </recordTypes>
+    <recordTypes>
+        <label>
+            <!-- Treatment Outcome -->
+        </label>
+        <name>Treatment_Outcome</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

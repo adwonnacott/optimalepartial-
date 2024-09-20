@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- If the patient is ineligible for TRT, select a reason why -->
+        </help>
+        <label>
+            <!-- Reason ineligible for TRT -->
+        </label>
+        <name>Ineligible_for_TRT_reason__c</name>
+        <picklistValues>
+            <masterLabel>Blood test results too old</masterLabel>
+            <translation>
+                <!-- Blood test results too old -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CV risk - Patient doesn’t want Rx</masterLabel>
+            <translation>
+                <!-- CV risk - Patient doesn’t want Rx -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cortisol needs repeating</masterLabel>
+            <translation>
+                <!-- Cortisol needs repeating -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cost too high - can’t afford</masterLabel>
+            <translation>
+                <!-- Cost too high - can’t afford -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DRE required</masterLabel>
+            <translation>
+                <!-- DRE required -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fertility risk - Patient doesn’t want Rx</masterLabel>
+            <translation>
+                <!-- Fertility risk - Patient doesn’t want Rx -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fertility risk - wants to consider</masterLabel>
+            <translation>
+                <!-- Fertility risk - wants to consider -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hair loss - Patient doesn’t want Rx</masterLabel>
+            <translation>
+                <!-- Hair loss - Patient doesn’t want Rx -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hct too high</masterLabel>
+            <translation>
+                <!-- Hct too high -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MRI required</masterLabel>
+            <translation>
+                <!-- MRI required -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Needs MOJO test</masterLabel>
+            <translation>
+                <!-- Needs MOJO test -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Needs Swimcount</masterLabel>
+            <translation>
+                <!-- Needs Swimcount -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Occupation check with OH</masterLabel>
+            <translation>
+                <!-- Occupation check with OH -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation>
+                <!-- Other -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PRL raised repeat required</masterLabel>
+            <translation>
+                <!-- PRL raised repeat required -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PSA repeat required</masterLabel>
+            <translation>
+                <!-- PSA repeat required -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient wants to consider risks</masterLabel>
+            <translation>
+                <!-- Patient wants to consider risks -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sleep apnoea - needs invx</masterLabel>
+            <translation>
+                <!-- Sleep apnoea - needs invx -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Testosterone repeat required - too high</masterLabel>
+            <translation>
+                <!-- Testosterone repeat required - too high -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Testosterone repeat required - too low</masterLabel>
+            <translation>
+                <!-- Testosterone repeat required - too low -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

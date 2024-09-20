@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Choose &apos;Send Now&apos; to send the contract to the Patient -->
+        </help>
+        <label>
+            <!-- Contract Status -->
+        </label>
+        <name>Contract_Status__c</name>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation>
+                <!-- Complete -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manual Send</masterLabel>
+            <translation>
+                <!-- Manual Send -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected by Patient</masterLabel>
+            <translation>
+                <!-- Rejected by Patient -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Send Now</masterLabel>
+            <translation>
+                <!-- Send Now -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent</masterLabel>
+            <translation>
+                <!-- Sent -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

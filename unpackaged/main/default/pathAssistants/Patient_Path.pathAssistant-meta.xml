@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <entityName>Contact</entityName>
+    <fieldName>Patient_Status__c</fieldName>
+    <masterLabel>Patient Path</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Patient must sign Patient Agreement and sign up to an OptiMale plan.&lt;/p&gt;&lt;p&gt;Send plan link from Zoho.&lt;/p&gt;</info>
+        <picklistValueName>Approved</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Date_of_Birth__c</fieldNames>
+        <info>&lt;p&gt;At least 1 recent Blood Test is required showing low testosterone.&lt;/p&gt;&lt;p&gt;Date of Birth must be captured correctly at this stage in DD/MM/YYYY format.&lt;/p&gt;</info>
+        <picklistValueName>Blood Test</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Capture Medical History.&lt;/p&gt;&lt;p&gt;Referred to Doctor for Consultation.&lt;/p&gt;</info>
+        <picklistValueName>Consultation</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Patient_Status__c</fieldNames>
+        <info>&lt;p&gt;Patient is fully on-boarded.&lt;/p&gt;&lt;p&gt;Order injection supplies if required.&lt;/p&gt;&lt;p&gt;Order medications from pharmacy and check that letterbox delivery is OK.&lt;/p&gt;</info>
+        <picklistValueName>Current Patient</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>ADAM_Questionnaire__c</fieldNames>
+        <fieldNames>Email</fieldNames>
+        <fieldNames>Phone</fieldNames>
+        <info>&lt;p&gt;Completed ADAM Questionnaire is desirable but not essential.&lt;/p&gt;&lt;p&gt;Email address is important at this stage.&lt;/p&gt;&lt;p&gt;Mobile number is desirable but not essential.&lt;/p&gt;</info>
+        <picklistValueName>Prospect</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

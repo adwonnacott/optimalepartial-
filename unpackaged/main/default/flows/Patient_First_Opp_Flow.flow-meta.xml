@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <description>DEPRECATE - One time use for reporting purposes</description>
+    <environments>Default</environments>
+    <interviewLabel>Patient First Opp Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Patient First Opp Flow DEP</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Consultations</name>
+        <label>Get Consultations</label>
+        <locationX>176</locationX>
+        <locationY>276</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Opportunities</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Patient__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Consultation_Form__c</object>
+        <sortField>Consultation_Date__c</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Opportunities</name>
+        <label>Get Opportunities</label>
+        <locationX>176</locationX>
+        <locationY>396</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Patient</targetReference>
+        </connector>
+        <filterLogic>1 AND (2 OR 3 OR 4 OR 5 OR 6)</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Doctor Consultation - Transfer Remote</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Doctor Consultation - Transfer F2F</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Doctor Consultation - Sign-Up Remote</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Doctor Consultation - Sign-Up Remote £99</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Doctor Consultation - Sign-Up F2F</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <sortField>CloseDate</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Patient</name>
+        <label>Update Patient</label>
+        <locationX>176</locationX>
+        <locationY>516</locationY>
+        <inputAssignments>
+            <field>First_Consultation_Date__c</field>
+            <value>
+                <elementReference>Get_Consultations.Consultation_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>First_Consultation__c</field>
+            <value>
+                <elementReference>Get_Consultations.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Opportunity_Won_Date__c</field>
+            <value>
+                <elementReference>Get_Opportunities.CloseDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WonOpportunity__c</field>
+            <value>
+                <elementReference>Get_Opportunities.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Won_Opportunity_Type__c</field>
+            <value>
+                <elementReference>Get_Opportunities.Type</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Consultations</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Patient_Status__pc</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Current Patient</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Patient_Status__pc</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>On Hold</stringValue>
+            </value>
+        </filters>
+        <object>Account</object>
+        <schedule>
+            <frequency>Once</frequency>
+            <startDate>2023-03-30</startDate>
+            <startTime>12:16:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

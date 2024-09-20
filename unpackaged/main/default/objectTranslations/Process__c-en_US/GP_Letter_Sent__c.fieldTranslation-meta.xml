@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Has a GP letter been sent, if required? (check &apos;Is GP letter required?&apos; field) -->
+        </help>
+        <label>
+            <!-- GP Letter Sent -->
+        </label>
+        <name>GP_Letter_Sent__c</name>
+    </CustomFieldTranslation>

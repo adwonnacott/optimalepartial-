@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>1. &gt; 35nmol/l TT &gt; 35nmol/l TT -&gt; Very high levels</name>
+    <pageDevName>X1_35nmol_l_TT</pageDevName>
+    <relatedEntityType>Blood_Test__c</relatedEntityType>
+    <style>none</style>
+    <subject>Your Optimale Blood Test Result</subject>
+    <textOnly>Hi {{{Blood_Test__c.Contact_Name__c}}}, 
+
+We have received the analysis of your blood test from the laboratory. The results indicate that you have very high testosterone levels, which are above the normal range. 
+
+You can access your blood test results below:
+
+View Results &lt; {{{Blood_Test__c.PDF_URL__c}}} &gt; 
+
+The password is: {{{Blood_Test__c.PDF_Password__c}}}
+
+Your Total Testosterone level is above 35nmol/l, which means you are unlikely to have a problem with low testosterone symptoms.
+
+Have you taken steroids, TRT or testosterone boosters recently? These may be the cause of your high levels. They can also be naturally occurring in some men with higher natural levels or a raised SHBG.
+
+Many thanks,
+
+Optimale
+
+Optimale Ltd, 71-75 Shelton Street, London, WC2H 9JQ, United Kingdom</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

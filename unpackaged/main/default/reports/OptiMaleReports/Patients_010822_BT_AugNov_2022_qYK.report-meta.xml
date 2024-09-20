@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_42262957</developerName>
+        <masterLabel>Low T</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Blood_Test__c.Low_Testosterone_Flag__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>_IM1_/img/samples/flag_red.gif_IM2_Red Flag_IM3_</sourceValue>
+            </sourceValues>
+            <value>Low T</value>
+        </values>
+        <values>
+            <value>Normal T</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_36037696</developerName>
+        <masterLabel>TT Range</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Blood_Test__c.Testosterone__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>12</to>
+            </sourceValues>
+            <value>Low &lt;12</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>12</from>
+                <to>15</to>
+            </sourceValues>
+            <value>Low 12-15</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>15</from>
+            </sourceValues>
+            <value>Normal</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Contact.Patient_Status__c</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Blood_Test__c.Testosterone__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Blood_Test__c.Free_Testosterone__c</field>
+    </columns>
+    <columns>
+        <field>Blood_Test__c.Low_Testosterone_Flag__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <criteriaItems>
+            <column>Contact.Patient_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Prospect,Blood Test,Consultation,Approved,On Hold,Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_CREATED_DATE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>8/1/2022 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_CREATED_DATE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>lessOrEqual</operator>
+            <value>11/30/2022 12:00 AM</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_42262957</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_36037696</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <name>Non-PT Accounts - BT Aug-Nov 2022</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactCustomEntity$Blood_Test__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>LAST_ACTIVITY</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Any follow up or new medical history information should be captured by the Doctor -->
+        </help>
+        <label>
+            <!-- Medical History Follow Up -->
+        </label>
+        <name>Medical_History_Follow_Up__c</name>
+    </CustomFieldTranslation>

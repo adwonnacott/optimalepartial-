@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Outbound Call - Spoke to Contact</fullName>
+        <default>false</default>
+        <label>Outbound Call - Spoke to Contact</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Outbound Call - No answer</fullName>
+        <default>false</default>
+        <label>Outbound Call - No answer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Outbound Call - Voicemail</fullName>
+        <default>false</default>
+        <label>Outbound Call - Voicemail</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Outbound Call - Incorrect details</fullName>
+        <default>false</default>
+        <label>Outbound Call - Incorrect details</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Inbound Call - Spoke to Contact</fullName>
+        <default>false</default>
+        <label>Inbound Call - Spoke to Contact</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Doctor Requested Blood Test Reminder</fullName>
+        <default>false</default>
+        <label>Doctor Requested Blood Test Reminder</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Regular Blood Test Reminder</fullName>
+        <default>false</default>
+        <label>Regular Blood Test Reminder</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Call</fullName>
+        <default>false</default>
+        <label>Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Send Letter</fullName>
+        <default>false</default>
+        <label>Send Letter</label>
+    </standardValue>
+</StandardValueSet>

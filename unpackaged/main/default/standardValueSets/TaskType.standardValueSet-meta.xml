@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Doctor Requested Blood Test Reminder</fullName>
+        <default>false</default>
+        <label>Doctor Requested Blood Test Reminder</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Medication Order</fullName>
+        <default>false</default>
+        <label>Medication Order</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Letter</fullName>
+        <default>false</default>
+        <label>Letter</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Regular Blood Test Reminder</fullName>
+        <default>false</default>
+        <label>Regular Blood Test Reminder</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Call</fullName>
+        <default>false</default>
+        <label>Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Meeting</fullName>
+        <default>false</default>
+        <label>Meeting</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>true</default>
+        <label>Other</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Nurse Home Visit</fullName>
+        <default>false</default>
+        <label>Nurse Home Visit</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Supplies Order</fullName>
+        <default>false</default>
+        <label>Supplies Order</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Therapeutic Venesection</fullName>
+        <default>false</default>
+        <label>Therapeutic Venesection</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Intercom Chat</fullName>
+        <default>false</default>
+        <label>Intercom Chat</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email</fullName>
+        <default>false</default>
+        <label>Email</label>
+    </standardValue>
+    <standardValue>
+        <fullName>No response to blood test results</fullName>
+        <default>false</default>
+        <label>No response to blood test results</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Follow-up Blood Test Reminder</fullName>
+        <default>false</default>
+        <label>Follow-up Blood Test Reminder</label>
+    </standardValue>
+</StandardValueSet>

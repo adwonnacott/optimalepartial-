@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Would you like Contact re Side Effects? -->
+        </label>
+        <name>Would_you_like_Contact_re_Side_Effects__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation>
+                <!-- No -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No, except if a clinician needs to discuss something with me</masterLabel>
+            <translation>
+                <!-- No, except if a clinician needs to discuss something with me -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation>
+                <!-- Yes -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

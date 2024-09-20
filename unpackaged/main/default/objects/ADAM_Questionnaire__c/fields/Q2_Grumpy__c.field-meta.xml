@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Q2_Grumpy__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Are you sad and/or grumpy?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Are you sad and/or grumpy?</inlineHelpText>
+    <label>Q2 Grumpy</label>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

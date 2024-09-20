@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Smoker__c</fullName>
+    <externalId>false</externalId>
+    <label>Smoker</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+            <value>
+                <fullName>Yes</fullName>
+                <default>false</default>
+                <label>Yes</label>
+            </value>
+            <value>
+                <fullName>Vape</fullName>
+                <default>false</default>
+                <label>Vape</label>
+            </value>
+            <value>
+                <fullName>Quit smoking</fullName>
+                <default>false</default>
+                <label>Quit smoking</label>
+            </value>
+            <value>
+                <fullName>Never smoked</fullName>
+                <default>false</default>
+                <label>Never smoked</label>
+            </value>
+            <value>
+                <fullName>True</fullName>
+                <default>false</default>
+                <label>True</label>
+            </value>
+            <value>
+                <fullName>False</fullName>
+                <default>false</default>
+                <label>False</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

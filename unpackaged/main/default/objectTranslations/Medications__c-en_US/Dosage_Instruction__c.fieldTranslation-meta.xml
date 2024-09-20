@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Prescription dosage eg 0.5mls -->
+        </help>
+        <label>
+            <!-- Dosage Instruction -->
+        </label>
+        <name>Dosage_Instruction__c</name>
+    </CustomFieldTranslation>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Onboarding Status -->
+        </label>
+        <name>Onboarding_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved for Consultation</masterLabel>
+            <translation>
+                <!-- Approved for Consultation -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consultation</masterLabel>
+            <translation>
+                <!-- Consultation -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Follow Up Complete</masterLabel>
+            <translation>
+                <!-- Follow Up Complete -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Follow Up Due</masterLabel>
+            <translation>
+                <!-- Follow Up Due -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ineligible / Lost</masterLabel>
+            <translation>
+                <!-- Ineligible / Lost -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Onboarding Complete</masterLabel>
+            <translation>
+                <!-- Onboarding Complete -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order Medication</masterLabel>
+            <translation>
+                <!-- Order Medication -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post-Consultation</masterLabel>
+            <translation>
+                <!-- Post-Consultation -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-Approval</masterLabel>
+            <translation>
+                <!-- Pre-Approval -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subscription Sign Up</masterLabel>
+            <translation>
+                <!-- Subscription Sign Up -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

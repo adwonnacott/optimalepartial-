@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gender__c</fullName>
+    <description>The Patient&#39;s Gender - Male/Female. Defaults to Male.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The Patient&#39;s Gender - Male/Female</inlineHelpText>
+    <label>Gender</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Male</fullName>
+                <default>true</default>
+                <label>Male</label>
+            </value>
+            <value>
+                <fullName>Female</fullName>
+                <default>false</default>
+                <label>Female</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

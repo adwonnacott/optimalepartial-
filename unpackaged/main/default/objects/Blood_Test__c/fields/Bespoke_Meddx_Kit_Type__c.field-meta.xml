@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bespoke_Meddx_Kit_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Bespoke Meddx Kit Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>KT173</fullName>
+                <default>false</default>
+                <label>KT173 - FP yellow vial</label>
+            </value>
+            <value>
+                <fullName>KT174</fullName>
+                <default>false</default>
+                <label>KT174 - FP yellow and purple vial</label>
+            </value>
+            <value>
+                <fullName>KT317</fullName>
+                <default>false</default>
+                <label>KT317 - Venous yellow vial</label>
+            </value>
+            <value>
+                <fullName>KT318</fullName>
+                <default>false</default>
+                <label>KT318 - Venous yellow and purple vial</label>
+            </value>
+            <value>
+                <fullName>KT285</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>KT285 - Venous yellow vial</label>
+            </value>
+            <value>
+                <fullName>KT286</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>KT286 - Venous yellow and purple vial</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

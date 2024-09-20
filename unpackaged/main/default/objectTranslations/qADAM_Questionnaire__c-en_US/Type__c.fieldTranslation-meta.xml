@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Type -->
+        </label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Post-Treatment</masterLabel>
+            <translation>
+                <!-- Post-Treatment -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-Treatment</masterLabel>
+            <translation>
+                <!-- Pre-Treatment -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

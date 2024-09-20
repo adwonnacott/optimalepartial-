@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ADAM_Score__c</fullName>
+    <description>Answering yes to question 3 or question 9 adds 3 points, all other questions are 1 point. 3 points and above is a positive questionnaire result indicating low testosterone.</description>
+    <externalId>false</externalId>
+    <formula>IF(Q1_Energy__c = TRUE, 1, 0) + 
+IF(Q2_Grumpy__c = TRUE, 1, 0) + 
+IF(Q3_Libido__c = TRUE, 3, 0) + 
+IF(Q4_Life_Enjoyment__c = TRUE, 1, 0) +
+IF(Q5_Strength__c = TRUE, 1, 0) + 
+IF(Q6_Sleepy__c = TRUE, 1, 0) + 
+IF(Q7_Sports__c = TRUE, 1, 0) + 
+IF(Q8_Work_Performance__c = TRUE, 1, 0) +
+IF(Q9_Erections__c = TRUE, 3, 0) +
+IF(Q10_Lost_Height__c = TRUE, 1, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Answering yes to question 3 or question 9 adds 3 points, all other questions are 1 point. 3 points and above is a positive questionnaire result indicating low testosterone.</inlineHelpText>
+    <label>ADAM Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

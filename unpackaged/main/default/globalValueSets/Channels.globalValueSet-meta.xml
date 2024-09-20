@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Optimale</fullName>
+        <default>true</default>
+        <label>Optimale</label>
+    </customValue>
+    <customValue>
+        <fullName>Meta Health</fullName>
+        <default>false</default>
+        <label>Meta Health</label>
+    </customValue>
+    <customValue>
+        <fullName>CJA Balance</fullName>
+        <default>false</default>
+        <label>CJA Balance</label>
+    </customValue>
+    <customValue>
+        <fullName>Immuniti</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Immuniti</label>
+    </customValue>
+    <customValue>
+        <fullName>Optimale Hellas</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Optimale Hellas</label>
+    </customValue>
+    <masterLabel>Channels</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Tick this checkbox if this is a new manual order, ie. an order that was not made via our website -->
+        </help>
+        <label>
+            <!-- Manual New Order -->
+        </label>
+        <name>Manual_New_Order__c</name>
+    </CustomFieldTranslation>

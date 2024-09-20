@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Medical_History_Follow_Up__c</fullName>
+    <description>Any follow up or new medical history information should be captured by the Doctor</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Any follow up or new medical history information should be captured by the Doctor</inlineHelpText>
+    <label>Medical History Follow Up</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

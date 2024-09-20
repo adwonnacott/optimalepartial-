@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Manual_New_Order__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Tick this checkbox if this is a new manual order, ie. an order that was not made via our website</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Tick this checkbox if this is a new manual order, ie. an order that was not made via our website</inlineHelpText>
+    <label>Manual New Order</label>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

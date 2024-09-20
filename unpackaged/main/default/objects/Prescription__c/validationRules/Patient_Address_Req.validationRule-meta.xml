@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Patient_Address_Req</fullName>
+    <active>true</active>
+    <description>Requires Patient Address components</description>
+    <errorConditionFormula>OR(ISBLANK(Patient__r.ShippingStreet),ISBLANK(Patient__r.ShippingCity),ISBLANK( Patient__r.Phone ),ISBLANK(Patient__r.ShippingPostalCode))</errorConditionFormula>
+    <errorMessage>Please ensure that Patient Shipping Address (Street, City and Postcode) and Phone are present before creating/updating a Prescription</errorMessage>
+</ValidationRule>

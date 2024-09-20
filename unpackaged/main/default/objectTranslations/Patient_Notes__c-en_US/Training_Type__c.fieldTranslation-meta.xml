@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Training Type -->
+        </label>
+        <name>Training_Type__c</name>
+        <picklistValues>
+            <masterLabel>Group</masterLabel>
+            <translation>
+                <!-- Group -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>One-To-One</masterLabel>
+            <translation>
+                <!-- One-To-One -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

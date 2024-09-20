@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fertility_History__c</fullName>
+    <externalId>false</externalId>
+    <label>Fertility History</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>I am intending to try for children in the future</fullName>
+                <default>false</default>
+                <label>I am intending to try for children in the future</label>
+            </value>
+            <value>
+                <fullName>I do not want children ever and I am 100% certain of this</fullName>
+                <default>false</default>
+                <label>I do not want children ever and I am 100% certain of this</label>
+            </value>
+            <value>
+                <fullName>I have never really considered my fertility</fullName>
+                <default>false</default>
+                <label>I have never really considered my fertility</label>
+            </value>
+            <value>
+                <fullName>I have children and my family is complete</fullName>
+                <default>false</default>
+                <label>I have children and my family is complete</label>
+            </value>
+            <value>
+                <fullName>I have children and I want to father more children in the future</fullName>
+                <default>false</default>
+                <label>I have children and I want to father more children in the future</label>
+            </value>
+            <value>
+                <fullName>I am actively trying for children now my partner is under 35 years old</fullName>
+                <default>false</default>
+                <label>I am actively trying for children now my partner is under 35 years old</label>
+            </value>
+            <value>
+                <fullName>I am actively trying for children and my partner is over 35 years old</fullName>
+                <default>false</default>
+                <label>I am actively trying for children and my partner is over 35 years old</label>
+            </value>
+            <value>
+                <fullName>I or my partner are currently under fertility investigation either privately or with the NHS</fullName>
+                <default>false</default>
+                <label>I or my partner are currently under fertility investigation either privately or with the NHS</label>
+            </value>
+            <value>
+                <fullName>My partner is currently pregnant</fullName>
+                <default>false</default>
+                <label>My partner is currently pregnant</label>
+            </value>
+            <value>
+                <fullName>I&#39;ve had a vasectomy</fullName>
+                <default>false</default>
+                <label>I&#39;ve had a vasectomy</label>
+            </value>
+            <value>
+                <fullName>I am gay but want to father children using my own semen for conception</fullName>
+                <default>false</default>
+                <label>I am gay but want to father children using my own semen for conception</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

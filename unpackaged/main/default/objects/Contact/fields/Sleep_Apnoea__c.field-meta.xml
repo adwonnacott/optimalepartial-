@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sleep_Apnoea__c</fullName>
+    <externalId>false</externalId>
+    <label>Sleep Apnoea</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+            <value>
+                <fullName>Yes - Central</fullName>
+                <default>false</default>
+                <label>Yes - Central</label>
+            </value>
+            <value>
+                <fullName>Yes - Obstructive</fullName>
+                <default>false</default>
+                <label>Yes - Obstructive</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

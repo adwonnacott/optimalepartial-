@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Already_seen_doctor__c</fullName>
+    <description>Have you already seen a doctor about your hormone issues?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Have you already seen a doctor about your hormone issues?</inlineHelpText>
+    <label>Already seen doctor?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes I have seen my GP</fullName>
+                <default>false</default>
+                <label>Yes I have seen my GP</label>
+            </value>
+            <value>
+                <fullName>Yes I have seen an endocrinologist</fullName>
+                <default>false</default>
+                <label>Yes I have seen an endocrinologist</label>
+            </value>
+            <value>
+                <fullName>Yes I have seen another doctor</fullName>
+                <default>false</default>
+                <label>Yes I have seen another doctor</label>
+            </value>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

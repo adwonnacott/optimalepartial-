@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Test_Results_sent_out_automated</fullName>
+    <columns>NAME</columns>
+    <columns>Contact__c</columns>
+    <columns>Order_Date__c</columns>
+    <columns>Test_Type__c</columns>
+    <columns>Status__c</columns>
+    <columns>PDF_Results_Upload_Date_Time__c</columns>
+    <columns>Results_Status__c</columns>
+    <columns>HL7_Results_Uploaded__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Low_Testosterone_Flag__c</columns>
+    <columns>Patient_Status__c</columns>
+    <columns>Account_Owner__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Results_Status__c</field>
+        <operation>equals</operation>
+        <value>Sent to patient (automated)</value>
+    </filters>
+    <filters>
+        <field>PDF_Results_Upload_Date_Time__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Test Results sent out automated</label>
+</ListView>

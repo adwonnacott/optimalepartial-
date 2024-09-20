@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Re-send HL7 file to Randox -->
+        </label>
+        <name>Re_send_HL7_file_to_Randox__c</name>
+        <picklistValues>
+            <masterLabel>HL7 file re-sent to Randox</masterLabel>
+            <translation>
+                <!-- HL7 file re-sent to Randox -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HL7 file sent to Randox</masterLabel>
+            <translation>
+                <!-- HL7 file sent to Randox -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Re-send HL7 file to Randox</masterLabel>
+            <translation>
+                <!-- Re-send HL7 file to Randox -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

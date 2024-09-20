@@ -1,0 +1,1898 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-19-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<apex:page standardController="Blood_Test__c" extensions="ASETPathologyReportController" renderAs="pdf" applyBodyTag="false">
+    <head>
+        <style type="text/css" media="print">
+            @page {
+                margin-top: 320px;
+                padding: 0 14px 0 0;
+                margin-bottom: 120px;
+                size:A4 portrait;
+            
+                @top-center {
+                    content: element(header);
+                }
+
+                @bottom-center {
+                    content: element(footer);
+                }
+
+            }
+
+            * {
+                font-family:"Calibri", sans-serif;
+            }
+
+            .centered {
+            	text-align: center;
+            }
+
+            div.header {
+                /* height: 1000px;
+                margin-top:20px;
+                margin-bottom: 120px;
+                padding-bottom: 120px; */
+                position: running(header);
+                width: 98%;
+                padding: 10px;
+                font-size: 22px;
+                font-family:"Calibri", sans-serif;
+            }
+
+            div.content {
+                margin-top: 120px;
+                width: 100%;
+            }
+
+            div.footer {
+                margin-top:24px;
+                position: running(footer);
+                font-size: 14px;
+            }
+
+            .pagenumber:before {
+                content: counter(page);
+            }
+
+            .pagecount:before {
+            	content: counter(pages);
+            }
+
+            table tbody td {
+                padding: 0;
+                margin: auto;
+                border: none;   
+            }
+
+            table {
+                border-collapse: collapse;
+                font-family:"Calibri", sans-serif;
+                font-size: 14px;
+            }     
+         
+            table tr .title {
+                padding: 12px 0;
+                font-weight: bold;
+            }  
+
+            table thead th {
+                border-left: none;
+                border-right: none;
+                border-top: 1px solid #0d80d3;
+                border-bottom: 1px solid #0d80d3;
+                padding-left: 0;
+                padding-right: 0;
+                color: #0d80d3;
+                width: 200px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            table thead th.invis-theader{
+                border-left: none;
+                border-right: none;
+                border-top: 1px solid transparent;
+                border-bottom: 1px solid transparent;
+                padding-left: 0;
+                padding-right: 0;
+                color: #0d80d3;
+                width: 200px;
+                padding-top: 0px !important;
+                padding-bottom: 0px !important;
+            }
+
+            .color-red {
+                color: red;
+            }
+
+            .color-blue {
+                color: #0d80d3;
+            }
+            
+            .header-table td {
+                width: 782px; 
+                vertical-align: baseline;
+            }
+
+            .contact-label {
+                color: #0d80d3;
+                width: 600px;
+                text-align: end; 
+            }
+
+            img {
+                margin-bottom: 20px;
+            }
+
+            .optimale--details tr td {
+                width: 238px!important;
+                padding-right: 20px;
+            }
+
+            .optimale--details tr td:nth-child(2){
+                text-align: left;
+            }
+
+            .optimale--details .hide {
+                display: none;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="header" style="padding-bottom: 240px;page-break-after:always;font-size: 18px;">
+            <div class="header-content">
+                <div class="logo">
+                    <apex:image url="{!$Resource.OptimaleLogo}" width="240" height="60"/>
+                </div>
+                <div class="col">
+                    <table>
+                        <tbody class="header-table">
+                            <tr>
+                                <td>
+                                    <div class="address">
+                                        71-75 Shelton Street <br />
+                                        Covent Garden <br />
+                                        London <br />
+                                        WC2H 9JQ <br />
+                                        0207 164 6911 <br />
+                                        bloods@optimale.co.uk <br />
+                                    </div>
+                                </td>
+                                <td class="contac-details">
+                                    <apex:outputText >
+                                        <span class="contact-label">Surname : </span> <apex:outputText value="{!contact.LastName}"/>
+                                        <br />
+                                    </apex:outputText>
+                                    <apex:outputText >
+                                        <span class="contact-label">Forename : </span> <apex:outputText value="{!contact.FirstName}"/>
+                                        <br />
+                                    </apex:outputText>
+                                    <apex:outputText >
+                                        <span class="contact-label">Date of birth : </span> 
+                                        <apex:outputText value="{0,date,dd/MM/yyyy}">
+                                            <apex:param value="{!contact.Date_of_Birth__c}"/>
+                                        </apex:outputText>
+                                        <br />
+                                    </apex:outputText>
+                                    <apex:outputText >
+                                        <span class="contact-label">Patient ID : </span> <apex:outputText value="{!contact.Patient_ID__c}"/>
+                                        <br />
+                                    </apex:outputText>
+                                    <apex:outputText >
+                                        <span class="contact-label">Blood Test ID : </span> <apex:outputText value="{!btRecord.Name}"/>
+                                        <br />
+                                    </apex:outputText>
+                                    <apex:outputText >
+                                        <span class="contact-label">Sex: </span> <apex:outputText value="{!contact.Gender__c}"/>
+                                        <br />
+                                    </apex:outputText>
+                                    <apex:outputText >
+                                        <span class="contact-label">Lab No : </span> <apex:outputText value="{!btRecord.Labs_Test_ID__c}"/> 
+                                        <br />
+                                    </apex:outputText>
+                                    <apex:outputText >
+                                        <span class="contact-label">Sample Date : </span>
+                                        <apex:outputText value="{!sampleDateStr}"/>
+                                        <!--<apex:outputText value="{0,date,dd/MM/yyyy HH:mm:ss}">
+                                            					
+                                            <apex:param value="{!btRecord.Sample_Date_Time__c}"/>
+                                        </apex:outputText>-->
+                                        <br />
+                                    </apex:outputText>
+                                    <apex:outputText >
+                                        <span class="contact-label">Sample Type : </span> <apex:outputText value="{!btRecord.Collection_Method__c}"/> 
+                                        <br />
+                                    </apex:outputText>
+                                    <apex:outputText >
+                                        <span class="contact-label">Age : </span> <apex:outputText value="{!contact.account.Age__pc}"/> 
+                                        <br />
+                                    </apex:outputText>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="table-header-wrapper" style="padding-top: 20px;">
+                <table style="padding-top: 20px; margin-left: -2px; table-layout: fixed; width: 100%;">
+                    <thead class="tableHeader">
+                        <tr>
+                            <th style="width: 178px;">Test</th>
+                            <th style="width: 158px;">Patient Result</th>
+                            <th style="width: 168px;">Normal Range</th>
+                            <th style="width: 168px;">Units</th>
+                            <!-- <th style="width: 138px;">Units</th> -->
+                        </tr>
+                    </thead>
+
+                </table>
+            </div>
+        </div>
+        <div class="footer" style="page-break-after:always;font-size: 14px;">
+            <div style="background:#0d80d3;"></div>
+            <br/>
+            <div class="page">
+                <div class="subfooter centered">Page <span class="pagenumber"/> of <span class="pagecount"/></div>
+            </div>
+            <br/>
+            <!--<div class="centered" style="color: #0d80d3;font-size:12px">
+                * Referred test, contact lab for details. **Awaiting - application submitted to UKAS, internally verified by clinical consultants V=Venous, F=Fingerprick 
+                <br/> NB. In house Allergy Testing on Phadia 250 was introduced on 1st March 2022.
+            </div>-->
+        </div>
+        <div class="content">
+            <table style="padding-bottom: 24px; table-layout: fixed; " border="0">
+                <thead class="tableHeader" style="visibility: hidden;">
+                    <tr style="line-height: 0px !important; height: 0px;">
+                        <th class="invis-theader" style="width: 178px; height: 0px !important; line-height: 0px !important;" height="0px">Test</th>
+                        <th class="invis-theader" style="width: 158px; height: 0px !important; line-height: 0px !important;" height="0px">Patient Result</th>
+                        <th class="invis-theader" style="width: 168px; height: 0px !important; line-height: 0px !important;" height="0px">Normal Range</th>
+                        <th class="invis-theader" style="width: 168px; height: 0px !important; line-height: 0px !important;" height="0px">Units</th>
+                    </tr>
+                </thead>
+                <tbody class="optimale--details">
+                    <tr class="{!IF( NOT( ISBLANK( btRecord.Haemoglobin__c ) ) || NOT( ISBLANK( btRecord.Red_Blood_Cells__c ) ) || NOT( ISBLANK( btRecord.Haematocrit_Adj__c ) ) || NOT( ISBLANK( btRecord.Haematocrit__c ) ) || NOT( ISBLANK( btRecord.Mean_Cell_Volume__c ) ) || NOT( ISBLANK( btRecord.Red_Cell_Distribution__c ) ) || NOT( ISBLANK( btRecord.Mean_Cell_Haemoglobin__c ) ) || NOT( ISBLANK( btRecord.MCHC__c ) ) || NOT( ISBLANK( btRecord.Platelets__c ) ) || NOT( ISBLANK( btRecord.MPV__c ) ) || NOT( ISBLANK( btRecord.White_Blood_Cells__c ) ) || NOT( ISBLANK( btRecord.Neutrophils__c ) ) || NOT( ISBLANK( btRecord.Lymphocytes__c ) ) || NOT( ISBLANK( btRecord.Monocytes__c ) ) || NOT( ISBLANK( btRecord.Eosinophils__c ) ) || NOT( ISBLANK( btRecord.Basophils__c ) ) || NOT( ISBLANK( btRecord.Cortisol__c ) ) || NOT( ISBLANK( btRecord.Magnesium__c ) ), '', 'hide')}">
+                        <td class="title">Full Blood Count</td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Haemoglobin__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Haemoglobin_Min__c	)) || NOT(ISBLANK(btRecord.Haemoglobin_Max__c	)),
+                                         IF(btRecord.Haemoglobin__c < VALUE(btRecord.Haemoglobin_Min__c) || btRecord.Haemoglobin__c >  VALUE(btRecord.Haemoglobin_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td> Haemoglobin</td>
+                        <td style="width: 100px;">
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Haemoglobin__c	)), btRecord.Haemoglobin__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td >
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Haemoglobin__c)), btRecord.Haemoglobin__c, 0 ) < IF(NOT(ISBLANK(btRecord.Haemoglobin_Min__c)) , VALUE(btRecord.Haemoglobin_Min__c), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Haemoglobin__c)), btRecord.Haemoglobin__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Haemoglobin_Max__c ) ) , VALUE(btRecord.Haemoglobin_Max__c), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Haemoglobin_Min__c}"/> - <apex:outputText value="{!btRecord.Haemoglobin_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Haemoglobin_Units__c}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Red_Blood_Cells__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Red_Blood_Cells_Min__c	)) || NOT(ISBLANK(btRecord.Red_Blood_Cells_Max__c	)),
+                                         IF(btRecord.Red_Blood_Cells__c < VALUE(btRecord.Red_Blood_Cells_Min__c) || btRecord.Red_Blood_Cells__c >  VALUE(btRecord.Red_Blood_Cells_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Red Blood Cells</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Red_Blood_Cells__c	)), btRecord.Red_Blood_Cells__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Red_Blood_Cells__c)), btRecord.Red_Blood_Cells__c, 0 ) < IF(NOT(ISBLANK(btRecord.Red_Blood_Cells_Min__c)) , VALUE(btRecord.Red_Blood_Cells_Min__c), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Red_Blood_Cells__c)), btRecord.Red_Blood_Cells__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Red_Blood_Cells_Max__c ) ) , VALUE(btRecord.Red_Blood_Cells_Max__c), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Red_Blood_Cells_Min__c}"/> - <apex:outputText value="{!btRecord.Red_Blood_Cells_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Red_Blood_Cells_Units__c}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                        NOT( ISBLANK( btRecord.Haematocrit_Adj__c ) ), 
+                            IF(NOT(ISBLANK(btRecord.Haematocrit_Min_Adj__c	)) || NOT(ISBLANK(btRecord.Haematocrit_Max_Adj__c	)),
+                                 IF(btRecord.Haematocrit_Adj__c < VALUE(btRecord.Haematocrit_Min_Adj__c) || btRecord.Haematocrit_Adj__c >  VALUE(btRecord.Haematocrit_Max_Adj__c), 
+                                    'color-red'	, '' ) , 
+                                 '' ) ,
+                             'hide'
+                        )}">
+                            <td>Haematocrit </td>
+                            <td>
+                                <apex:outputText value="{0,number,#,##0.000}">
+                                    <apex:param value="{!IF(NOT(ISBLANK(btRecord.Haematocrit_Adj__c	)), btRecord.Haematocrit_Adj__c, 0 )}" />
+                                </apex:outPutText>
+                            </td>
+                            <td>
+                                <span class="status">
+                                    <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Haematocrit_Adj__c)), btRecord.Haematocrit_Adj__c, 0 ) < IF(NOT(ISBLANK(btRecord.Haematocrit_Min_Adj__c)) , VALUE(btRecord.Haematocrit_Min_Adj__c), 0), true, false)}">
+                                        <apex:outputText value="{!low}"/>
+                                        &nbsp;
+                                    </apex:outputText>
+                                    <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Haematocrit_Adj__c)), btRecord.Haematocrit_Adj__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Haematocrit_Max_Adj__c ) ) , VALUE(btRecord.Haematocrit_Max_Adj__c), 0) , true, false)}">
+                                        <apex:outputText value="{!high}" />
+                                        &nbsp;
+                                    </apex:outputText>
+                                </span>
+                                <span class="normal-range">
+                                        <apex:outputText value="{!btRecord.Haematocrit_Min_Adj__c}"/> - &nbsp;<apex:outputText value="{!btRecord.Haematocrit_Max_Adj__c}"/>
+                                </span>
+                            </td>
+                            <td>
+                                <apex:outputText value="{!btRecord.Haematocrit_Units_Adj__c}"/>
+                            </td>
+                        </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Haematocrit__c ) ) && ISBLANK( btRecord.Haematocrit_Adj__c ), 
+                                    IF(NOT(ISBLANK(btRecord.Haematocrit_Min__c	)) || NOT(ISBLANK(btRecord.Haematocrit_Max__c	)),
+                                         IF(btRecord.Haematocrit__c < VALUE(btRecord.Haematocrit_Min__c) || btRecord.Haematocrit__c >  VALUE(btRecord.Haematocrit_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Haematocrit</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Haematocrit__c	)), btRecord.Haematocrit__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Haematocrit__c)), btRecord.Haematocrit__c, 0 ) < IF(NOT(ISBLANK(btRecord.Haematocrit_Min__c)) , VALUE(btRecord.Haematocrit_Min__c), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Haematocrit__c)), btRecord.Haematocrit__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Haematocrit_Max__c ) ) , VALUE(btRecord.Haematocrit_Max__c), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Haematocrit_Min__c}"/> - &nbsp;<apex:outputText value="{!btRecord.Haematocrit_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Haematocrit_Units__c}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Mean_Cell_Volume__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Mean_Cell_Volume_Min__c	)) || NOT(ISBLANK(btRecord.Mean_Cell_Volume_Max__c	)),
+                                         IF(btRecord.Mean_Cell_Volume__c < VALUE(btRecord.Mean_Cell_Volume_Min__c) || btRecord.Mean_Cell_Volume__c >  VALUE(btRecord.Mean_Cell_Volume_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Mean Cell Volume</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Mean_Cell_Volume__c	)), btRecord.Mean_Cell_Volume__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Mean_Cell_Volume__c)), btRecord.Mean_Cell_Volume__c, 0 ) < IF(NOT(ISBLANK(btRecord.Mean_Cell_Volume_Min__c)) , VALUE(btRecord.Mean_Cell_Volume_Min__c), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Mean_Cell_Volume__c)), btRecord.Mean_Cell_Volume__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Mean_Cell_Volume_Max__c ) ) , VALUE(btRecord.Mean_Cell_Volume_Max__c), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Mean_Cell_Volume_Min__c}"/> -&nbsp;<apex:outputText value="{!btRecord.Mean_Cell_Volume_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Mean_Cell_Volume_Units__c}"/>
+                        </td>
+                        <td>
+                            &nbsp;	
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Red_Cell_Distribution__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Red_Cell_Distribution_Min__c	)) || NOT(ISBLANK(btRecord.Red_Cell_Distribution_Max__c	)),
+                                         IF(btRecord.Red_Cell_Distribution__c < VALUE(btRecord.Red_Cell_Distribution_Min__c) || btRecord.Red_Cell_Distribution__c >  VALUE(btRecord.Red_Cell_Distribution_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Red Cell Distribution</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Red_Cell_Distribution__c	)), btRecord.Red_Cell_Distribution__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Red_Cell_Distribution__c)), btRecord.Red_Cell_Distribution__c, 0 ) < IF(NOT(ISBLANK(btRecord.Red_Cell_Distribution_Min__c)) , VALUE(btRecord.Red_Cell_Distribution_Min__c), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Red_Cell_Distribution__c)), btRecord.Red_Cell_Distribution__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Red_Cell_Distribution_Max__c ) ) , VALUE(btRecord.Red_Cell_Distribution_Max__c), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Red_Cell_Distribution_Min__c}"/> - <apex:outputText value="{!btRecord.Red_Cell_Distribution_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Red_Cell_Distribution_Units__c}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Mean_Cell_Haemoglobin__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Mean_Cell_Haemoglobin_Min__c	)) || NOT(ISBLANK(btRecord.Mean_Cell_Haemoglobin_Max__c	)),
+                                         IF(btRecord.Mean_Cell_Haemoglobin__c < VALUE(btRecord.Mean_Cell_Haemoglobin_Min__c) || btRecord.Mean_Cell_Haemoglobin__c >  VALUE(btRecord.Mean_Cell_Haemoglobin_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Mean Cell Haemoglobin</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Mean_Cell_Haemoglobin__c	)), btRecord.Mean_Cell_Haemoglobin__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Mean_Cell_Haemoglobin__c)), btRecord.Mean_Cell_Haemoglobin__c, 0 ) < IF(NOT(ISBLANK(btRecord.Mean_Cell_Haemoglobin_Min__c)) , VALUE(btRecord.Mean_Cell_Haemoglobin_Min__c), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Mean_Cell_Haemoglobin__c)), btRecord.Mean_Cell_Haemoglobin__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Mean_Cell_Haemoglobin_Max__c ) ) , VALUE(btRecord.Mean_Cell_Haemoglobin_Max__c), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Mean_Cell_Haemoglobin_Min__c}"/> - &nbsp;<apex:outputText value="{!btRecord.Mean_Cell_Haemoglobin_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Mean_Cell_Haemoglobin_Units__c}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.MCHC__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.MCHC_Min__c	)) || NOT(ISBLANK(btRecord.MCHC_Max__c	)),
+                                         IF(btRecord.MCHC__c < VALUE(btRecord.MCHC_Min__c) || btRecord.MCHC__c >  VALUE(btRecord.MCHC_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>MCHC</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.MCHC__c	)), btRecord.MCHC__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.MCHC__c)), btRecord.MCHC__c, 0 ) < IF(NOT(ISBLANK(btRecord.MCHC_Min__c)) , VALUE(btRecord.MCHC_Min__c), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.MCHC__c)), btRecord.MCHC__c, 0 ) > IF(  NOT( ISBLANK( btRecord.MCHC_Max__c ) ) , VALUE(btRecord.MCHC_Max__c), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.MCHC_Min__c}"/> -&nbsp; <apex:outputText value="{!btRecord.MCHC_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.MCHC_Units__c}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Platelets__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Platelets_Min__c	)) || NOT(ISBLANK(btRecord.Platelets_Max__c	)),
+                                         IF(btRecord.Platelets__c < VALUE(btRecord.Platelets_Min__c) || btRecord.Platelets__c >  VALUE(btRecord.Platelets_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Platelets</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Platelets__c	)), btRecord.Platelets__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Platelets__c)), btRecord.Platelets__c, 0 ) < IF(NOT(ISBLANK(btRecord.Platelets_Min__c)) , VALUE(btRecord.Platelets_Min__c), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Platelets__c)), btRecord.Platelets__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Platelets_Max__c ) ) , VALUE(btRecord.Platelets_Max__c), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Platelets_Min__c}"/> -&nbsp; <apex:outputText value="{!btRecord.Platelets_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Platelets_Units__c}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.MPV__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.MPV_Min__c	)) || NOT(ISBLANK(btRecord.MPV_Max__c	)),
+                                         IF(btRecord.MPV__c < VALUE(btRecord.MPV_Min__c) || btRecord.MPV__c >  VALUE(btRecord.MPV_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>MPV</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.MPV__c	)), btRecord.MPV__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.MPV__c)), btRecord.MPV__c, 0 ) < IF(NOT(ISBLANK(btRecord.MPV_Min__c)) , VALUE(btRecord.MPV_Min__c), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.MPV__c)), btRecord.MPV__c, 0 ) > IF(  NOT( ISBLANK( btRecord.MPV_Max__c ) ) , VALUE(btRecord.MPV_Max__c), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.MPV_Min__c}"/> -&nbsp; <apex:outputText value="{!btRecord.MPV_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.MPV_Units__c}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.White_Blood_Cells__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.White_Blood_Cells_Min__c	)) || NOT(ISBLANK(btRecord.White_Blood_Cells_Max__c	)),
+                                         IF(btRecord.White_Blood_Cells__c < VALUE(btRecord.White_Blood_Cells_Min__c) || btRecord.White_Blood_Cells__c >  VALUE(btRecord.White_Blood_Cells_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>White Blood Cells</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.White_Blood_Cells__c	)), btRecord.White_Blood_Cells__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.White_Blood_Cells__c)), btRecord.White_Blood_Cells__c, 0 ) < IF(NOT(ISBLANK(btRecord.White_Blood_Cells_Min__c	)) , VALUE(btRecord.White_Blood_Cells_Min__c	), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.White_Blood_Cells__c)), btRecord.White_Blood_Cells__c, 0 ) > IF(  NOT( ISBLANK( btRecord.White_Blood_Cells_Max__c		 ) ) , VALUE(btRecord.White_Blood_Cells_Max__c		), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.White_Blood_Cells_Min__c	}"/> -&nbsp; <apex:outputText value="{!btRecord.White_Blood_Cells_Max__c		}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.White_Blood_Cells_Units__c		}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Neutrophils__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Neutrophils_Min__c	)) || NOT(ISBLANK(btRecord.Neutrophils_Max__c	)),
+                                         IF(btRecord.Neutrophils__c < VALUE(btRecord.Neutrophils_Min__c) || btRecord.Neutrophils__c >  VALUE(btRecord.Neutrophils_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Neutrophils</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Neutrophils__c	)), btRecord.Neutrophils__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Neutrophils__c)), btRecord.Neutrophils__c, 0 ) < IF(NOT(ISBLANK(btRecord.Neutrophils_Min__c	)) , VALUE(btRecord.Neutrophils_Min__c	), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Neutrophils__c)), btRecord.Neutrophils__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Neutrophils_Max__c		 ) ) , VALUE(btRecord.Neutrophils_Max__c		), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Neutrophils_Min__c	}"/> -&nbsp; <apex:outputText value="{!btRecord.Neutrophils_Max__c		}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Neutrophils_Units__c		}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Lymphocytes__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Lymphocytes_Min__c	)) || NOT(ISBLANK(btRecord.Lymphocytes_Max__c	)),
+                                         IF(btRecord.Lymphocytes__c < VALUE(btRecord.Lymphocytes_Min__c) || btRecord.Lymphocytes__c >  VALUE(btRecord.Lymphocytes_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Lymphocytes</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Lymphocytes__c	)), btRecord.Lymphocytes__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Lymphocytes__c)), btRecord.Lymphocytes__c, 0 ) < IF(NOT(ISBLANK(btRecord.Lymphocytes_Min__c	)) , VALUE(btRecord.Lymphocytes_Min__c	), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Lymphocytes__c)), btRecord.Lymphocytes__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Lymphocytes_Max__c		 ) ) , VALUE(btRecord.Lymphocytes_Max__c		), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Lymphocytes_Min__c	}"/> -&nbsp; <apex:outputText value="{!btRecord.Lymphocytes_Max__c		}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Lymphocytes_Units__c		}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Monocytes__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Monocytes_Min__c	)) || NOT(ISBLANK(btRecord.Monocytes_Max__c	)),
+                                         IF(btRecord.Monocytes__c < VALUE(btRecord.Monocytes_Min__c) || btRecord.Monocytes__c >  VALUE(btRecord.Monocytes_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Monocytes</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Monocytes__c	)), btRecord.Monocytes__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Monocytes__c)), btRecord.Monocytes__c, 0 ) < IF(NOT(ISBLANK(btRecord.Monocytes_Min__c	)) , VALUE(btRecord.Monocytes_Min__c	), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Monocytes__c)), btRecord.Monocytes__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Monocytes_Max__c		 ) ) , VALUE(btRecord.Monocytes_Max__c		), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Monocytes_Min__c	}"/> -&nbsp; <apex:outputText value="{!btRecord.Monocytes_Max__c		}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Monocytes_Units__c}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Eosinophils__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Eosinophils_Min__c	)) || NOT(ISBLANK(btRecord.Eosinophils_Max__c	)),
+                                         IF(btRecord.Eosinophils__c < VALUE(btRecord.Eosinophils_Min__c) || btRecord.Eosinophils__c >  VALUE(btRecord.Eosinophils_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Eosinophils</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Eosinophils__c	)), btRecord.Eosinophils__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Eosinophils__c)), btRecord.Eosinophils__c, 0 ) < IF(NOT(ISBLANK(btRecord.Eosinophils_Min__c	)) , VALUE(btRecord.Eosinophils_Min__c	), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Eosinophils__c)), btRecord.Eosinophils__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Eosinophils_Max__c		 ) ) , VALUE(btRecord.Eosinophils_Max__c		), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Eosinophils_Min__c	}"/> -&nbsp; <apex:outputText value="{!btRecord.Eosinophils_Max__c		}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Eosinophils_Units__c			}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Basophils__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Basophils_Min__c	)) || NOT(ISBLANK(btRecord.Basophils_Max__c	)),
+                                         IF(btRecord.Basophils__c < VALUE(btRecord.Basophils_Min__c) || btRecord.Basophils__c >  VALUE(btRecord.Basophils_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Basophils</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Basophils__c	)), btRecord.Basophils__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Basophils__c)), btRecord.Basophils__c, 0 ) < IF(NOT(ISBLANK(btRecord.Basophils_Min__c	)) , VALUE(btRecord.Basophils_Min__c	), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Basophils__c)), btRecord.Basophils__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Basophils_Max__c		 ) ) , VALUE(btRecord.Basophils_Max__c		), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Basophils_Min__c	}"/> -&nbsp; <apex:outputText value="{!btRecord.Basophils_Max__c		}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Basophils_Units__c}"/>
+                        </td>
+                    </tr>
+
+                    
+                    <tr class="{!IF( 
+                        NOT( ISBLANK( btRecord.Magnesium__c ) ), 
+                            IF(NOT(ISBLANK(btRecord.Magnesium_Min__c)) || NOT(ISBLANK(btRecord.Magnesium_Max__c	)),
+                                 IF(btRecord.Magnesium__c < VALUE(btRecord.Magnesium_Min__c) || btRecord.Magnesium__c >  VALUE(btRecord.Magnesium_Max__c), 
+                                    'color-red'	, '' ) , 
+                                 '' ) ,
+                             'hide'
+                        )}">
+                        <td>Magnesium</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Magnesium__c	)), btRecord.Magnesium__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Magnesium__c)), btRecord.Magnesium__c, 0 ) < IF(NOT(ISBLANK(btRecord.Magnesium_Min__c)) , VALUE(btRecord.Magnesium_Min__c), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Magnesium__c)), btRecord.Magnesium__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Magnesium_Max__c ) ) , VALUE(btRecord.Magnesium_Max__c), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                        </span>
+                        <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Magnesium_Min__c}"/> -&nbsp; <apex:outputText value="{!btRecord.Magnesium_Max__c}"/>
+                        </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Magnesium_Units__c}"/>
+                        </td>
+                    </tr>
+                    
+                    <tr class="{!IF( NOT( ISBLANK( btRecord.Albumin__c ) ) || NOT( ISBLANK( btRecord.Total_Protein__c ) ) || NOT( ISBLANK( btRecord.Globulin__c ) ) || NOT( ISBLANK( btRecord.HbA1c__c ) ), '', 'hide')}">
+                        <td class="title">Biochemistry</td>
+                    </tr>
+                    
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Albumin__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Albumin_Min__c	)) || NOT(ISBLANK(btRecord.Albumin_Max__c	)),
+                                         IF(btRecord.Albumin__c < VALUE(btRecord.Albumin_Min__c) || btRecord.Albumin__c >  VALUE(btRecord.Albumin_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Albumin</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Albumin__c	)), btRecord.Albumin__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Albumin__c)), btRecord.Albumin__c, 0 ) < IF(NOT(ISBLANK(btRecord.Albumin_Min__c	)) , VALUE(btRecord.Albumin_Min__c	), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Albumin__c)), btRecord.Albumin__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Albumin_Max__c		 ) ) , VALUE(btRecord.Albumin_Max__c		), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Albumin_Min__c	}"/> -&nbsp; <apex:outputText value="{!btRecord.Albumin_Max__c		}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Albumin_Units__c	}"/>
+                        </td>
+                    </tr>
+                    
+                    <tr class="{!IF( 
+                        NOT( ISBLANK( btRecord.Ferritin__c ) ), 
+                            IF(NOT(ISBLANK(btRecord.Ferritin_Min__c)) || NOT(ISBLANK(btRecord.Ferritin_Max__c	)),
+                                 IF(btRecord.Ferritin__c < VALUE(btRecord.Ferritin_Min__c) || btRecord.Ferritin__c >  VALUE(btRecord.Ferritin_Max__c), 
+                                    'color-red'	, '' ) , 
+                                 '' ) ,
+                             'hide'
+                        )}">
+                        <td>Ferritin</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Ferritin__c	)), btRecord.Ferritin__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Ferritin__c)), btRecord.Ferritin__c, 0 ) < IF(NOT(ISBLANK(btRecord.Ferritin_Min__c	)) , VALUE(btRecord.Ferritin_Min__c	), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Ferritin__c)), btRecord.Ferritin__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Ferritin_Max__c ) ) , VALUE(btRecord.Ferritin_Max__c), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                        </span>
+                        <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Ferritin_Min__c}"/> -&nbsp; <apex:outputText value="{!btRecord.Ferritin_Max__c}"/>
+                        </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Ferritin_Units__c}"/>
+                        </td>
+                    </tr>
+                    
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Total_Protein__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Total_Protein_Min__c	)) || NOT(ISBLANK(btRecord.Total_Protein_Max__c	)),
+                                         IF(btRecord.Total_Protein__c < VALUE(btRecord.Total_Protein_Min__c) || btRecord.Total_Protein__c >  VALUE(btRecord.Total_Protein_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Total Protein</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Total_Protein__c	)), btRecord.Total_Protein__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Total_Protein__c)), btRecord.Total_Protein__c, 0 ) < IF(NOT(ISBLANK(btRecord.Total_Protein_Min__c	)) , VALUE(btRecord.Total_Protein_Min__c	), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Total_Protein__c)), btRecord.Total_Protein__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Total_Protein_Max__c		 ) ) , VALUE(btRecord.Total_Protein_Max__c		), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Total_Protein_Min__c	}"/> -&nbsp; <apex:outputText value="{!btRecord.Total_Protein_Max__c		}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Total_Protein_Units__c		}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Globulin__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Globulin_Min__c	)) || NOT(ISBLANK(btRecord.Globulin_Max__c	)),
+                                         IF(btRecord.Globulin__c < VALUE(btRecord.Globulin_Min__c) || btRecord.Globulin__c >  VALUE(btRecord.Globulin_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Globulin</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Globulin__c	)), btRecord.Globulin__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Globulin__c)), btRecord.Globulin__c, 0 ) < IF(NOT(ISBLANK(btRecord.Globulin_Min__c	)) , VALUE(btRecord.Globulin_Min__c	), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Globulin__c)), btRecord.Globulin__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Globulin_Max__c		 ) ) , VALUE(btRecord.Globulin_Max__c		), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Globulin_Min__c	}"/> -&nbsp; <apex:outputText value="{!btRecord.Globulin_Max__c		}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Globulin_Units__c	}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.HbA1c__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.HbA1c_Min__c	)) || NOT(ISBLANK(btRecord.HbA1c_Max__c	)),
+                                         IF(btRecord.HbA1c__c < VALUE(btRecord.HbA1c_Min__c) || btRecord.HbA1c__c >  VALUE(btRecord.HbA1c_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>HbA1c-(IFCC)</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.HbA1c__c	)), btRecord.HbA1c__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.HbA1c__c)), btRecord.HbA1c__c, 0 ) < IF(NOT(ISBLANK(btRecord.HbA1c_Min__c	)) , VALUE(btRecord.HbA1c_Min__c	), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.HbA1c__c)), btRecord.HbA1c__c, 0 ) > IF(  NOT( ISBLANK( btRecord.HbA1c_Max__c		 ) ) , VALUE(btRecord.HbA1c_Max__c		), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.HbA1c_Min__c	}"/> -&nbsp; <apex:outputText value="{!btRecord.HbA1c_Max__c		}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.HbA1c_Units__c}"/>
+                        </td>
+                    </tr>
+                    
+                    <tr class="{!IF( NOT( ISBLANK( btRecord.Sodium__c ) ) || NOT( ISBLANK( btRecord.Urea__c ) ) || NOT( ISBLANK( btRecord.Creatinine__c ) ) || NOT( ISBLANK( btRecord.eGFR_MDRD__c ) ), '', 'hide')}">
+                        <td class="title">Kidney Function</td>
+                    </tr>
+                    
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Sodium__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Sodium_Min__c	)) || NOT(ISBLANK(btRecord.Sodium_Max__c	)),
+                                         IF(btRecord.Sodium__c < VALUE(btRecord.Sodium_Min__c) || btRecord.Sodium__c >  VALUE(btRecord.Sodium_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Sodium</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Sodium__c	)), btRecord.Sodium__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Sodium__c)), btRecord.Sodium__c, 0 ) < IF(NOT(ISBLANK(btRecord.Sodium_Min__c	)) , VALUE(btRecord.Sodium_Min__c	), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Sodium__c)), btRecord.Sodium__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Sodium_Max__c		 ) ) , VALUE(btRecord.Sodium_Max__c		), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Sodium_Min__c}"/> -&nbsp; <apex:outputText value="{!btRecord.Sodium_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Sodium_Units__c}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Urea__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Urea_Min__c	)) || NOT(ISBLANK(btRecord.Urea_Max__c	)),
+                                         IF(btRecord.Urea__c < VALUE(btRecord.Urea_Min__c) || btRecord.Urea__c >  VALUE(btRecord.Urea_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Urea</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Urea__c)), btRecord.Urea__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Urea__c)), btRecord.Urea__c, 0 ) < IF(NOT(ISBLANK(btRecord.Urea_Min__c	)) , VALUE(btRecord.Urea_Min__c	), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Urea__c)), btRecord.Urea__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Urea_Max__c		 ) ) , VALUE(btRecord.Urea_Max__c		), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Urea_Min__c}"/> -&nbsp; <apex:outputText value="{!btRecord.Urea_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Urea_Units__c	}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Creatinine__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Creatinine_Min__c	)) || NOT(ISBLANK(btRecord.Creatinine_Max__c	)),
+                                         IF(btRecord.Creatinine__c < VALUE(btRecord.Creatinine_Min__c) || btRecord.Creatinine__c >  VALUE(btRecord.Creatinine_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Creatinine</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Creatinine__c)), btRecord.Creatinine__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Creatinine__c)), btRecord.Creatinine__c, 0 ) < IF(NOT(ISBLANK(btRecord.Creatinine_Min__c	)) , VALUE(btRecord.Creatinine_Min__c	), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Creatinine__c)), btRecord.Creatinine__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Creatinine_Max__c		 ) ) , VALUE(btRecord.Creatinine_Max__c		), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Creatinine_Min__c}"/> -&nbsp; <apex:outputText value="{!btRecord.Creatinine_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Creatinine_Units__c	}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.eGFR_MDRD__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.eGFR_Min__c	)) || NOT(ISBLANK(btRecord.eGFR_Max__c	)),
+                                         IF(btRecord.eGFR_MDRD__c < VALUE(btRecord.eGFR_Min__c) || btRecord.eGFR_MDRD__c >  VALUE(btRecord.eGFR_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>eGFR(Caucasian Only)</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.eGFR_MDRD__c)), btRecord.eGFR_MDRD__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.eGFR_MDRD__c)), btRecord.eGFR_MDRD__c, 0 ) < IF(NOT(ISBLANK(btRecord.eGFR_Min__c	)) , VALUE(btRecord.eGFR_Min__c	), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.eGFR_MDRD__c)), btRecord.eGFR_MDRD__c, 0 ) > IF(  NOT( ISBLANK( btRecord.eGFR_Max__c		 ) ) , VALUE(btRecord.eGFR_Max__c		), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.eGFR_Min__c}"/> -&nbsp; <apex:outputText value="{!btRecord.eGFR_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.eGFR_Units__c	}"/>
+                        </td>
+                    </tr>
+                    
+                    <tr class="{!IF( NOT( ISBLANK( btRecord.ALT__c ) ) || NOT( ISBLANK( btRecord.GGT__c ) ) || NOT( ISBLANK( btRecord.Total_Bilirubin__c ) ) || NOT( ISBLANK( btRecord.ALP__c ) ), '', 'hide')}">
+                        <td class="title">Liver Function</td>
+                    </tr>
+                    
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.ALT__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.ALT_Min__c	)) || NOT(ISBLANK(btRecord.ALT_Max__c	)),
+                                         IF(btRecord.ALT__c < VALUE(btRecord.ALT_Min__c) || btRecord.ALT__c >  VALUE(btRecord.ALT_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>ALT</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.ALT__c)), btRecord.ALT__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.ALT__c)), btRecord.ALT__c, 0 ) < IF(NOT(ISBLANK(btRecord.ALT_Min__c	)) , VALUE(btRecord.ALT_Min__c	), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.ALT__c)), btRecord.ALT__c, 0 ) > IF(  NOT( ISBLANK( btRecord.ALT_Max__c		 ) ) , VALUE(btRecord.ALT_Max__c		), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.ALT_Min__c}"/> -&nbsp; <apex:outputText value="{!btRecord.ALT_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.ALT_Units__c}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.GGT__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.GGT_Min__c	)) || NOT(ISBLANK(btRecord.GGT_Max__c	)),
+                                         IF(btRecord.GGT__c < VALUE(btRecord.GGT_Min__c) || btRecord.GGT__c >  VALUE(btRecord.GGT_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>GGT</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.GGT__c)), btRecord.GGT__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.GGT__c)), btRecord.GGT__c, 0 ) < IF(NOT(ISBLANK(btRecord.GGT_Min__c	)) , VALUE(btRecord.GGT_Min__c	), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.GGT__c)), btRecord.GGT__c, 0 ) > IF(  NOT( ISBLANK( btRecord.GGT_Max__c		 ) ) , VALUE(btRecord.GGT_Max__c		), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.GGT_Min__c}"/> -&nbsp; <apex:outputText value="{!btRecord.GGT_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.GGT_Units__c}"/>
+                        </td>
+                    </tr> 
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Total_Bilirubin__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Total_Bilirubin_Min__c	)) || NOT(ISBLANK(btRecord.Total_Bilirubin_Max__c	)),
+                                         IF(btRecord.Total_Bilirubin__c < VALUE(btRecord.Total_Bilirubin_Min__c) || btRecord.Total_Bilirubin__c >  VALUE(btRecord.Total_Bilirubin_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Total Bilirubin</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Total_Bilirubin__c)), btRecord.Total_Bilirubin__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Total_Bilirubin__c)), btRecord.Total_Bilirubin__c, 0 ) < IF(NOT(ISBLANK(btRecord.Total_Bilirubin_Min__c		)) , VALUE(btRecord.Total_Bilirubin_Min__c		), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Total_Bilirubin__c)), btRecord.Total_Bilirubin__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Total_Bilirubin_Max__c			 ) ) , VALUE(btRecord.Total_Bilirubin_Max__c			), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Total_Bilirubin_Min__c	}"/> -&nbsp; <apex:outputText value="{!btRecord.Total_Bilirubin_Max__c	}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Total_Bilirubin_Units__c	}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.ALP__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.ALP_Min__c	)) || NOT(ISBLANK(btRecord.ALP_Max__c	)),
+                                         IF(btRecord.ALP__c < VALUE(btRecord.ALP_Min__c) || btRecord.ALP__c >  VALUE(btRecord.ALP_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>ALP</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.ALP__c)), btRecord.ALP__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.ALP__c)), btRecord.ALP__c, 0 ) < IF(NOT(ISBLANK(btRecord.ALP_Min__c		)) , VALUE(btRecord.ALP_Min__c		), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.ALP__c)), btRecord.ALP__c, 0 ) > IF(  NOT( ISBLANK( btRecord.ALP_Max__c			 ) ) , VALUE(btRecord.ALP_Max__c			), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.ALP_Min__c	}"/> -&nbsp; <apex:outputText value="{!btRecord.ALP_Max__c	}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.ALP_Units__c	}"/>
+                        </td>
+                    </tr>
+                    
+                    <tr class="{!IF( NOT( ISBLANK( btRecord.Cholesterol__c ) ) || NOT( ISBLANK( btRecord.HDL__c ) ) || NOT( ISBLANK( btRecord.Triglycerides__c ) ) || NOT( ISBLANK( btRecord.LDL__c ) ) || NOT( ISBLANK( btRecord.HDL_Cholesterol_ratio__c ) ) || NOT( ISBLANK( btRecord.Non_HDL_Cholesterol__c ) ), '', 'hide')}" >
+                        <td class="title">Lipids</td>
+                    </tr>
+                    
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Cholesterol__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Cholesterol_Min__c	)) || NOT(ISBLANK(btRecord.Cholesterol_Max__c	)),
+                                         IF(btRecord.Cholesterol__c < VALUE(btRecord.Cholesterol_Min__c) || btRecord.Cholesterol__c >  VALUE(btRecord.Cholesterol_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Cholesterol</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Cholesterol__c)), btRecord.Cholesterol__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Cholesterol__c)), btRecord.Cholesterol__c, 0 ) < IF(NOT(ISBLANK(btRecord.Cholesterol_Min__c		)) , VALUE(btRecord.Cholesterol_Min__c		), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Cholesterol__c)), btRecord.Cholesterol__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Cholesterol_Max__c			 ) ) , VALUE(btRecord.Cholesterol_Max__c			), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Cholesterol_Min__c	}"/> -&nbsp; <apex:outputText value="{!btRecord.Cholesterol_Max__c	}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Cholesterol_Units__c	}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.HDL__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.HDL_Min__c	)) || NOT(ISBLANK(btRecord.HDL_Max__c	)),
+                                         IF(btRecord.HDL__c < VALUE(btRecord.HDL_Min__c) || btRecord.HDL__c >  VALUE(btRecord.HDL_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>HDL</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.HDL__c)), btRecord.HDL__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.HDL__c)), btRecord.HDL__c, 0 ) < IF(NOT(ISBLANK(btRecord.HDL_Min__c		)) , VALUE(btRecord.HDL_Min__c		), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.HDL__c)), btRecord.HDL__c, 0 ) > IF(  NOT( ISBLANK( btRecord.HDL_Max__c			 ) ) , VALUE(btRecord.HDL_Max__c			), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.HDL_Min__c	}"/> -&nbsp; <apex:outputText value="{!btRecord.HDL_Max__c	}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.HDL_Units__c}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                        NOT( ISBLANK( btRecord.HDL_of_Total__c ) ), 
+                            IF(NOT(ISBLANK(btRecord.HDL_of_Total_Min__c	)) && NOT(ISBLANK(btRecord.HDL_of_Total_Field_Max__c	)),
+                                 IF(btRecord.HDL_of_Total__c < VALUE(SUBSTITUTE(btRecord.HDL_of_Total_Min__c,'%','')) || btRecord.HDL_of_Total__c >  VALUE(SUBSTITUTE(btRecord.HDL_of_Total_Field_Max__c,'%','')), 
+                                    'color-red'	, '' ) , 
+                                 '' ) ,
+                             'hide'
+                        )}">
+                        <td>HDL % of Total</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.HDL_of_Total__c)), btRecord.HDL_of_Total__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.HDL_of_Total__c)), btRecord.HDL_of_Total__c, 0 ) < IF(NOT(ISBLANK(btRecord.HDL_of_Total_Min__c		)) , VALUE(SUBSTITUTE(btRecord.HDL_of_Total_Min__c,'%','')		), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.HDL_of_Total__c)), btRecord.HDL_of_Total__c, 0 ) > IF(  NOT( ISBLANK( btRecord.HDL_of_Total_Field_Max__c			 ) ) , VALUE(SUBSTITUTE(btRecord.HDL_of_Total_Field_Max__c,'%','')			), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                        </span>
+                        <span class="normal-range">
+                                <apex:outputText value="{!btRecord.HDL_of_Total_Min__c	}"/> -&nbsp; <apex:outputText value="{!btRecord.HDL_of_Total_Field_Max__c	}"/>
+                        </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.HDL_Unit__c}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Triglycerides__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Triglycerides_Min__c	)) || NOT(ISBLANK(btRecord.Triglycerides_Max__c	)),
+                                         IF(btRecord.Triglycerides__c < VALUE(btRecord.Triglycerides_Min__c) || btRecord.Triglycerides__c >  VALUE(btRecord.Triglycerides_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Triglycerides</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Triglycerides__c)), btRecord.Triglycerides__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Triglycerides__c)), btRecord.Triglycerides__c, 0 ) < IF(NOT(ISBLANK(btRecord.Triglycerides_Min__c		)) , VALUE(btRecord.Triglycerides_Min__c		), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Triglycerides__c)), btRecord.Triglycerides__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Triglycerides_Max__c			 ) ) , VALUE(btRecord.Triglycerides_Max__c			), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Triglycerides_Min__c	}"/> -&nbsp; <apex:outputText value="{!btRecord.Triglycerides_Max__c	}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Triglycerides_Units__c}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.LDL__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.LDL_Min__c	)) || NOT(ISBLANK(btRecord.LDL_Max__c	)),
+                                         IF(btRecord.LDL__c < VALUE(btRecord.LDL_Min__c) || btRecord.LDL__c >  VALUE(btRecord.LDL_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>LDL</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.LDL__c)), btRecord.LDL__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.LDL__c)), btRecord.LDL__c, 0 ) < IF(NOT(ISBLANK(btRecord.LDL_Min__c			)) , VALUE(btRecord.LDL_Min__c			), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.LDL__c)), btRecord.LDL__c, 0 ) > IF(  NOT( ISBLANK( btRecord.LDL_Max__c				 ) ) , VALUE(btRecord.LDL_Max__c				), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.LDL_Min__c		}"/> -&nbsp; <apex:outputText value="{!btRecord.LDL_Max__c		}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.LDL_Units__c}"/>
+                        </td>
+                    </tr>
+                    <!-- <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.HDL_Cholesterol_ratio__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.HDL_Cholesterol_ratio_Min__c	)) || NOT(ISBLANK(btRecord.HDL_Cholesterol_ratio_Max__c	)),
+                                         IF(btRecord.HDL_Cholesterol_ratio__c < VALUE(btRecord.HDL_Cholesterol_ratio_Min__c) || btRecord.HDL_Cholesterol_ratio__c >  VALUE(btRecord.HDL_Cholesterol_ratio_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>HDL Cholesterol ratio</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.HDL_Cholesterol_ratio__c)), btRecord.HDL_Cholesterol_ratio__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.HDL_Cholesterol_ratio__c	)), btRecord.HDL_Cholesterol_ratio__c	, 0 ) < IF(NOT(ISBLANK(btRecord.HDL_Cholesterol_ratio_Min__c			)) , VALUE(btRecord.HDL_Cholesterol_ratio_Min__c			), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.HDL_Cholesterol_ratio__c	)), btRecord.HDL_Cholesterol_ratio__c	, 0 ) > IF(  NOT( ISBLANK( btRecord.HDL_Cholesterol_ratio_Max__c				 ) ) , VALUE(btRecord.HDL_Cholesterol_ratio_Max__c				), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.HDL_Cholesterol_ratio_Min__c		}"/> -&nbsp; <apex:outputText value="{!btRecord.HDL_Cholesterol_ratio_Max__c		}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.HDL_Cholesterol_ratio_Units__c	}"/>
+                        </td>
+                    </tr> -->
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Non_HDL_Cholesterol__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Non_HDL_Cholesterol_Min__c	)) || NOT(ISBLANK(btRecord.Non_HDL_Cholesterol_Max__c	)),
+                                         IF(btRecord.Non_HDL_Cholesterol__c < VALUE(btRecord.Non_HDL_Cholesterol_Min__c) || btRecord.Non_HDL_Cholesterol__c >  VALUE(btRecord.Non_HDL_Cholesterol_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Non HDL Cholesterol</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Non_HDL_Cholesterol__c)), btRecord.Non_HDL_Cholesterol__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Non_HDL_Cholesterol__c)), btRecord.Non_HDL_Cholesterol__c, 0 ) < IF(NOT(ISBLANK(btRecord.Non_HDL_Cholesterol_Min__c)) , VALUE(btRecord.Non_HDL_Cholesterol_Min__c), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Non_HDL_Cholesterol__c)), btRecord.Non_HDL_Cholesterol__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Non_HDL_Cholesterol_Max__c ) ) , VALUE(btRecord.Non_HDL_Cholesterol_Max__c), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Non_HDL_Cholesterol_Min__c}"/> - &nbsp;<apex:outputText value="{!btRecord.Non_HDL_Cholesterol_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Non_HDL_Cholesterol_Units__c}"/>
+                        </td>
+                    </tr>
+                    
+                    
+                    <tr class="{!IF( NOT( ISBLANK( btRecord.Testosterone__c ) ) || NOT( ISBLANK( btRecord.Prolactin__c ) ) || NOT( ISBLANK( btRecord.SHBG__c ) ) || NOT( ISBLANK( btRecord.Free_Testosterone__c ) ) || NOT( ISBLANK( btRecord.Oestradiol__c ) ) || NOT( ISBLANK( btRecord.LH__c ) ) || NOT( ISBLANK( btRecord.FSH__c ) ), '', 'hide')}">
+                        <td class="title">Hormones</td>
+                    </tr>
+                    
+                    <tr class="{!IF( 
+                        NOT( ISBLANK( btRecord.Cortisol__c ) && CONTAINS(btRecord.Test_Type__c, 'OPT912') ), 
+                            IF(NOT(ISBLANK(btRecord.Cortisol_Min__c)) || NOT(ISBLANK(btRecord.Cortisol_Max__c	)),
+                                 IF(btRecord.Cortisol__c < VALUE(btRecord.Cortisol_Min__c) || btRecord.Cortisol__c >  VALUE(btRecord.Cortisol_Max__c), 
+                                    'color-red'	, '' ) , 
+                                 '' ) ,
+                             'hide'
+                        )}">
+                        <td>Cortisol</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Cortisol__c	)), btRecord.Cortisol__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Cortisol__c)), btRecord.Cortisol__c, 0 ) < IF(NOT(ISBLANK(btRecord.Cortisol_Min__c	)) , VALUE(btRecord.Cortisol_Min__c	), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Cortisol__c)), btRecord.Cortisol__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Cortisol_Max__c ) ) , VALUE(btRecord.Cortisol_Max__c), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                        </span>
+                        <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Cortisol_Min__c}"/> -&nbsp; <apex:outputText value="{!btRecord.Cortisol_Max__c}"/>
+                        </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Cortisol_Units__c}"/>
+                        </td>
+                    </tr>
+                    
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.FSH__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.FSH_Min__c	)) || NOT(ISBLANK(btRecord.FSH_Max__c	)),
+                                         IF(btRecord.FSH__c < VALUE(btRecord.FSH_Min__c) || btRecord.FSH__c >  VALUE(btRecord.FSH_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>FSH</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.FSH__c)), btRecord.FSH__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.FSH__c)), btRecord.FSH__c, 0 ) < IF(NOT(ISBLANK(btRecord.FSH_Min__c)) , VALUE(btRecord.FSH_Min__c), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.FSH__c)), btRecord.FSH__c, 0 ) > IF(  NOT( ISBLANK( btRecord.FSH_Max__c ) ) , VALUE(btRecord.FSH_Max__c), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.FSH_Min__c}"/> - &nbsp;<apex:outputText value="{!btRecord.FSH_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.FSH_Units__c}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.LH__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.LH_Min__c	)) || NOT(ISBLANK(btRecord.LH_Max__c	)),
+                                         IF(btRecord.LH__c < VALUE(btRecord.LH_Min__c) || btRecord.LH__c >  VALUE(btRecord.LH_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>LH</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.LH__c)), btRecord.LH__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.LH__c)), btRecord.LH__c, 0 ) < IF(NOT(ISBLANK(btRecord.LH_Min__c)) , VALUE(btRecord.LH_Min__c), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.LH__c)), btRecord.LH__c, 0 ) > IF(  NOT( ISBLANK( btRecord.LH_Max__c ) ) , VALUE(btRecord.LH_Max__c), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.LH_Min__c}"/> - &nbsp;<apex:outputText value="{!btRecord.LH_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.LH_Units__c}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Oestradiol__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Oestradiol_Min__c	)) || NOT(ISBLANK(btRecord.Oestradiol_Max__c	)),
+                                         IF(btRecord.Oestradiol__c < VALUE(btRecord.Oestradiol_Min__c) || btRecord.Oestradiol__c >  VALUE(btRecord.Oestradiol_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Oestradiol</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Oestradiol__c)), btRecord.Oestradiol__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Oestradiol__c	)), btRecord.Oestradiol__c	, 0 ) < IF(NOT(ISBLANK(btRecord.Oestradiol_Min__c)) , VALUE(btRecord.Oestradiol_Min__c), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Oestradiol__c	)), btRecord.Oestradiol__c	, 0 ) > IF(  NOT( ISBLANK( btRecord.Oestradiol_Max__c ) ) , VALUE(btRecord.Oestradiol_Max__c), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Oestradiol_Min__c}"/> - &nbsp;<apex:outputText value="{!btRecord.Oestradiol_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Oestradiol_Units__c}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Free_Testosterone__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Free_Testosterone_Min__c	)) || NOT(ISBLANK(btRecord.Free_Testosterone_Max__c	)),
+                                         IF(btRecord.Free_Testosterone__c < VALUE(btRecord.Free_Testosterone_Min__c) || btRecord.Free_Testosterone__c >  VALUE(btRecord.Free_Testosterone_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Free-Testosterone (Calculated)</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Free_Testosterone__c	)), btRecord.Free_Testosterone__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Free_Testosterone__c	)), btRecord.Free_Testosterone__c	, 0 ) < IF(NOT(ISBLANK(btRecord.Free_Testosterone_Min__c)) , VALUE(btRecord.Free_Testosterone_Min__c), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Free_Testosterone__c	)), btRecord.Free_Testosterone__c, 0 ) > IF(  NOT( ISBLANK( btRecord.Free_Testosterone_Max__c ) ) , VALUE(btRecord.Free_Testosterone_Max__c), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Free_Testosterone_Min__c}"/> - &nbsp;<apex:outputText value="{!btRecord.Free_Testosterone_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Free_Testosterone_Units__c}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.SHBG__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.SHBG_Min__c	)) || NOT(ISBLANK(btRecord.SHBG_Max__c	)),
+                                         IF(btRecord.SHBG__c < VALUE(btRecord.SHBG_Min__c) || btRecord.SHBG__c >  VALUE(btRecord.SHBG_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>SHBG</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.SHBG__c)), btRecord.SHBG__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.SHBG__c	)), btRecord.SHBG__c	, 0 ) < IF(NOT(ISBLANK(btRecord.SHBG_Min__c)) , VALUE(btRecord.SHBG_Min__c), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.SHBG__c	)), btRecord.SHBG__c	, 0 ) > IF(  NOT( ISBLANK( btRecord.SHBG_Max__c ) ) , VALUE(btRecord.SHBG_Max__c), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.SHBG_Min__c}"/> - &nbsp;<apex:outputText value="{!btRecord.SHBG_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.SHBG_Units__c}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Prolactin__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Prolactin_Min__c	)) || NOT(ISBLANK(btRecord.Prolactin_Max__c	)),
+                                         IF(btRecord.Prolactin__c < VALUE(btRecord.Prolactin_Min__c) || btRecord.Prolactin__c >  VALUE(btRecord.Prolactin_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Prolactin</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Prolactin__c)), btRecord.Prolactin__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Prolactin__c	)), btRecord.Prolactin__c	, 0 ) < IF(NOT(ISBLANK(btRecord.Prolactin_Min__c)) , VALUE(btRecord.Prolactin_Min__c), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Prolactin__c	)), btRecord.Prolactin__c	, 0 ) > IF(  NOT( ISBLANK( btRecord.Prolactin_Max__c ) ) , VALUE(btRecord.Prolactin_Max__c), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Prolactin_Min__c}"/> - &nbsp;<apex:outputText value="{!btRecord.Prolactin_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Prolactin_Units__c}"/>
+                        </td>
+                    </tr>
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Testosterone__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Testosterone_Min__c	)) || NOT(ISBLANK(btRecord.Testosterone_Max__c	)),
+                                         IF(btRecord.Testosterone__c < VALUE(btRecord.Testosterone_Min__c) || btRecord.Testosterone__c >  VALUE(btRecord.Testosterone_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Testosterone</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Testosterone__c)), btRecord.Testosterone__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Testosterone__c	)), btRecord.Testosterone__c	, 0 ) < IF(NOT(ISBLANK(btRecord.Testosterone_Min__c)) , VALUE(btRecord.Testosterone_Min__c), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Testosterone__c	)), btRecord.Testosterone__c	, 0 ) > IF(  NOT( ISBLANK( btRecord.Testosterone_Max__c ) ) , VALUE(btRecord.Testosterone_Max__c), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Testosterone_Min__c}"/> - &nbsp;<apex:outputText value="{!btRecord.Testosterone_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Testosterone_Units__c	}"/>
+                        </td>
+                    </tr>
+					
+					 
+                    <tr class="{!IF( NOT( ISBLANK( btRecord.TSH__c ) ) || NOT( ISBLANK( btRecord.Free_T4__c ) ), '', 'hide')}">
+                        <td class="title">Thyroid Function</td>
+                    </tr>
+                    
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.TSH__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.TSH_Min__c	)) || NOT(ISBLANK(btRecord.TSH_Max__c	)),
+                                         IF(btRecord.TSH__c < VALUE(btRecord.TSH_Min__c) || btRecord.TSH__c >  VALUE(btRecord.TSH_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>TSH</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.TSH__c)), btRecord.TSH__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.TSH__c	)), btRecord.TSH__c	, 0 ) < IF(NOT(ISBLANK(btRecord.TSH_Min__c)) , VALUE(btRecord.TSH_Min__c), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.TSH__c	)), btRecord.TSH__c	, 0 ) > IF(  NOT( ISBLANK( btRecord.TSH_Max__c ) ) , VALUE(btRecord.TSH_Max__c), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.TSH_Min__c}"/> - &nbsp;<apex:outputText value="{!btRecord.TSH_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.TSH_Units__c}"/>
+                        </td>
+                    </tr>
+				
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.Free_T4__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.Free_T4_Min__c	)) || NOT(ISBLANK(btRecord.Free_T4_Max__c	)),
+                                         IF(btRecord.Free_T4__c < VALUE(btRecord.Free_T4_Min__c) || btRecord.Free_T4__c >  VALUE(btRecord.Free_T4_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>Free T4</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.Free_T4__c)), btRecord.Free_T4__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td>
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.Free_T4__c	)), btRecord.Free_T4__c	, 0 ) < IF(NOT(ISBLANK(btRecord.Free_T4_Min__c)) , VALUE(btRecord.Free_T4_Min__c), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.Free_T4__c	)), btRecord.Free_T4__c	, 0 ) > IF(  NOT( ISBLANK( btRecord.Free_T4_Max__c ) ) , VALUE(btRecord.Free_T4_Max__c), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.Free_T4_Min__c}"/> - &nbsp;<apex:outputText value="{!btRecord.Free_T4_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.Free_T4_Units__c}"/>
+                        </td>
+                    </tr>
+                
+                    <tr class="{!IF( NOT( ISBLANK( btRecord.PSA_Prostate__c ) ), '', 'hide')}" >
+                        <td class="title">Markers</td>
+                    </tr>
+                    
+                    <tr class="{!IF( 
+                                NOT( ISBLANK( btRecord.PSA_Prostate__c ) ), 
+                                    IF(NOT(ISBLANK(btRecord.PSA_Prostate_Min__c	)) || NOT(ISBLANK(btRecord.PSA_Prostate_Max__c	)),
+                                         IF(btRecord.PSA_Prostate__c < VALUE(btRecord.PSA_Prostate_Min__c) || btRecord.PSA_Prostate__c >  VALUE(btRecord.PSA_Prostate_Max__c), 
+                                            'color-red'	, '' ) , 
+                                         '' ) ,
+                                     'hide'
+                                )}">
+                        <td>PSA - Non Symptomatic</td>
+                        <td>
+                            <apex:outputText value="{0,number,#,##0.000}">
+                                <apex:param value="{!IF(NOT(ISBLANK(btRecord.PSA_Prostate__c)), btRecord.PSA_Prostate__c, 0 )}" />
+                            </apex:outPutText>
+                        </td>
+                        <td >
+                            <span class="status">
+                                <apex:outputText rendered="{!IF( IF(NOT(ISBLANK(btRecord.PSA_Prostate__c)), btRecord.PSA_Prostate__c, 0 ) < IF(NOT(ISBLANK(btRecord.PSA_Prostate_Min__c)) , VALUE(btRecord.PSA_Prostate_Min__c), 0), true, false)}">
+                                    <apex:outputText value="{!low}"/>
+                                    &nbsp;
+                                </apex:outputText>
+                                <apex:outputText rendered="{!IF(  IF(NOT(ISBLANK(btRecord.PSA_Prostate__c)), btRecord.PSA_Prostate__c, 0 ) > IF(  NOT( ISBLANK( btRecord.PSA_Prostate_Max__c ) ) , VALUE(btRecord.PSA_Prostate_Max__c), 0) , true, false)}">
+                                    <apex:outputText value="{!high}" />
+                                    &nbsp;
+                                </apex:outputText>
+                           </span>
+                           <span class="normal-range">
+                                <apex:outputText value="{!btRecord.PSA_Prostate_Min__c}"/> - &nbsp;<apex:outputText value="{!btRecord.PSA_Prostate_Max__c}"/>
+                           </span>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!btRecord.PSA_Prostate_Units__c}"/>
+                        </td>
+                    </tr>
+                
+                </tbody>
+            </table>
+        </div>
+    </body>
+</apex:page>

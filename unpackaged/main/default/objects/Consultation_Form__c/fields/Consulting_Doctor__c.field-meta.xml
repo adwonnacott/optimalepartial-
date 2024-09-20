@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Consulting_Doctor__c</fullName>
+    <externalId>false</externalId>
+    <label>Consulting Doctor</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Dr Chris Airey</fullName>
+                <default>false</default>
+                <label>Dr Chris Airey</label>
+            </value>
+            <value>
+                <fullName>Dr Aman Chungh</fullName>
+                <default>false</default>
+                <label>Dr Aman Chungh</label>
+            </value>
+            <value>
+                <fullName>Dr Lauren Airey</fullName>
+                <default>false</default>
+                <label>Dr Lauren Airey</label>
+            </value>
+            <value>
+                <fullName>Dr Zak Taylor</fullName>
+                <default>false</default>
+                <label>Dr Zak Taylor</label>
+            </value>
+            <value>
+                <fullName>Dr Nitin Shori</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Dr Nitin Shori</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

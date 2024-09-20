@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Meds Order</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Meds Orders</value>
+    </caseValues>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <layouts>
+        <layout>Meds Order Layout</layout>
+        <sections>
+            <label>
+                <!-- Custom Links -->
+            </label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>
+                <!-- Medications -->
+            </label>
+            <section>Medications</section>
+        </sections>
+        <sections>
+            <label>
+                <!-- Patient Details -->
+            </label>
+            <section>Patient Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>OM Meds Order Layout Community Portal</layout>
+        <sections>
+            <label>
+                <!-- Custom Links -->
+            </label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label>
+            <!-- New Prescription -->
+        </label>
+        <name>New_Prescription</name>
+    </quickActions>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label>
+            <!-- New_Prescription -->
+        </label>
+        <name>New_Prescription</name>
+    </webLinks>
+</CustomObjectTranslation>

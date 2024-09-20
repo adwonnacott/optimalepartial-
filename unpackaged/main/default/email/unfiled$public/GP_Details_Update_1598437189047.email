@@ -1,0 +1,15 @@
+<html>
+ <head> 
+  <title></title> 
+ </head> 
+ <body style="height: auto; min-height: auto;">
+  Hi&nbsp;{{{Recipient.FirstName}}} 
+  <br /> 
+  <br /> We need to ensure our records are up to date with your GP's details so we are able to update them on your treatment with us. If you could please reply to this email with your GP's name and practice address so we can update our systems. 
+  <br /> 
+  <br /> Please let us know if you have any questions at all. 
+  <br /> 
+  <br /> Many thanks 
+  <br /> Optimale&nbsp;
+ </body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Order Source -->
+        </label>
+        <name>Order_Source__c</name>
+        <picklistValues>
+            <masterLabel>Auto Subscription</masterLabel>
+            <translation>
+                <!-- Auto Subscription -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manual PT Request</masterLabel>
+            <translation>
+                <!-- Manual PT Request -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

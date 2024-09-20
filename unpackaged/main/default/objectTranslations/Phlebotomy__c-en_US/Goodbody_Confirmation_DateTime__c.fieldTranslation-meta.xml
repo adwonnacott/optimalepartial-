@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Goodbody Confirmation DateTime -->
+        </label>
+        <name>Goodbody_Confirmation_DateTime__c</name>
+    </CustomFieldTranslation>

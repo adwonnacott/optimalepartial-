@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Generate_PDF_Using_VFPage</name>
+        <label>Generate PDF Using VFPage</label>
+        <locationX>242</locationX>
+        <locationY>539</locationY>
+        <actionName>GeneratePDFInvocable</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>GeneratePDFInvocable</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>57.0</apiVersion>
+    <decisions>
+        <name>Check_Field_Updates</name>
+        <label>Check Field Updates</label>
+        <locationX>374</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Auto_send_to_patient</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Results_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Auto-send to patient</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Generate_PDF_Using_VFPage</targetReference>
+            </connector>
+            <label>Auto-send to patient</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Which_Action</name>
+        <label>Which Action?</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Check_Field_Updates</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>On Update</defaultConnectorLabel>
+        <rules>
+            <name>On_Insert</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ISNEW</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>On Insert</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>ISNEW</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <interviewLabel>Auto-send to patient Blood Test Trigger Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Auto-send to patient Blood Test Trigger Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Which_Action</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Results_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Auto-send to patient</stringValue>
+            </value>
+        </filters>
+        <object>Blood_Test__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

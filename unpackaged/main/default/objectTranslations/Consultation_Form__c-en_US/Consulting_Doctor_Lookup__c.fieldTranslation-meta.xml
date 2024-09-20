@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Consulting Doctor -->
+        </label>
+        <name>Consulting_Doctor_Lookup__c</name>
+        <relationshipLabel>
+            <!-- Consultation Forms -->
+        </relationshipLabel>
+    </CustomFieldTranslation>

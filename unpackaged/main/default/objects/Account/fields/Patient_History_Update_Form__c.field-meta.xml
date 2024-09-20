@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Patient_History_Update_Form__c</fullName>
+    <description>Online form to send to Patient for them to update their Patient History</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Online form to send to Patient for them to update their Patient History</inlineHelpText>
+    <label>Patient History Update Form</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Url</type>
+</CustomField>

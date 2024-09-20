@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Dispensing Status -->
+        </label>
+        <name>Dispensing_Status__c</name>
+        <picklistValues>
+            <masterLabel>Dispensed by the pharmacy</masterLabel>
+            <translation>
+                <!-- Dispensed by the pharmacy -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>With the pharmacy to dispense</masterLabel>
+            <translation>
+                <!-- With the pharmacy to dispense -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_of_last_Successful_Blood_Test__c</fullName>
+    <externalId>false</externalId>
+    <label>Date of last Successful Blood Test</label>
+    <summarizedField>Blood_Test__c.Sample_Date__c</summarizedField>
+    <summaryFilterItems>
+        <field>Blood_Test__c.Status__c</field>
+        <operation>equals</operation>
+        <value>Successful Test, Successful Test, Partial Success/Some Failed Values</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Blood_Test__c.Contact__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <type>Summary</type>
+</CustomField>

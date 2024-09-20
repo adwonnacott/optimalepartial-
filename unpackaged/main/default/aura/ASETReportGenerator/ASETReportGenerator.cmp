@@ -1,0 +1,25 @@
+<aura:component controller="GeneratePDFInvocable" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,force:hasRecordId" access="global" >
+    <aura:attribute name="recordId" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <div class="slds-text-heading_large slds-align_absolute-center ">
+        <div class="slds-grid slds-grid_vertical">
+            <div class="slds-col">
+                <span>
+                    Generating ASETPathology Report...
+                </span>
+            </div>
+            <div class="slds-col">
+                <div class="slds-align_absolute-center" style="height:9rem">
+                    <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_inline">
+                        <span class="slds-assistive-text">Loading</span>
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+</aura:component>

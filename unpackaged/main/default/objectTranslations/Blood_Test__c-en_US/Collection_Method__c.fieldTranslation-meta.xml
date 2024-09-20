@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Method for collecting the blood sample -->
+        </help>
+        <label>
+            <!-- Collection Method -->
+        </label>
+        <name>Collection_Method__c</name>
+        <picklistValues>
+            <masterLabel>Finger - Prick</masterLabel>
+            <translation>
+                <!-- Finger - Prick -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nurse Home Visit</masterLabel>
+            <translation>
+                <!-- Nurse Home Visit -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nurse Home Visit - Inuvi</masterLabel>
+            <translation>
+                <!-- Nurse Home Visit - Inuvi -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Venous</masterLabel>
+            <translation>
+                <!-- Venous -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Venous - Goodbody</masterLabel>
+            <translation>
+                <!-- Venous - Goodbody -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Venous - Kit Only</masterLabel>
+            <translation>
+                <!-- Venous - Kit Only -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Venous - Randox</masterLabel>
+            <translation>
+                <!-- Venous - Randox -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Venous - Superdrug</masterLabel>
+            <translation>
+                <!-- Venous - Superdrug -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

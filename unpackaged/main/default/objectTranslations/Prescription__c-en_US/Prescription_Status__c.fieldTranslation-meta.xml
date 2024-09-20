@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Prescription Status -->
+        </label>
+        <name>Prescription_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved by Doctor</masterLabel>
+            <translation>
+                <!-- Approved by Doctor -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved by Doctor (re-submit to pharmacy)</masterLabel>
+            <translation>
+                <!-- Approved by Doctor (re-submit to pharmacy) -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation>
+                <!-- Cancelled -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dispatched by pharmacy</masterLabel>
+            <translation>
+                <!-- Dispatched by pharmacy -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation>
+                <!-- Draft -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>For Doctor Review</masterLabel>
+            <translation>
+                <!-- For Doctor Review -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected by Doctor</masterLabel>
+            <translation>
+                <!-- Rejected by Doctor -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

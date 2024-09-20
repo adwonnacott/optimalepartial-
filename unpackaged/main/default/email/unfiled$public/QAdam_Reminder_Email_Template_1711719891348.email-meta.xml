@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>QAdam Reminder Email Template</name>
+    <pageDevName>QAdam_Reminder_Email_Template</pageDevName>
+    <relatedEntityType>qADAM_Questionnaire__c</relatedEntityType>
+    <style>none</style>
+    <subject>Your TRT experience matters! Help us keep an eye on your progress</subject>
+    <textOnly>Hi {{{qADAM_Questionnaire__c.Patient_First_Name__c}}},
+
+As part the ongoing monitoring of your symptoms and effectiveness of your treatment, we ask new and existing patients to complete a clinically validated questionnaire every 3 months. You can find a link to the questionnaire below.
+
+Submit Response &lt; {{{qADAM_Questionnaire__c.Typeform_URL__c}}} &gt; 
+
+Sharing your insights (both the good and bad) will play a crucial role in helping us accurately monitor and assess your progress over time, so we can create a personalised patient journey, tailored just for you. This information not only helps us better understand the impact of TRT on your life but also provides on the overall efficacy of our TRT protocol, so we can continue to refine and improve how we serve our patients.
+
+Your responses will remain confidential on an individual basis. We use this data solely on an aggregate basis, ensuring your privacy and anonymity.
+
+Best,
+
+The Optimale Team
+
+Optimale Ltd, 71-75 Shelton Street, London, WC2H 9JQ, United Kingdom</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

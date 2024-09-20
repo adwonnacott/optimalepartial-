@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_Repeats_Allowed_No_of_Repeats_req</fullName>
+    <active>true</active>
+    <description>Requires a value in Number of Repeats if Medication allows repeats</description>
+    <errorConditionFormula>AND(OR(Number_of_Repeats_Allowed__c =0,ISBLANK(Number_of_Repeats_Allowed__c)), Repeats_Allowed__c = true)</errorConditionFormula>
+    <errorDisplayField>Number_of_Repeats_Allowed__c</errorDisplayField>
+    <errorMessage>Number of Repeats Allowed must be completed if Repeats Allowed is TRUE</errorMessage>
+</ValidationRule>

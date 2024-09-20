@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cancellation_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Cancellation Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Unable to afford</fullName>
+                <default>false</default>
+                <label>Unable to afford</label>
+            </value>
+            <value>
+                <fullName>Unhappy with service</fullName>
+                <default>false</default>
+                <label>Unhappy with service</label>
+            </value>
+            <value>
+                <fullName>Poor response to treatment</fullName>
+                <default>false</default>
+                <label>Poor response to treatment</label>
+            </value>
+            <value>
+                <fullName>Unstable HCT</fullName>
+                <default>false</default>
+                <label>Unstable HCT</label>
+            </value>
+            <value>
+                <fullName>Moved abroad</fullName>
+                <default>false</default>
+                <label>Moved abroad</label>
+            </value>
+            <value>
+                <fullName>Other medical reason</fullName>
+                <default>false</default>
+                <label>Other medical reason</label>
+            </value>
+            <value>
+                <fullName>No response from patient</fullName>
+                <default>false</default>
+                <label>No response from patient</label>
+            </value>
+            <value>
+                <fullName>Stopped paying subscription</fullName>
+                <default>false</default>
+                <label>Stopped paying subscription</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

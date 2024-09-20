@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Degree_of_Erection_Possible__c</fullName>
+    <externalId>false</externalId>
+    <label>Degree of Erection Possible</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Half at best</fullName>
+                <default>false</default>
+                <label>Half at best</label>
+            </value>
+            <value>
+                <fullName>Sometimes full</fullName>
+                <default>false</default>
+                <label>Sometimes full</label>
+            </value>
+            <value>
+                <fullName>Unable to sustain erection</fullName>
+                <default>false</default>
+                <label>Unable to sustain erection</label>
+            </value>
+            <value>
+                <fullName>Spontaneous erections</fullName>
+                <default>false</default>
+                <label>Spontaneous erections</label>
+            </value>
+            <value>
+                <fullName>Duration</fullName>
+                <default>false</default>
+                <label>Duration</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

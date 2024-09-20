@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_of_last_Doctor_Review__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Date of last Doctor Review Consultation</inlineHelpText>
+    <label>Date of last Doctor Review</label>
+    <summarizedField>Consultation_Form__c.Consultation_Date__c</summarizedField>
+    <summaryFilterItems>
+        <field>Consultation_Form__c.Consultation_Type__c</field>
+        <operation>equals</operation>
+        <value>3 month follow up, 6+ month follow up, Additional follow up</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Consultation_Form__c.Patient__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

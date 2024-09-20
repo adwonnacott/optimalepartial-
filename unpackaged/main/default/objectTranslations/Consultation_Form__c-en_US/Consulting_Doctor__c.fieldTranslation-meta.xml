@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Consulting Doctor -->
+        </label>
+        <name>Consulting_Doctor__c</name>
+        <picklistValues>
+            <masterLabel>Dr Aman Chungh</masterLabel>
+            <translation>
+                <!-- Dr Aman Chungh -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dr Chris Airey</masterLabel>
+            <translation>
+                <!-- Dr Chris Airey -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dr Lauren Airey</masterLabel>
+            <translation>
+                <!-- Dr Lauren Airey -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dr Zak Taylor</masterLabel>
+            <translation>
+                <!-- Dr Zak Taylor -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

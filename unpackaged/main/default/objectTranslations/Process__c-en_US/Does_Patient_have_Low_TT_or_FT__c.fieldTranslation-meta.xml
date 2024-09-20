@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Does Patient have Low TT or FT? -->
+        </label>
+        <name>Does_Patient_have_Low_TT_or_FT__c</name>
+        <picklistValues>
+            <masterLabel>No, needs to order blood test</masterLabel>
+            <translation>
+                <!-- No, needs to order blood test -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No, not eligible for treatment</masterLabel>
+            <translation>
+                <!-- No, not eligible for treatment -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes, has blood test results</masterLabel>
+            <translation>
+                <!-- Yes, has blood test results -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

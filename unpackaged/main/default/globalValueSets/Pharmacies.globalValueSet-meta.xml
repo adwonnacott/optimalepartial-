@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>WebRX Pharma</fullName>
+        <default>false</default>
+        <label>WebRX Pharma</label>
+    </customValue>
+    <customValue>
+        <fullName>Manual</fullName>
+        <default>false</default>
+        <label>Manual</label>
+    </customValue>
+    <customValue>
+        <fullName>CPS/CloudRX</fullName>
+        <default>false</default>
+        <label>CPS/CloudRX</label>
+    </customValue>
+    <customValue>
+        <fullName>NPLabs</fullName>
+        <default>false</default>
+        <label>NPLabs</label>
+    </customValue>
+    <customValue>
+        <fullName>WebRX Pharma - ROI</fullName>
+        <default>false</default>
+        <label>WebRX Pharma - ROI</label>
+    </customValue>
+    <masterLabel>Pharmacies</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

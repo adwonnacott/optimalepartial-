@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Testosterone Cypionate 200mg/ml 10ml vial</fullName>
+        <default>false</default>
+        <label>Testosterone Cypionate 200mg/ml 10ml vial</label>
+    </customValue>
+    <customValue>
+        <fullName>Cypionate Testex Prolongatum 250mg/2ml ampoule</fullName>
+        <default>false</default>
+        <label>Cypionate Testex Prolongatum 250mg/2ml ampoule</label>
+    </customValue>
+    <customValue>
+        <fullName>Sustanon</fullName>
+        <default>false</default>
+        <label>Sustanon 250mg/ml 1ml ampoule</label>
+    </customValue>
+    <customValue>
+        <fullName>Enanthate</fullName>
+        <default>false</default>
+        <label>Testosterone Enanthate 250mg/ml 1ml ampoule</label>
+    </customValue>
+    <customValue>
+        <fullName>Versabase Cream 150mg/ml 70ml bottle</fullName>
+        <default>false</default>
+        <label>Versabase Cream 150mg/ml 70ml bottle</label>
+    </customValue>
+    <customValue>
+        <fullName>Versabase Cream 45mg/ml 45ml bottle</fullName>
+        <default>false</default>
+        <label>Versabase Cream 45mg/ml 45ml bottle</label>
+    </customValue>
+    <customValue>
+        <fullName>Testogel</fullName>
+        <default>false</default>
+        <label>Testogel 16.2mg/g Gel 88g</label>
+    </customValue>
+    <customValue>
+        <fullName>Tostran</fullName>
+        <default>false</default>
+        <label>Tostran 2% gel 60g</label>
+    </customValue>
+    <customValue>
+        <fullName>HCG</fullName>
+        <default>false</default>
+        <label>HCG Gonasi HP 5000iu</label>
+    </customValue>
+    <customValue>
+        <fullName>2xHCG</fullName>
+        <default>false</default>
+        <label>2x HCG Gonasi HP 5000iu</label>
+    </customValue>
+    <customValue>
+        <fullName>3xHCG</fullName>
+        <default>false</default>
+        <label>3x HCG Gonasi HP 5000iu</label>
+    </customValue>
+    <customValue>
+        <fullName>Tor-Bac Bacteriostatic Water 5ml ampoule</fullName>
+        <default>false</default>
+        <label>Tor-Bac Bacteriostatic Water 5ml ampoule</label>
+    </customValue>
+    <customValue>
+        <fullName>Anastrozole</fullName>
+        <default>false</default>
+        <label>Anastrozole 1mg x 28 tablets</label>
+    </customValue>
+    <customValue>
+        <fullName>Exemestane Aromasin</fullName>
+        <default>false</default>
+        <label>Exemestane (Aromasin) 25mg x 30 tablets</label>
+    </customValue>
+    <customValue>
+        <fullName>Nebido</fullName>
+        <default>false</default>
+        <label>Nebido 1000mg/4ml ampoule</label>
+    </customValue>
+    <customValue>
+        <fullName>Tamoxifen</fullName>
+        <default>false</default>
+        <label>Tamoxifen 20mg x 30 tablets</label>
+    </customValue>
+    <customValue>
+        <fullName>Minoxidil 5% Azelaic Acid 2% Finasteride 0.1% 60ml bottle</fullName>
+        <default>false</default>
+        <label>Minoxidil 5%, Azelaic Acid 2%, Finasteride 0.1% 60ml bottle</label>
+    </customValue>
+    <customValue>
+        <fullName>Minoxidil 5% Finasteride 0.1% Trichofoam 100ml</fullName>
+        <default>false</default>
+        <label>Minoxidil 5%, Finasteride 0.1% Trichofoam 100ml</label>
+    </customValue>
+    <customValue>
+        <fullName>Minoxidil 5% Finasteride 0.1% Trichofoam 60ml</fullName>
+        <default>false</default>
+        <label>Minoxidil 5%, Finasteride 0.1% Trichofoam 60ml</label>
+    </customValue>
+    <customValue>
+        <fullName>Minoxidil</fullName>
+        <default>false</default>
+        <label>Minoxidil 5% Regaine foam</label>
+    </customValue>
+    <customValue>
+        <fullName>Clomid</fullName>
+        <default>false</default>
+        <label>Clomid (clomifene citrate) 50mg x 30 tablets</label>
+    </customValue>
+    <customValue>
+        <fullName>Tadalafil 5mg x 28 tablets</fullName>
+        <default>false</default>
+        <label>Tadalafil 5mg x 28 tablets</label>
+    </customValue>
+    <customValue>
+        <fullName>Tadalafil 20mg x 4 tablets</fullName>
+        <default>false</default>
+        <label>Tadalafil 20mg x 4 tablets</label>
+    </customValue>
+    <customValue>
+        <fullName>Sildenafil 50mg x 4 tablets</fullName>
+        <default>false</default>
+        <label>Sildenafil 50mg x 4 tablets</label>
+    </customValue>
+    <customValue>
+        <fullName>Sildenafil 50mg x 8 tablets</fullName>
+        <default>false</default>
+        <label>Sildenafil 50mg x 8 tablets</label>
+    </customValue>
+    <customValue>
+        <fullName>Finasteride 1mg x 28 tablets</fullName>
+        <default>false</default>
+        <label>Finasteride 1mg x 28 tablets</label>
+    </customValue>
+    <customValue>
+        <fullName>Finasteride 5mg x 28 tablets</fullName>
+        <default>false</default>
+        <label>Finasteride 5mg x 28 tablets</label>
+    </customValue>
+    <customValue>
+        <fullName>Metformin 500mg M/r x 28</fullName>
+        <default>false</default>
+        <label>Metformin 500mg M/r x 28</label>
+    </customValue>
+    <customValue>
+        <fullName>Mesterolone</fullName>
+        <default>false</default>
+        <label>Mesterolone</label>
+    </customValue>
+    <customValue>
+        <fullName>Finasteride</fullName>
+        <default>false</default>
+        <label>Finasteride</label>
+    </customValue>
+    <customValue>
+        <fullName>Bacteriostatic Water x 2 + MDV</fullName>
+        <default>false</default>
+        <label>Bacteriostatic Water x 2 + MDV</label>
+    </customValue>
+    <customValue>
+        <fullName>Bacteriostatic Water x 3</fullName>
+        <default>false</default>
+        <label>Bacteriostatic Water x 3</label>
+    </customValue>
+    <customValue>
+        <fullName>Bacteriostatic Water</fullName>
+        <default>false</default>
+        <label>Bacteriostatic Water x 10</label>
+    </customValue>
+    <customValue>
+        <fullName>Multi-use vials x3</fullName>
+        <default>false</default>
+        <label>Multi-use vials x3</label>
+    </customValue>
+    <customValue>
+        <fullName>Menopur</fullName>
+        <default>false</default>
+        <label>Menopur</label>
+    </customValue>
+    <customValue>
+        <fullName>Saxenda</fullName>
+        <default>false</default>
+        <label>Saxenda</label>
+    </customValue>
+    <customValue>
+        <fullName>Sildenafil</fullName>
+        <default>false</default>
+        <label>Sildenafil</label>
+    </customValue>
+    <customValue>
+        <fullName>Levitra</fullName>
+        <default>false</default>
+        <label>Levitra</label>
+    </customValue>
+    <customValue>
+        <fullName>Cypionate</fullName>
+        <default>false</default>
+        <label>Cypionate</label>
+    </customValue>
+    <customValue>
+        <fullName>Metformin</fullName>
+        <default>false</default>
+        <label>Metformin</label>
+    </customValue>
+    <customValue>
+        <fullName>Danazol</fullName>
+        <default>false</default>
+        <label>Danazol</label>
+    </customValue>
+    <customValue>
+        <fullName>Tadalafil</fullName>
+        <default>false</default>
+        <label>Tadalafil</label>
+    </customValue>
+    <customValue>
+        <fullName>Test. Cream</fullName>
+        <default>false</default>
+        <label>Test. Cream</label>
+    </customValue>
+    <customValue>
+        <fullName>Other Test. Preparation</fullName>
+        <default>false</default>
+        <label>Other Test. Preparation</label>
+    </customValue>
+    <customValue>
+        <fullName>Versabase Cream</fullName>
+        <default>false</default>
+        <label>Versabase Cream</label>
+    </customValue>
+    <customValue>
+        <fullName>Levothyroxine 50mcg</fullName>
+        <default>false</default>
+        <label>Levothyroxine 50mcg</label>
+    </customValue>
+    <customValue>
+        <fullName>Liothyronine Sodium 5mcg</fullName>
+        <default>false</default>
+        <label>Liothyronine Sodium 5mcg</label>
+    </customValue>
+    <customValue>
+        <fullName>Cabergoline 500mcg x 8 tablets</fullName>
+        <default>false</default>
+        <label>Cabergoline 500mcg x 8 tablets</label>
+    </customValue>
+    <customValue>
+        <fullName>Raloxifene 60mg x 28 tablets</fullName>
+        <default>false</default>
+        <label>Raloxifene 60mg x 28 tablets</label>
+    </customValue>
+    <customValue>
+        <fullName>Nuchido</fullName>
+        <default>false</default>
+        <label>Nuchido</label>
+    </customValue>
+    <customValue>
+        <fullName>Atorvastatin</fullName>
+        <default>false</default>
+        <label>Atorvastatin 80mg x 28 Tablets</label>
+    </customValue>
+    <customValue>
+        <fullName>Versabase Cream 200mg/ml 70ml bottle</fullName>
+        <default>false</default>
+        <label>Versabase Cream 200mg/ml 70ml bottle</label>
+    </customValue>
+    <customValue>
+        <fullName>Paroxetine 20mg x 28 Tablets</fullName>
+        <default>false</default>
+        <label>Paroxetine 20mg x 28 Tablets</label>
+    </customValue>
+    <customValue>
+        <fullName>Testogel 40.5mg/2.5g Gel x 30 Sachets</fullName>
+        <default>false</default>
+        <label>Testogel 40.5mg/2.5g Gel x 30 Sachets</label>
+    </customValue>
+    <customValue>
+        <fullName>Exemestane</fullName>
+        <default>false</default>
+        <label>Exemestane</label>
+    </customValue>
+    <customValue>
+        <fullName>Versabase Cream 100mg/ml 70ml bottle</fullName>
+        <default>false</default>
+        <label>Versabase Cream 100mg/ml 70ml bottle</label>
+    </customValue>
+    <customValue>
+        <fullName>Testogel 50mg/5g Gel x 30 Sachets</fullName>
+        <default>false</default>
+        <label>Testogel 50mg/5g Gel x 30 Sachets</label>
+    </customValue>
+    <customValue>
+        <fullName>Nuchido Time x 180 capsules</fullName>
+        <default>false</default>
+        <label>Nuchido Time x 180 capsules</label>
+    </customValue>
+    <customValue>
+        <fullName>Atorvastatin 80mg 28 Tablets</fullName>
+        <default>false</default>
+        <label>Atorvastatin 80mg 28 Tablets</label>
+    </customValue>
+    <customValue>
+        <fullName>Paroxetine 20mg</fullName>
+        <default>false</default>
+        <label>Paroxetine 20mg</label>
+    </customValue>
+    <customValue>
+        <fullName>Atorvastatin 40mg x 28 Tablets</fullName>
+        <default>false</default>
+        <label>Atorvastatin 40mg x 28 Tablets</label>
+    </customValue>
+    <customValue>
+        <fullName>Lymecycline 408mg x 28 Capsules.</fullName>
+        <default>false</default>
+        <label>Lymecycline 408mg x 28 Capsules.</label>
+    </customValue>
+    <description>Medications Prescribed by Optimale</description>
+    <masterLabel>Medications</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

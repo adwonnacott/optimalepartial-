@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exclude_from_Blood_Test_Reminders__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Exclude this patient from automated blood test reminders, for example if they are not a TRT patient and are on ED meds only</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Exclude this patient from automated blood test reminders, for example if they are not a TRT patient and are on ED meds only</inlineHelpText>
+    <label>Exclude from Blood Test Reminders?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

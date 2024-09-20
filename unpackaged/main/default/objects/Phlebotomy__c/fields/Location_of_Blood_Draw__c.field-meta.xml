@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Location_of_Blood_Draw__c</fullName>
+    <description>Location of the Blood Draw - eg Superdrug Bristol / Patient&#39;s Home</description>
+    <externalId>false</externalId>
+    <label>Location of Blood Draw</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

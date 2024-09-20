@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- PDF Results Upload Date/Time -->
+        </label>
+        <name>PDF_Results_Upload_Date_Time__c</name>
+    </CustomFieldTranslation>

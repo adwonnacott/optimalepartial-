@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Send Email with Sign Up links -->
+        </label>
+        <name>Send_Email_with_Sign_Up_links__c</name>
+    </CustomFieldTranslation>

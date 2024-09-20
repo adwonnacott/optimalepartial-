@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>Blood_Test__c.Sample_Date__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Patient_ID__c</field>
+    </columns>
+    <columns>
+        <field>Blood_Test__c.Test_Type__c</field>
+    </columns>
+    <columns>
+        <field>Blood_Test__c.Results_Status__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Blood_Test__c.HL7_Results_Uploaded__c</field>
+    </columns>
+    <columns>
+        <field>Blood_Test__c.PDF_Results_Upload_Date_Time__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Blood_Test__c.Test_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>OPT004-FP,OPT004-V</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_CREATED_DATE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterThan</operator>
+            <value>11/1/2023 12:00 AM</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>All BT2s since November 2023</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactCustomEntity$Blood_Test__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>LAST_ACTIVITY</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

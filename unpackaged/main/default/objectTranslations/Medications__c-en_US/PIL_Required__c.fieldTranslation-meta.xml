@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Do we need to send a Patient Information Leaflet (PIL) to the patient? -->
+        </help>
+        <label>
+            <!-- PIL Required? -->
+        </label>
+        <name>PIL_Required__c</name>
+    </CustomFieldTranslation>

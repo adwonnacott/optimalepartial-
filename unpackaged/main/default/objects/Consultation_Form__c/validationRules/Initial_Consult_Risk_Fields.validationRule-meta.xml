@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Initial_Consult_Risk_Fields</fullName>
+    <active>true</active>
+    <description>Risk Notes and Risk Level are mandatory fields when completing consultation form</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(Testosterone_treatments_explained__c, &#39;Yes&#39;),
+OR(
+ISBLANK(Risk_Notes__c ),
+ISBLANK(TEXT( Risk_Level__c ))
+)
+)</errorConditionFormula>
+    <errorDisplayField>Risk_Level__c</errorDisplayField>
+    <errorMessage>Please complete the Risk Notes and Risk Level fields</errorMessage>
+</ValidationRule>

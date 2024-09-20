@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Outcome__c</fullName>
+    <description>Outcome of complaint, whether the person who submitted the complaint is satisfied or not</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Outcome of complaint, whether the person who submitted the complaint is satisfied or not</inlineHelpText>
+    <label>Outcome</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

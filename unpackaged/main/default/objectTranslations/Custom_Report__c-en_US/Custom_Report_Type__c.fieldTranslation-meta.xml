@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Custom Report Type -->
+        </label>
+        <name>Custom_Report_Type__c</name>
+        <picklistValues>
+            <masterLabel>Calls Sales Correlation</masterLabel>
+            <translation>
+                <!-- Calls Sales Correlation -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Treatment Outcome</masterLabel>
+            <translation>
+                <!-- Treatment Outcome -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

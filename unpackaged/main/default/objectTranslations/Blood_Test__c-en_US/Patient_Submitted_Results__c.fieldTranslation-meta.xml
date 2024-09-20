@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Results submitted by patient from another blood testing service eg Medichecks -->
+        </help>
+        <label>
+            <!-- Patient Submitted Results -->
+        </label>
+        <name>Patient_Submitted_Results__c</name>
+    </CustomFieldTranslation>

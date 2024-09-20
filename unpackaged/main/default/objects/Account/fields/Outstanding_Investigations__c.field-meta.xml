@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Outstanding_Investigations__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Patient has outstanding investigations that need to be regularly chased</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Patient has outstanding investigations that need to be regularly chased</inlineHelpText>
+    <label>Outstanding Investigations?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

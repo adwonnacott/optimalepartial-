@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Do you have a decrease in strength and/or endurance? -->
+        </help>
+        <label>
+            <!-- Q5 Strength -->
+        </label>
+        <name>Q5_Strength__c</name>
+    </CustomFieldTranslation>

@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Blood Test</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Blood Tests</value>
+    </caseValues>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <layouts>
+        <layout>Blood Test Layout</layout>
+        <sections>
+            <label>
+                <!-- Custom Links -->
+            </label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>
+                <!-- Full Blood Count -->
+            </label>
+            <section>Full Blood Count</section>
+        </sections>
+        <sections>
+            <label>
+                <!-- Hormones -->
+            </label>
+            <section>Hormones</section>
+        </sections>
+        <sections>
+            <label>
+                <!-- Iron Studies -->
+            </label>
+            <section>Iron Studies</section>
+        </sections>
+        <sections>
+            <label>
+                <!-- Kidney Function -->
+            </label>
+            <section>Kidney Function</section>
+        </sections>
+        <sections>
+            <label>
+                <!-- Lipids -->
+            </label>
+            <section>Lipids</section>
+        </sections>
+        <sections>
+            <label>
+                <!-- Liver Function -->
+            </label>
+            <section>Liver Function</section>
+        </sections>
+        <sections>
+            <label>
+                <!-- Other Results -->
+            </label>
+            <section>Other Results</section>
+        </sections>
+        <sections>
+            <label>
+                <!-- Results Status -->
+            </label>
+            <section>Results Status</section>
+        </sections>
+        <sections>
+            <label>
+                <!-- Test Order Info -->
+            </label>
+            <section>Test Order Info</section>
+        </sections>
+        <sections>
+            <label>
+                <!-- Thyroid -->
+            </label>
+            <section>Thyroid</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>OM Blood Test Layout Community Portal</layout>
+        <sections>
+            <label>
+                <!-- Custom Links -->
+            </label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label>
+                <!-- Test Order Info -->
+            </label>
+            <section>Test Order Info</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label>
+            <!-- Download ASET Pathology Report -->
+        </label>
+        <name>Download_ASET_Pathology_Report</name>
+    </quickActions>
+    <quickActions>
+        <label>
+            <!-- Generate PDF -->
+        </label>
+        <name>Generate_PDF</name>
+    </quickActions>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage>
+            <!-- Please enter a Bespoke Test Type -->
+        </errorMessage>
+        <name>Bespoke_Kit_Test_Type</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Please choose a Bespoke Meddx Kit Type -->
+        </errorMessage>
+        <name>Bespoke_Meddx_Kit_Type</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Please update the patient&apos;s date of birth before creating a new blood test -->
+        </errorMessage>
+        <name>Check_DOB_Exists</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Please update the patient&apos;s shipping address before creating a new blood test -->
+        </errorMessage>
+        <name>Check_Shipping_Address_Exists</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Please enter a collection method -->
+        </errorMessage>
+        <name>Collection_method_must_be_added</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- You must tick one of the order types on the left, eg Manual New Order, Replacement Kit, etc -->
+        </errorMessage>
+        <name>No_order_type_ticked</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Status must be Successful or Partial Success if Patient Submitted Results are uploaded -->
+        </errorMessage>
+        <name>Patient_Submitted_Results_Status</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Please select a Replacement Reason for the Replacement Kit -->
+        </errorMessage>
+        <name>Replacement_Reason</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Please enter a Sample Date for the Test -->
+        </errorMessage>
+        <name>Sample_Date_for_Successful_Test</name>
+    </validationRules>
+</CustomObjectTranslation>

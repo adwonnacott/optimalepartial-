@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Answering yes to question 3 or question 9 adds 3 points, all other questions are 1 point. 3 points and above is a positive questionnaire result indicating low testosterone. -->
+        </help>
+        <label>
+            <!-- ADAM Score -->
+        </label>
+        <name>ADAM_Score__c</name>
+    </CustomFieldTranslation>

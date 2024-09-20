@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Diagnosis__c</fullName>
+    <description>What was the OptiMale Doctor&#39;s diagnosis of the Patient?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>What was the OptiMale Doctor&#39;s diagnosis of the Patient?</inlineHelpText>
+    <label>Diagnosis</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

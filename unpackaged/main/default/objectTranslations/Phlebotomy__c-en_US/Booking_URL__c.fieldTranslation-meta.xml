@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <help>
+            <!-- Goodbody Booking Link -->
+        </help>
+        <label>
+            <!-- Booking URL -->
+        </label>
+        <name>Booking_URL__c</name>
+    </CustomFieldTranslation>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Libido Issues? -->
+        </label>
+        <name>Libido_Issues__c</name>
+        <picklistValues>
+            <masterLabel>Normal</masterLabel>
+            <translation>
+                <!-- Normal -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Primary reduced</masterLabel>
+            <translation>
+                <!-- Primary reduced -->
+            </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secondary reduced</masterLabel>
+            <translation>
+                <!-- Secondary reduced -->
+            </translation>
+        </picklistValues>
+    </CustomFieldTranslation>

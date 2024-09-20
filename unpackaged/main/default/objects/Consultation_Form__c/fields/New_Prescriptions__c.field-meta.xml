@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Prescriptions__c</fullName>
+    <description>New Medications the OptiMale Doctor has decided to prescribe for the Patient</description>
+    <externalId>false</externalId>
+    <inlineHelpText>New Medications the OptiMale Doctor has decided to prescribe for the Patient</inlineHelpText>
+    <label>New Prescriptions</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Medications</valueSetName>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nurse_Home_Visits_to_organise</fullName>
+    <columns>SUBJECT</columns>
+    <columns>TYPE</columns>
+    <columns>WHAT_NAME</columns>
+    <columns>DUE_DATE</columns>
+    <columns>STATUS</columns>
+    <columns>PRIORITY</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>IS_CLOSED</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>IS_RECURRENCE</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>notEqual</operation>
+        <value>autocase</value>
+    </filters>
+    <filters>
+        <field>TYPE</field>
+        <operation>equals</operation>
+        <value>Nurse Home Visit</value>
+    </filters>
+    <label>Nurse Home Visits to organise</label>
+</ListView>

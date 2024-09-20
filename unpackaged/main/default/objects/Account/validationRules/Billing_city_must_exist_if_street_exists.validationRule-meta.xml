@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_city_must_exist_if_street_exists</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(IsPersonAccount=true, ISBLANK(BillingCity),Not(ISBLANK(BillingStreet)),
+ISCHANGED(BillingStreet) )</errorConditionFormula>
+    <errorDisplayField>BillingStreet</errorDisplayField>
+    <errorMessage>Please ensure all billing fields are completed - do not enter all the billing address in the billing street field!</errorMessage>
+</ValidationRule>

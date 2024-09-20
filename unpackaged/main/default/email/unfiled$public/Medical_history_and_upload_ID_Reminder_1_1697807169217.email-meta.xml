@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Medical history and upload ID Reminder 1</name>
+    <pageDevName>Medical_history_and_upload_ID_Reminder_1</pageDevName>
+    <relatedEntityType>Blood_Test__c</relatedEntityType>
+    <style>none</style>
+    <subject>Medical History Questionnaire Reminder</subject>
+    <textOnly>Dear {{{Blood_Test__c.Contact_Name__c}}}, 
+
+Further to your recent Blood Test request, we asked you to submit a Medical History Questionnaire online. We haven’t yet received this back and we’ll need it in order to move forward with your assessment.
+
+Please follow the link below to submit your Questionnaire response: 
+
+Complete Questionnare &lt; https://optimale.typeform.com/to/cj6EnJ1L#patient_id={{{Recipient.Patient_ID__c}}}&amp;name={{{Blood_Test__c.Account_First_Name__c}}} &gt; 
+
+We look forward to receiving your response. Please let us know if you have any questions,
+
+Many thanks,
+
+Optimale
+
+Optimale Ltd, 71-75 Shelton Street, London, WC2H 9JQ, United Kingdom</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

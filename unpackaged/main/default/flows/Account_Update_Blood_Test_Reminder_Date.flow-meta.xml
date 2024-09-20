@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <decisions>
+        <name>Patient_Status</name>
+        <label>Patient Status</label>
+        <locationX>182</locationX>
+        <locationY>311</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Changed_to_Current_Patient</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Patient_Status__pc</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Current Patient</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Patient_Status__pc</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>On Hold</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Patient_Status__pc</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Lost</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Next_Blood_Test_Reminder_Date</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Changed to Current Patient</label>
+        </rules>
+    </decisions>
+    <description>Updates Blood Test Reminder Date where status changed to Current Patient</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>nextBloodTestReminderFormula</name>
+        <dataType>Date</dataType>
+        <expression>{!$Record.Treatment_Start_Date__c}+42</expression>
+    </formulas>
+    <interviewLabel>Account Update Blood Test Reminder Date {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account Update Blood Test Reminder Date</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Next_Blood_Test_Reminder_Date</name>
+        <label>Update Next Blood Test Reminder Date</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>Next_Blood_Test_Reminder__c</field>
+            <value>
+                <elementReference>nextBloodTestReminderFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Patient_Status</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Next_Blood_Test_Reminder__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Patient_Status__pc</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Account</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

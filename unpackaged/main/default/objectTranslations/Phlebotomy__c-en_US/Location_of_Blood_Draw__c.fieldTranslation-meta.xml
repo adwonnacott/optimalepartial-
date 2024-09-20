@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+        <label>
+            <!-- Location of Blood Draw -->
+        </label>
+        <name>Location_of_Blood_Draw__c</name>
+    </CustomFieldTranslation>
